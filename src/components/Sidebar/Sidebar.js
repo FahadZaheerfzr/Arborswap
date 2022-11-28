@@ -41,9 +41,11 @@ const nav_items = [
 ]
 
 
-export default function Sidebar() {
+export default function Sidebar({ fullSidebar }) {
     const [active, setActive] = useState("Discover")
     const [activeItem, setActiveItem] = useState("Marketplace");
+    const [tempfixed, setTempFixed] = useState(true);
+
 
 
     const handleActiveItem = (nav_item) => {
@@ -55,10 +57,34 @@ export default function Sidebar() {
         }
     }
 
+    if (!fullSidebar) {
+        return (
+            <div className='w-full flex justify-end'>
+                <div className='w-[35%] flex flex-col items-center mb-[5%] justify-between'>
+                    <div className='nav-items'>
+                        {nav_items.map(nav_item => (
+                            <div className='mt-8'>
+                                <img className='h-6 w-6' src={nav_item.icon} alt={nav_item.name} />
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className=' flex justify-center'>
+                        <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
+                            <input type="checkbox" value="" checked={tempfixed ? false : true} id="default-toggle" className="sr-only peer"
+                                onChange={() => setTempFixed(!tempfixed)}
+                            />
+                            <div className="w-14 h-7 bg-[#F5F1EB] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all border-[#F5F1EB] peer-checked:bg-[#C89211]" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        );
+    }
     return (
         <div className='w-full flex flex-col '>
             {
-                activeItem === "null" && 
+                activeItem === "null" &&
                 <div className='bg-white pt-[20%]'>
                 </div>
             }
@@ -89,7 +115,7 @@ export default function Sidebar() {
                 </div>
             ))}
             {
-                activeItem === "null" && 
+                activeItem === "null" &&
                 <div className='bg-white pt-[20%]'>
                 </div>
             }
@@ -97,9 +123,10 @@ export default function Sidebar() {
                 <div className='flex'>
                     <img className='mr-3' src='./images/Sidebar/sun.svg' alt="sun" />
                     <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
-                        <input type="checkbox" value="" checked={false} id="default-toggle" className="sr-only peer"
+                        <input type="checkbox" value="" checked={tempfixed ? false : true} id="default-toggle" className="sr-only peer"
+                        onChange={() => setTempFixed(!tempfixed)}
                         />
-                        <div className="w-14 h-7 bg-[#F5F1EB] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all border-[#F5F1EB] peer-checked:bg-[#6FCE0F]" />
+                        <div className="w-14 h-7 bg-[#F5F1EB] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all border-[#F5F1EB] peer-checked:bg-[#C89211]" />
                     </label>
 
                     <div className='bg-[#C89211] rounded-[14px] flex items-center px-2 ml-5'>
@@ -110,7 +137,7 @@ export default function Sidebar() {
                         </span>
                     </div>
                 </div>
-                
+
 
                 <div className='socials flex mt-9'>
                     <div className='twitter flex items-center justify-center bg-[#F5F1EB] w-[34px] h-[34px] rounded-md '>
@@ -131,13 +158,11 @@ export default function Sidebar() {
                 </div>
 
                 <div className='copyrights'>
-                <span className=' text-[10px] text-[#A69F9F] font-gilroy font-medium'>
-                @2022 Arborswap. All right Reserved. 
-                </span>
+                    <span className=' text-[10px] text-[#A69F9F] font-gilroy font-medium'>
+                        @2022 Arborswap. All right Reserved.
+                    </span>
+                </div>
             </div>
-            </div>
-
-            
         </div>
     )
 }
