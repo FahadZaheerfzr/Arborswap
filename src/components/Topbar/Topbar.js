@@ -21,7 +21,7 @@ export default function Topbar() {
                 <div className='border-2 rounded-md border-[#00783F] border-opacity-50 flex items-center justify-between ml-8'>
                     <img className='ml-5' src='./images/Topbar/metamask.svg' alt="metamask" />
 
-                    <span className='font-gilroy ml-2'>
+                    <span className='font-gilroy font-medium ml-2'>
                     0xdd....ahs4
                     </span>
 

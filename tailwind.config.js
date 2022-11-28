@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        "gilroy": ["Gilroy"],
+        "gilroy": ["Gilroy", "GilroyBold"],
       }
     },
   },
