@@ -48,13 +48,15 @@ export default function Sidebar({ fullSidebar }) {
 
 
 
-    const handleActiveItem = (nav_item) => {
-
-        if (nav_item === activeItem) {
-            setActiveItem("null")
-        } else {
-            setActiveItem(nav_item);
+    const handleActiveItem = (nav_item, nav_item_extendable) => {
+        if (nav_item_extendable) {
+            if (nav_item === activeItem) {
+                setActiveItem("null")
+            } else {
+                setActiveItem(nav_item);
+            }
         }
+
     }
 
     if (!fullSidebar) {
@@ -82,49 +84,51 @@ export default function Sidebar({ fullSidebar }) {
         );
     }
     return (
-        <div className='w-full flex flex-col '>
-            {
-                activeItem === "null" &&
-                <div className='bg-white pt-[20%]'>
-                </div>
-            }
-            {nav_items.map(nav_item => (
-                <div key={nav_item.id} className='mt-8 w-full cursor-pointer' onClick={(nav_item_name) => handleActiveItem(nav_item.name)}>
-                    <div className='flex justify-between items-center'>
-                        <div className='flex ml-[20%]'>
-                            <img src={nav_item.icon} alt="nav-item-icon" />
-                            <span className={`font-gilroy font-semibold ml-5 ${nav_item.active ? "text-primary-green" : "text-light-text"}`}>
-                                {nav_item.name}
-                            </span>
+        <div className='w-full flex flex-col justify-between mb-5'>
+            <div className='nav-items'>
+                {
+                    activeItem === "null" &&
+                    <div className='bg-white pt-[20%]'>
+                    </div>
+                }
+                {nav_items.map(nav_item => (
+                    <div key={nav_item.id} className='mt-8 w-full cursor-pointer' onClick={(nav_item_name) => handleActiveItem(nav_item.name, nav_item.extendable)}>
+                        <div className='flex justify-between items-center'>
+                            <div className='flex ml-[20%]'>
+                                <img src={nav_item.icon} alt="nav-item-icon" />
+                                <span className={`font-gilroy font-semibold ml-5 ${nav_item.active ? "text-primary-green" : "text-light-text"}`}>
+                                    {nav_item.name}
+                                </span>
+                            </div>
+                            {nav_item.extendable &&
+                                <div className='mr-8'>
+                                    <img src='./images/Sidebar/arrow-down.svg' alt="arrow-down" />
+                                </div>
+                            }
                         </div>
-                        {nav_item.extendable &&
-                            <div className='mr-8'>
-                                <img src='./images/Sidebar/arrow-down.svg' alt="arrow-down" />
+                        {activeItem === nav_item.name &&
+                            <div className='bg-[#FAF8F5] flex flex-col items-center mt-3 pb-5'>
+                                {nav_item.subItems.map((subItem, index) => (
+                                    <span key={index} className={`font-semibold font-gilroy mt-5 ${active === subItem ? "text-primary-green" : "text-light-text"}`}>
+                                        {subItem}
+                                    </span>
+                                ))}
                             </div>
                         }
                     </div>
-                    {activeItem === nav_item.name &&
-                        <div className='bg-[#FAF8F5] flex flex-col items-center mt-3 pb-5'>
-                            {nav_item.subItems.map((subItem, index) => (
-                                <span key={index} className={`font-semibold font-gilroy mt-5 ${active === subItem ? "text-primary-green" : "text-light-text"}`}>
-                                    {subItem}
-                                </span>
-                            ))}
-                        </div>
-                    }
-                </div>
-            ))}
-            {
-                activeItem === "null" &&
-                <div className='bg-white pt-[20%]'>
-                </div>
-            }
-            <div className='mt-[30%] flex flex-col items-end mr-7'>
+                ))}
+                {
+                    activeItem === "null" &&
+                    <div className='bg-white pt-[20%]'>
+                    </div>
+                }
+            </div>
+            <div className=' flex flex-col items-end mr-7'>
                 <div className='flex'>
                     <img className='mr-3' src='./images/Sidebar/sun.svg' alt="sun" />
                     <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
                         <input type="checkbox" value="" checked={tempfixed ? false : true} id="default-toggle" className="sr-only peer"
-                        onChange={() => setTempFixed(!tempfixed)}
+                            onChange={() => setTempFixed(!tempfixed)}
                         />
                         <div className="w-14 h-7 bg-[#F5F1EB] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all border-[#F5F1EB] peer-checked:bg-[#C89211]" />
                     </label>

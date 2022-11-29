@@ -13,11 +13,11 @@ export default function BaseLayout() {
             </div>
 
             <div className='flex min-h-[85%]'>
-                <div className={`w-[20%] flex bg-white ${Styles.sideBar} ease-in-out duration-300 ${showSidebar ? "translate-x-0" : "-translate-x-[65%]"}`}>
+                <div className={`w-[270px] flex bg-white ${Styles.sideBar} ease-in-out duration-300 ${showSidebar ? "translate-x-0" : "-translate-x-[170px]"}`}>
                     <Sidebar fullSidebar={showSidebar} />
 
                     <div className='absolute z-30 ml-[90%] mt-6'>
-                        <div className='h-12 w-12 bg-white rounded-full flex justify-center items-center'
+                        <div className='h-12 w-12 bg-white rounded-full flex justify-center items-center cursor-pointer'
                             onClick={() => setShowSidebar(!showSidebar)}>
 
                             <img src='./images/Sidebar/arrow-left.svg' alt="arrow-left" />
@@ -25,8 +25,7 @@ export default function BaseLayout() {
                     </div>
                 </div>
 
-                <div className='w-[80%]'>
-
+                <div className={`w-[calc(100%-270px)] ${showSidebar ? "translate-x-0" : "-translate-x-[170px]"}`}>
 
                 </div>
             </div>

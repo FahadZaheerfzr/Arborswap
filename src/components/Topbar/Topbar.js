@@ -18,7 +18,7 @@ export default function Topbar() {
                     <img src='./images/Topbar/notification.svg' alt="notification" />
                 </div>
 
-                <div className='border-2 rounded-md border-[#00783F] border-opacity-50 flex items-center justify-between ml-8'>
+                <div className='border-2 rounded-md border-primary-green border-opacity-50 flex items-center justify-between ml-8'>
                     <img className='ml-5' src='./images/Topbar/metamask.svg' alt="metamask" />
 
                     <span className='font-gilroy font-medium ml-2'>
@@ -26,9 +26,9 @@ export default function Topbar() {
                     </span>
 
                     <div className='flex ml-3 mr-6'>
-                        <div className='w-1 h-1 rounded-full bg-[#00783F] mr-[2px]' />
-                        <div className='w-1 h-1 rounded-full bg-[#00783F] mr-[2px]' />
-                        <div className='w-1 h-1 rounded-full bg-[#00783F]' />
+                        <div className='w-1 h-1 rounded-full bg-primary-green mr-[2px]' />
+                        <div className='w-1 h-1 rounded-full bg-primary-green mr-[2px]' />
+                        <div className='w-1 h-1 rounded-full bg-primary-green' />
                     </div>
                 </div>
             </div>
