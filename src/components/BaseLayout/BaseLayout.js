@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Sidebar from '../Sidebar/Sidebar'
 import Styles from './BaseLayout.module.css'
 import Topbar from '../Topbar/Topbar'
+import CollectionLayout from '../Collections/CollectionLayout';
 
 export default function BaseLayout() {
     const [showSidebar, setShowSidebar] = useState(true);
@@ -18,8 +19,8 @@ export default function BaseLayout() {
                 <Topbar setSideBarMobile={setSideBarMobile} sideBarMobile={sideBarMobile} />
             </div>
 
-            <div className='flex w-full min-h-[calc(100%-110px)]'>
-            <div className={`${sideBarMobile? "block":"hidden"} md:hidden w-[240px] bg-white absolute z-20`}>
+            <div className='flex w-full'>
+                <div className={`${sideBarMobile ? "block" : "hidden"} md:hidden w-[240px] bg-white absolute z-20`}>
                     <Sidebar fullSidebar={true} tempfixed={tempfixed} handleTempFixed={handleTempFixed} />
                 </div>
 
@@ -35,8 +36,8 @@ export default function BaseLayout() {
                     </div>
                 </div>
 
-                <div className={`w-full md:w-[calc(100%-270px)] ease-in-out ${showSidebar ? " translate-x-0" : "-translate-x-[170px]"}`}>
-                    
+                <div className={`w-full md:w-[calc(100%-270px)] md:ml-[270px] ease-in-out duration-300 ${showSidebar ? " translate-x-0" : "-translate-x-[170px]"}`}>
+                    <CollectionLayout />
                 </div>
             </div>
         </div>

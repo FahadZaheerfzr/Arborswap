@@ -5,8 +5,8 @@
 }
 
 .sideBar{
-    position: sticky;
-    top:110px;
-    left: 0;
+    position: fixed;
+    top: 100px;
     z-index: 50;
+    min-height: calc(100% - 100px);
 }
