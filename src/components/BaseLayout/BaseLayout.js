@@ -8,6 +8,10 @@ export default function BaseLayout() {
     const [sideBarMobile, setSideBarMobile] = useState(false);
     const [tempfixed, setTempFixed] = useState(true);
 
+    const handleTempFixed = () => {
+        setTempFixed(!tempfixed);
+    }
+
     return (
         <div className='w-full h-screen'>
             <div className={`${Styles.topBar} bg-white`}>
@@ -16,11 +20,11 @@ export default function BaseLayout() {
 
             <div className='flex w-full min-h-[calc(100%-110px)]'>
             <div className={`${sideBarMobile? "block":"hidden"} md:hidden w-[240px] bg-white absolute z-20`}>
-                    <Sidebar fullSidebar={true} tempfixed={tempfixed} setTempFixed={setTempFixed} />
+                    <Sidebar fullSidebar={true} tempfixed={tempfixed} handleTempFixed={handleTempFixed} />
                 </div>
 
                 <div className={`hidden md:flex w-[270px] bg-white ${Styles.sideBar} ease-in-out duration-300 ${showSidebar ? "translate-x-0" : "-translate-x-[170px]"}`}>
-                    <Sidebar fullSidebar={showSidebar} tempfixed={tempfixed} setTempFixed={setTempFixed} />
+                    <Sidebar fullSidebar={showSidebar} tempfixed={tempfixed} handleTempFixed={handleTempFixed} />
 
                     <div className='absolute z-30 ml-[90%] mt-6'>
                         <div className='h-12 w-12 bg-white rounded-full flex justify-center items-center cursor-pointer'
