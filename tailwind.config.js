@@ -7,6 +7,10 @@ module.exports = {
     extend: {
       fontFamily:{
         "gilroy": ["Gilroy", "GilroyBold"],
+      },
+      colors:{
+        "light-text":"#A69F9F",
+        "primary-green": "#00783F"
       }
     },
   },

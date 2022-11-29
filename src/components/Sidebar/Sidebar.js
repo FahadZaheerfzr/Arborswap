@@ -93,7 +93,7 @@ export default function Sidebar({ fullSidebar }) {
                     <div className='flex justify-between items-center'>
                         <div className='flex ml-[20%]'>
                             <img src={nav_item.icon} alt="nav-item-icon" />
-                            <span className={`font-gilroy font-semibold ml-5 ${nav_item.active ? "text-[#00783F]" : "text-[#A69F9F]"}`}>
+                            <span className={`font-gilroy font-semibold ml-5 ${nav_item.active ? "text-primary-green" : "text-light-text"}`}>
                                 {nav_item.name}
                             </span>
                         </div>
@@ -106,7 +106,7 @@ export default function Sidebar({ fullSidebar }) {
                     {activeItem === nav_item.name &&
                         <div className='bg-[#FAF8F5] flex flex-col items-center mt-3 pb-5'>
                             {nav_item.subItems.map((subItem, index) => (
-                                <span key={index} className={`font-semibold font-gilroy mt-5 ${active === subItem ? "text-[#00783F]" : "text-[#A69F9F]"}`}>
+                                <span key={index} className={`font-semibold font-gilroy mt-5 ${active === subItem ? "text-primary-green" : "text-light-text"}`}>
                                     {subItem}
                                 </span>
                             ))}
@@ -158,7 +158,7 @@ export default function Sidebar({ fullSidebar }) {
                 </div>
 
                 <div className='copyrights'>
-                    <span className=' text-[10px] text-[#A69F9F] font-gilroy font-medium'>
+                    <span className=' text-[10px] text-light-text font-gilroy font-medium'>
                         @2022 Arborswap. All right Reserved.
                     </span>
                 </div>
