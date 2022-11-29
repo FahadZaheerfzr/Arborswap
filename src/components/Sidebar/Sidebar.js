@@ -91,11 +91,11 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                     </div>
                 }
                 {nav_items.map(nav_item => (
-                    <div key={nav_item.id} className='mt-8 w-full cursor-pointer' onClick={(nav_item_name) => handleActiveItem(nav_item.name, nav_item.extendable)}>
-                        <div className='flex justify-between items-center'>
+                    <div key={nav_item.id} className='mt-8 w-full cursor-pointer' >
+                        <div className='flex justify-between items-center' onClick={(nav_item_name) => handleActiveItem(nav_item.name, nav_item.extendable)}>
                             <div className='flex ml-[20%]'>
                                 <img src={nav_item.icon} alt="nav-item-icon" />
-                                <span className={`font-gilroy font-semibold ml-5 ${nav_item.active ? "text-primary-green" : "text-light-text"}`}>
+                                <span className={`font-gilroy font-semibold ml-5 ${nav_item.active ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
                                     {nav_item.name}
                                 </span>
                             </div>
@@ -106,9 +106,9 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                             }
                         </div>
                         {activeItem === nav_item.name &&
-                            <div className='bg-[#FAF8F5] flex flex-col items-center mt-3 pb-5'>
+                            <div className='bg-[#FAF8F5] flex flex-col pl-[35%] mt-3 pb-5'>
                                 {nav_item.subItems.map((subItem, index) => (
-                                    <span key={index} className={`font-semibold font-gilroy mt-5 ${active === subItem ? "text-primary-green" : "text-light-text"}`}>
+                                    <span key={index} className={`font-semibold font-gilroy mt-5 ${active === subItem ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
                                         {subItem}
                                     </span>
                                 ))}
