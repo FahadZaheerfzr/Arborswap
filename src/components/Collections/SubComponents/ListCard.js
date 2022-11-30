@@ -8,7 +8,7 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
         <span className='ml-5 font-gilroy font-bold text-[#464754]'>
           {card_name}
         </span>
-        {verified && <img src='./images/collections/card/verified.svg' alt="verified-icon" className='ml-2' />}
+        {verified && <img src='./images/collections/cards/verified.svg' alt="verified-icon" className='ml-2' />}
       </div>
 
       <div className='flex items-center w-3/4 justify-around'>
