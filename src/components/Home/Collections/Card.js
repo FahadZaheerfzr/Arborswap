@@ -14,7 +14,7 @@ export default function Card({ card_name, card_image, verified, card_icon, card_
                             {card_name}
                         </span>
                         {verified &&
-                            <img className='ml-2' src='./images/collections/cards/verified.svg' alt="verified" />
+                            <img className='ml-2' src='./images/home/collections/cards/verified.svg' alt="verified" />
                         }
                     </div>
 

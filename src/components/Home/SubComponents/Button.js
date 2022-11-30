@@ -6,7 +6,7 @@ export default function Button({buttonText}) {
         <span>
             {buttonText}
         </span>
-        <img className='ml-2' src='./images/collections/arrow-down.svg' alt="arrow-down" />
+        <img className='ml-2' src='./images/home/arrow-down.svg' alt="arrow-down" />
     </button>
   )
 }

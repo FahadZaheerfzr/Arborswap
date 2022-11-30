@@ -8,7 +8,7 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
         <span className='ml-5 font-gilroy font-bold text-[#464754]'>
           {card_name}
         </span>
-        {verified && <img src='./images/collections/cards/verified.svg' alt="verified-icon" className='ml-2' />}
+        {verified && <img src='./images/home/collections/cards/verified.svg' alt="verified-icon" className='ml-2' />}
       </div>
 
       <div className='flex items-center w-3/4 justify-around'>
@@ -17,7 +17,7 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
             <span className='font-gilroy font-medium text-[#807373] text-xs'>
               Floor Price
             </span>
-            <img src='./images/collections/question.svg' alt="info-icon" className='ml-2' />
+            <img src='./images/home/collections/question.svg' alt="info-icon" className='ml-2' />
           </div>
           <div className='value flex items-center mt-1'>
             <img src={card_category_icon} alt="category-icon" className='mr-2' />
@@ -33,7 +33,7 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
             <span className='font-gilroy font-medium text-[#807373] text-xs'>
               Volume
             </span>
-            <img src='./images/collections/question.svg' alt="info-icon" className='ml-2' />
+            <img src='./images/home/collections/question.svg' alt="info-icon" className='ml-2' />
           </div>
           <div className='value flex items-center mt-1'>
             <img src={card_category_icon} alt="category-icon" className='mr-2' />

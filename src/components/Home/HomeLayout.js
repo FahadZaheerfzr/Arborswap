@@ -3,9 +3,9 @@ import Carousel from './Slider/Slider'
 import Button from './SubComponents/Button'
 import Tab from './SubComponents/Tab'
 import { Cards } from '../../data/cards'
-import Card from './SubComponents/Card'
+import Card from './Collections/Card'
 import Dropdown from './SubComponents/Dropdown'
-import ListCard from './SubComponents/ListCard'
+import ListCard from './Collections/ListCard'
 
 
 const Buttons = [
@@ -50,7 +50,7 @@ const Tabs = [
     },
 ]
 
-export default function CollectionLayout() {
+export default function HomeLayout() {
     const [activeTab, setActiveTab] = useState(1);
     const [cardFormat, setCardFormat] = useState('grid');
     const [dropDownToggle, setDropDownToggle] = useState(false);
@@ -114,11 +114,11 @@ export default function CollectionLayout() {
                 <div className='flex'>
                     <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer ${cardFormat === "list" ? "bg-white" : "bg-[#F5F1EB]"}`}
                         onClick={() => setCardFormat("list")}>
-                        <img src='./images/collections/list-icon.svg' alt="list-icon" />
+                        <img src='./images/home/collections/list-icon.svg' alt="list-icon" />
                     </div>
                     <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer ${cardFormat === "grid" ? "bg-white" : "bg-[#F5F1EB]"}`}
                         onClick={() => setCardFormat("grid")}>
-                        <img src='./images/collections/grid-icon.svg' alt="grid-icon" />
+                        <img src='./images/home/collections/grid-icon.svg' alt="grid-icon" />
                     </div>
                 </div>
                 {Buttons.map((button) => (

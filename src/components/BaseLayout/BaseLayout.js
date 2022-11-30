@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Sidebar from '../Sidebar/Sidebar'
 import Styles from './BaseLayout.module.css'
 import Topbar from '../Topbar/Topbar'
-import CollectionLayout from '../Collections/CollectionLayout';
+import HomeLayout from '../Home/HomeLayout';
 
 export default function BaseLayout() {
     const [showSidebar, setShowSidebar] = useState(true);
@@ -37,7 +37,7 @@ export default function BaseLayout() {
                 </div>
 
                 <div className={`w-full md:w-[calc(100%-270px)] md:ml-[270px] ease-in-out duration-300 ${showSidebar ? " translate-x-0" : "-translate-x-[170px]"}`}>
-                    <CollectionLayout />
+                    <HomeLayout />
                 </div>
             </div>
         </div>
