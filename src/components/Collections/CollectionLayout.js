@@ -73,11 +73,10 @@ export default function CollectionLayout() {
                         <img className='mb-2 ml-2' src='./images/collections/arrow-down.svg' alt="arrow-down" />
                     </div>
 
-                    <div className="absolute">
+                    <div className="absolute mt-24">
                         {dropDownToggle &&
                             <Dropdown collections={collections} setCollections={setCollections} />
                         }
-
                     </div>
 
                     <div className='sub-text mt-2'>
