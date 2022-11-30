@@ -5,16 +5,16 @@ import SlideContent from './SlideContent';
 
 const slide_images = [
     {
-        img1: "./images/collections/banner1.svg",
-        img2: "./images/collections/banner2.svg"
+        img1: "./images/home/banner1.svg",
+        img2: "./images/home/banner2.svg"
     },
     {
-        img1: "./images/collections/banner1.svg",
-        img2: "./images/collections/banner2.svg"
+        img1: "./images/home/banner1.svg",
+        img2: "./images/home/banner2.svg"
     },
     {
-        img1: "./images/collections/banner1.svg",
-        img2: "./images/collections/banner2.svg"
+        img1: "./images/home/banner1.svg",
+        img2: "./images/home/banner2.svg"
     },
 
 ]
