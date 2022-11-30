@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import Carousel from './Slider/Slider'
 import Button from './SubComponents/Button'
 import Tab from './SubComponents/Tab'
-import { Cards } from '../../data/cards'
+import { Collections, NFTs } from '../../data/cards'
 import Card from './Collections/Card'
 import Dropdown from './SubComponents/Dropdown'
 import ListCard from './Collections/ListCard'
+import CardMobile from './NFTs/CardMobile'
 
 
 const Buttons = [
@@ -114,13 +115,23 @@ export default function HomeLayout() {
                 <div className='flex'>
                     <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer ${cardFormat === "list" ? "bg-white" : "bg-[#F5F1EB]"}`}
                         onClick={() => setCardFormat("list")}>
+                        {
+                            collections ?
                         <img src='./images/home/collections/list-icon.svg' alt="list-icon" />
+                        : <img src='./images/home/nfts/menu-small.svg' alt="small menu" />
+                        }
                     </div>
                     <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer ${cardFormat === "grid" ? "bg-white" : "bg-[#F5F1EB]"}`}
                         onClick={() => setCardFormat("grid")}>
-                        <img src='./images/home/collections/grid-icon.svg' alt="grid-icon" />
+                        {
+                            collections ?
+                                <img src='./images/home/collections/grid-icon.svg' alt="grid-icon" />
+                                : <img src='./images/home/nfts/menu.svg' alt="menu" />
+                        }
+
                     </div>
                 </div>
+
                 {Buttons.map((button) => (
                     <Button key={button.id} buttonText={button.buttonText} />
                 ))}
@@ -134,23 +145,44 @@ export default function HomeLayout() {
                     </div>
                 </div>
             </div>
+            {
+                collections ?
+                    cardFormat === "grid" ?
+                        <div className='w-full grid grid-cols-1 md:grid-cols-3 mt-7 gap-5'>
+                            {Collections.map((card) => (
+                                <Card key={card.id} card_name={card.name} card_image={card.image} verified={card.verified} card_icon={card.icon} card_category_icon={card.category_icon} floor_price={card.floor_price} item_quantity={card.item_quantity} />
+                            ))}
+                        </div> :
+                        <div className='hidden md:block w-full mt-4'>
+                            {Collections.map((card) => (
+                                <ListCard key={card.id} card_name={card.name} verified={card.verified} card_icon={card.icon} card_category_icon={card.category_icon} floor_price={card.floor_price} item_quantity={card.item_quantity} volume={card.volume} change={card.change} />
+                            ))}
+                        </div> :
 
-            {cardFormat === "grid" ?
-                <div className='w-full grid grid-cols-1 md:grid-cols-3 mt-7 gap-5'>
-                    {Cards.map((card) => (
-                        <Card key={card.id} card_name={card.name} card_image={card.image} verified={card.verified} card_icon={card.icon} card_category_icon={card.category_icon} floor_price={card.floor_price} item_quantity={card.item_quantity} />
-                    ))}
-                </div> :
-
-
-                <div className='w-full mt-4'>
-                    {Cards.map((card) => (
-                        <ListCard key={card.id} card_name={card.name} verified={card.verified} card_icon={card.icon} card_category_icon={card.category_icon} floor_price={card.floor_price} item_quantity={card.item_quantity} volume={card.volume} change={card.change} />
+                    cardFormat === "grid" ?
+                    <div className='hidden md:grid w-full  md:grid-cols-3 mt-7 gap-5'>
+                        {NFTs.map((nft) => (
+                            <Card key={nft.id} card_name={nft.name} card_image={nft.image} verified={false} card_icon={"/images/home/collections/cards/verified.svg"} card_category_icon={nft.category_icon} floor_price={nft.listed_price} item_quantity={nft.owner} nft={true} />
+                        ))}
+                    </div>
+                    :
+                    <div className='hidden md:grid w-full md:grid-cols-4 mt-7 gap-5'>
+                        {NFTs.map((nft) => (
+                            <Card key={nft.id} card_name={nft.name} card_image={nft.image} verified={false} card_icon={"/images/home/collections/cards/verified.svg"} card_category_icon={nft.category_icon} floor_price={nft.listed_price} item_quantity={nft.owner} nft={true} small={true} />
+                        ))}
+                    </div>
+            }
+            {!collections &&
+                <div className='md:hidden w-full mt-4'>
+                    {NFTs.map((nft) => (
+                        <div className='mt-4'>
+                        <CardMobile key={nft.id} card_name={nft.name} card_image={nft.image} verified={true} listed_price={nft.listed_price} card_category_icon={nft.category_icon} owner={nft.owner} />
+                        </div>
                     ))}
                 </div>
             }
 
-           
+
         </div>
     )
 }
