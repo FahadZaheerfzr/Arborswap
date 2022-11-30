@@ -1,18 +1,52 @@
 import React from 'react'
-import {Carousel} from 'react-responsive-carousel'
+import { CarouselProvider, Slider, Slide} from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
-export default function Slider() {
+export default function Carousel() {
     return (
-        <Carousel autoPlay >
-            <div>
-                <img src="./images/collections/banner-1.png" />
-                <p className="legend">Legend 1</p>
-            </div>
-            <div>
-                <img src="./images/collections/banner-2.png" />
-                <p className="legend">Legend 2</p>
-            </div>
+        <CarouselProvider
+        naturalSlideWidth={70}
+        naturalSlideHeight={20}
+        totalSlides={3}
+        isPlaying={true}
+        interval={3000}
+      >
+        <Slider>
+          <Slide index={0}>
+            <div className=' flex'>
+                <div className='w-1/2 pr-2'>
+                    <img className='w-full' src="./images/collections/banner1.svg" alt="banner-1" />
+                </div>
 
-        </Carousel>
+                <div className='w-1/2 flex justify-end pr-2' >
+                    <img className='w-full' src="./images/collections/banner2.svg" alt="banner-2" />
+                </div>
+            </div>
+          </Slide>
+          <Slide index={1}>
+          <div className=' flex'>
+                <div className='w-1/2 pr-2'>
+                    <img className='w-full' src="./images/collections/banner1.svg" alt="banner-1" />
+                </div>
+
+                <div className='w-1/2 flex justify-end pr-2' >
+                    <img className='w-full' src="./images/collections/banner2.svg" alt="banner-2" />
+                </div>
+            </div>
+          </Slide>
+          <Slide index={2}>
+          <div className=' flex'>
+                <div className='w-1/2 pr-2'>
+                    <img className='w-full' src="./images/collections/banner1.svg" alt="banner-1" />
+                </div>
+
+                <div className='w-1/2 flex justify-end pr-2' >
+                    <img className='w-full' src="./images/collections/banner2.svg" alt="banner-2" />
+                </div>
+            </div>
+          </Slide>
+        </Slider>
+
+      </CarouselProvider>
     )
 }

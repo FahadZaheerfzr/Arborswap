@@ -133,7 +133,7 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                         <input type="checkbox" value="" checked={tempfixed ? false : true} id="default-toggle" className="sr-only peer"
                             onChange={handleTempFixed}
                         />
-                        <div className="w-10 h-6 md:w-14 md:h-7 bg-[#F5F1EB] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[0] after:md:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:md:h-6 after:w-5 after:md:w-6 after:transition-all border-[#F5F1EB] peer-checked:bg-[#C89211]" />
+                        <div className="w-10 h-6 md:w-14 md:h-7 bg-[#F5F1EB] peer-focus:outline-none peer-focus:ring-0 peer-focus:ring-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:md:top-[2px] after:left-[0] after:md:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:md:h-6 after:w-5 after:md:w-6 after:transition-all border-[#F5F1EB] peer-checked:bg-[#C89211]" />
                     </label>
 
                     <div className='bg-[#C89211] rounded-[14px] flex items-center px-2 ml-5'>
