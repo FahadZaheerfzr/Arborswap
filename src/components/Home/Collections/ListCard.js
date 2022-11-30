@@ -48,10 +48,10 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
             <span className='font-gilroy font-medium text-[#807373] text-xs'>
               Changes 24h
             </span>
-            <img src='./images/collections/question.svg' alt="info-icon" className='ml-2' />
+            <img src='./images/home/collections/question.svg' alt="info-icon" className='ml-2' />
           </div>
           <div className='value flex items-center mt-1'>
-            <img src="./images/collections/polygon.svg" alt="change-icon" className='mr-2' />
+            <img src="./images/home/collections/polygon.svg" alt="change-icon" className='mr-2' />
             <span className='font-gilroy font-bold text-dark-text text-sm'>
               {change}
             </span>
@@ -63,7 +63,7 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
             <span className='font-gilroy font-medium text-[#807373] text-xs'>
               Items
             </span>
-            <img src='./images/collections/question.svg' alt="info-icon" className='ml-2' />
+            <img src='./images/home/collections/question.svg' alt="info-icon" className='ml-2' />
           </div>
           <div className='value flex items-center mt-1'>
             <span className='font-gilroy font-bold text-dark-text text-sm'>

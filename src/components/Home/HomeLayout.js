@@ -70,7 +70,7 @@ export default function HomeLayout() {
                             Discover <br />
                             Collections
                         </span>
-                        <img className='mb-2 ml-2' src='./images/collections/arrow-down.svg' alt="arrow-down" />
+                        <img className='mb-2 ml-2' src='./images/home/arrow-down.svg' alt="arrow-down" />
                     </div>
 
                     <div className="absolute mt-24">
