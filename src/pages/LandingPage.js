@@ -1,5 +1,6 @@
 import BaseLayout from '../components/BaseLayout/BaseLayout';
-import { useDocumentTitle } from '../hooks/setDocumentTitle'
+import HomeLayout from '../components/Home/HomeLayout';
+import { useDocumentTitle } from '../hooks/setDocumentTitle';
 
 export default function LandingPage() {
   useDocumentTitle("ArborSwap");
@@ -7,7 +8,9 @@ export default function LandingPage() {
     <div className='w-full'>
 
       <div className='base-layout'>
-          <BaseLayout />
+          <BaseLayout >
+            <HomeLayout />
+          </BaseLayout>
       </div>
 
     </div>
