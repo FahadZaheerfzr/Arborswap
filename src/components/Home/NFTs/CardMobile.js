@@ -17,7 +17,7 @@ export default function CardMobile({ card_name, card_image, verified, card_categ
 
                 <div className='flex mt-1'>
                 {verified &&
-                    <img src='./images/home/collections/cards/verified.svg' alt="verified" />
+                    <img src='/images/home/collections/cards/verified.svg' alt="verified" />
                 }
                     <span className='ml-1 font-gilroy text-light-text text-xs font-semibold'>
                         {owner}
@@ -39,7 +39,7 @@ export default function CardMobile({ card_name, card_image, verified, card_categ
 
                 <div className='flex mt-5'>
                     <button className='bg-primary-green rounded-md px-2 py-2 font-gilroy font-bold text-sm text-[#F5F6F7] flex items-center justify-center'>
-                        <img src='./images/home/nfts/wallet-money.svg' alt="wallet" />
+                        <img src='/images/home/nfts/wallet-money.svg' alt="wallet" />
                         <span className='ml-2'>
                             Buy Now
                         </span>

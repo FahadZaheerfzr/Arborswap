@@ -4,8 +4,8 @@ const nav_items = [
     {
         id: 1,
         name: 'Dashboard',
-        icon: './images/Sidebar/dashboard.svg',
-        //  activeIcon:'./images/Sidebar/dashboard-active.svg',
+        icon: '/images/sidebar/dashboard.svg',
+        //  activeIcon:'/images/Sidebar/dashboard-active.svg',
         active: false,
         extendable: false,
         subItems: []
@@ -13,8 +13,8 @@ const nav_items = [
     {
         id: 2,
         name: 'Marketplace',
-        icon: './images/Sidebar/marketplace.svg',
-        // activeIcon:'./images/Sidebar/marketplace-active.svg',
+        icon: '/images/sidebar/marketplace.svg',
+        // activeIcon:'/images/Sidebar/marketplace-active.svg',
         active: true,
         extendable: true,
         subItems: ["Discover", "Rankings", "Create"]
@@ -22,8 +22,8 @@ const nav_items = [
     {
         id: 3,
         name: 'User Profile',
-        icon: './images/Sidebar/user-profile.svg',
-        //activeIcon:'./images/Sidebar/marketplace-active.svg',
+        icon: '/images/Sidebar/user-profile.svg',
+        //activeIcon:'/images/Sidebar/marketplace-active.svg',
         active: false,
         extendable: true,
         subItems: ["My Profile", "Rankings", "Create"]
@@ -31,8 +31,8 @@ const nav_items = [
     {
         id: 4,
         name: 'More Products',
-        icon: './images/Sidebar/menu.svg',
-        // activeIcon:'./images/Sidebar/marketplace-active.svg',
+        icon: '/images/Sidebar/menu.svg',
+        // activeIcon:'/images/Sidebar/marketplace-active.svg',
         active: false,
         extendable: true,
         subItems: ["Search", "Rankings", "Create"]
@@ -101,7 +101,7 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                             </div>
                             {nav_item.extendable &&
                                 <div className='mr-8'>
-                                    <img src='./images/Sidebar/arrow-down.svg' alt="arrow-down" />
+                                    <img src='/images/Sidebar/arrow-down.svg' alt="arrow-down" />
                                 </div>
                             }
                         </div>
@@ -128,7 +128,7 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
 
             <div className=' flex flex-col items-end mr-7'>
                 <div className='flex'>
-                    <img className='mr-3' src='./images/Sidebar/sun.svg' alt="sun" />
+                    <img className='mr-3' src='/images/Sidebar/sun.svg' alt="sun" />
                     <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
                         <input type="checkbox" value="" checked={tempfixed ? false : true} id="default-toggle" className="sr-only peer"
                             onChange={handleTempFixed}
@@ -137,7 +137,7 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                     </label>
 
                     <div className='bg-[#C89211] rounded-[14px] flex items-center px-2 ml-5'>
-                        <img src='./images/Sidebar/logo.svg' alt="logo" />
+                        <img src='/images/Sidebar/logo.svg' alt="logo" />
 
                         <span className='font-gilroy ml-[10px] text-sm font-bold text-white'>
                             $0.25
@@ -148,19 +148,19 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
 
                 <div className='socials flex mt-9'>
                     <div className='twitter flex items-center justify-center bg-[#F5F1EB] w-[34px] h-[34px] rounded-md '>
-                        <img src='./images/Sidebar/socials/twitter.svg' alt="twitter" />
+                        <img src='/images/Sidebar/socials/twitter.svg' alt="twitter" />
                     </div>
 
                     <div className='telegram flex items-center justify-center bg-[#F5F1EB] w-[34px] h-[34px] rounded-md ml-3'>
-                        <img src='./images/Sidebar/socials/telegram.svg' alt="telegram" />
+                        <img src='/images/Sidebar/socials/telegram.svg' alt="telegram" />
                     </div>
 
                     <div className='dribble flex items-center justify-center bg-[#F5F1EB] w-[34px] h-[34px] rounded-md ml-3'>
-                        <img src='./images/Sidebar/socials/dribbble.svg' alt="dribble" />
+                        <img src='/images/Sidebar/socials/dribbble.svg' alt="dribble" />
                     </div>
 
                     <div className='instagram flex items-center justify-center bg-[#F5F1EB] w-[34px] h-[34px] rounded-md ml-3'>
-                        <img src='./images/Sidebar/socials/instagram.svg' alt="instagram" />
+                        <img src='/images/Sidebar/socials/instagram.svg' alt="instagram" />
                     </div>
                 </div>
 

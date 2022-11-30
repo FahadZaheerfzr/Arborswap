@@ -8,7 +8,7 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
         <span className='ml-5 font-gilroy font-bold text-[#464754]'>
           {card_name}
         </span>
-        {verified && <img src='./images/home/collections/cards/verified.svg' alt="verified-icon" className='ml-2' />}
+        {verified && <img src='/images/home/collections/cards/verified.svg' alt="verified-icon" className='ml-2' />}
       </div>
 
       <div className='flex items-center w-3/4 justify-around'>
@@ -17,7 +17,7 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
             <span className='font-gilroy font-medium text-[#807373] text-xs'>
               Floor Price
             </span>
-            <img src='./images/home/collections/question.svg' alt="info-icon" className='ml-2' />
+            <img src='/images/home/collections/question.svg' alt="info-icon" className='ml-2' />
           </div>
           <div className='value flex items-center mt-1'>
             <img src={card_category_icon} alt="category-icon" className='mr-2' />
@@ -33,7 +33,7 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
             <span className='font-gilroy font-medium text-[#807373] text-xs'>
               Volume
             </span>
-            <img src='./images/home/collections/question.svg' alt="info-icon" className='ml-2' />
+            <img src='/images/home/collections/question.svg' alt="info-icon" className='ml-2' />
           </div>
           <div className='value flex items-center mt-1'>
             <img src={card_category_icon} alt="category-icon" className='mr-2' />
@@ -48,10 +48,10 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
             <span className='font-gilroy font-medium text-[#807373] text-xs'>
               Changes 24h
             </span>
-            <img src='./images/home/collections/question.svg' alt="info-icon" className='ml-2' />
+            <img src='/images/home/collections/question.svg' alt="info-icon" className='ml-2' />
           </div>
           <div className='value flex items-center mt-1'>
-            <img src="./images/home/collections/polygon.svg" alt="change-icon" className='mr-2' />
+            <img src="/images/home/collections/polygon.svg" alt="change-icon" className='mr-2' />
             <span className='font-gilroy font-bold text-dark-text text-sm'>
               {change}
             </span>
@@ -63,7 +63,7 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
             <span className='font-gilroy font-medium text-[#807373] text-xs'>
               Items
             </span>
-            <img src='./images/home/collections/question.svg' alt="info-icon" className='ml-2' />
+            <img src='/images/home/collections/question.svg' alt="info-icon" className='ml-2' />
           </div>
           <div className='value flex items-center mt-1'>
             <span className='font-gilroy font-bold text-dark-text text-sm'>
@@ -77,7 +77,7 @@ export default function ListCard({ card_name, change, verified, card_icon, card_
           View
           </span>
 
-          <img src='./images/Sidebar/arrow-left.svg' alt="arrow-icon" className='ml-2 rotate-180' />
+          <img src='/images/Sidebar/arrow-left.svg' alt="arrow-icon" className='ml-2 rotate-180' />
         </div>
       </div>
     </div>
