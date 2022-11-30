@@ -15,8 +15,8 @@ module.exports = {
         "light-gray-shade":"#FAF8F5"
       },
       backgroundImage: {
-        'tree-pattern': "url('../public/images/collections/tree logo desktop.svg')",
-        'tree-pattern-mobile': "url('./public/images/collections/tree logo.svg')",
+        'tree-pattern': "url('../public/images/collections/tree-logo-desktop.svg')",
+        'tree-pattern-mobile': "url('./public/images/collections/tree-logo.svg')",
       }
     },
   },
