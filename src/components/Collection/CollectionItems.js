@@ -6,8 +6,7 @@ import CardMobile from '../Home/NFTs/CardMobile'
 export default function CollectionItems({ items, bigGrid }) {
     const { showSidebar } = useContext(SidebarContext);
     return (
-        <div className='w-full flex  items-center px-4 md:pl-[100px] md:pr-0
-         '>
+        <div className='w-full flex  items-center px-4 md:pl-[100px] md:pr-0'>
 
             <div className='w-full flex justify-center mt-7'>
             {bigGrid? 
