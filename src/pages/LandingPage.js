@@ -8,9 +8,9 @@ export default function LandingPage() {
     <div className='w-full'>
 
       <div className='base-layout'>
-          <BaseLayout >
+        <BaseLayout >
             <HomeLayout />
-          </BaseLayout>
+        </BaseLayout>
       </div>
 
     </div>

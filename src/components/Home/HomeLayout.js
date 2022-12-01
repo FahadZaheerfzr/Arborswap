@@ -13,17 +13,17 @@ const Buttons = [
     {
         id: 1,
         buttonText: 'Sort By',
-        dropDownItems: []
+        dropDownItems: ["Floor Price", "Items", "Name (A-Z)", "Name (Z-A)"],
     },
     {
         id: 2,
         buttonText: 'All Categories',
-        dropDownItems: []
+        dropDownItems: ["Ethereum", "Solana", "Polygon", "Binance Smart Chain", "Cardano"]
     },
     {
         id: 3,
         buttonText: 'Floor Price',
-        dropDownItems: []
+        dropDownItems: ["Low to High", "High to Low"]
     },
 ]
 
@@ -56,6 +56,12 @@ export default function HomeLayout() {
     const [cardFormat, setCardFormat] = useState('grid');
     const [dropDownToggle, setDropDownToggle] = useState(false);
     const [collections, setCollections] = useState(true);
+    const [sortBy, setSortBy] = useState("");
+    const [allCategories, setAllCategories] = useState("");
+    const [floorPrice, setFloorPrice] = useState("");
+
+    const stateArray = [sortBy, allCategories, floorPrice];
+    const stateSetArray = [setSortBy, setAllCategories, setFloorPrice];
 
     const toggleDropDown = () => {
         setDropDownToggle(!dropDownToggle);
@@ -133,7 +139,7 @@ export default function HomeLayout() {
                 </div>
 
                 {Buttons.map((button) => (
-                    <Button key={button.id} buttonText={button.buttonText} />
+                    <Button key={button.id} buttonText={button.buttonText} dropDownItems={button.dropDownItems} filter={stateArray[button.id - 1]} setFilter={stateSetArray[button.id - 1]} />
                 ))}
 
 
@@ -150,7 +156,7 @@ export default function HomeLayout() {
                     cardFormat === "grid" ?
                         <div className='w-full grid grid-cols-1 md:grid-cols-3 mt-7 gap-5'>
                             {Collections.map((card) => (
-                                <Link key={card.id}  to={`collections/${card.id}`} >
+                                <Link key={card.id} to={`collections/${card.id}`} >
                                     <Card card_name={card.name} card_image={card.image} verified={card.verified} card_icon={card.icon} card_category_icon={card.category_icon} floor_price={card.floor_price} item_quantity={card.item_quantity} />
                                 </Link>
                             ))}

@@ -29,6 +29,7 @@ export default function CollectionPage() {
 
             const activities = Activities.filter((activity) => activity.collection_id === collection.id);
             setActivities(activities);
+            document.title = collection.name;
         }
         console.log(items);
     }, [collection]);
