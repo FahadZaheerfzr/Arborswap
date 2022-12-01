@@ -19,6 +19,7 @@ export const Collections = [
         creator_icon: "/images/home/collections/cards/binance.svg",
         creator_name: "0xc19....2dde",
         description:"A deflationary collection of degenerates, punks, and misfits. Gods of the metaverse & masters of our own universe. Powered by the Solana Blockchain. Your DeGod gives you the ability to mine DUST, access to our NFT tracking.",
+        nfts: [1,3,5,2,4],
     },
     {
         id: 2,
@@ -40,7 +41,7 @@ export const Collections = [
         creator_logo: "/images/home/collections/cards/creator_logo.svg",
         creator_name: "0xc19....2dde",
         description:"A deflationary collection of degenerates, punks, and misfits. Gods of the metaverse & masters of our own universe. Powered by the Solana Blockchain. Your DeGod gives you the ability to mine DUST, access to our NFT tracking.",
-
+        nfts: [1,2,5,6],
     },
     {
         id: 3,
@@ -62,7 +63,7 @@ export const Collections = [
         creator_logo: "/images/home/collections/cards/creator_logo.svg",
         creator_name: "0xc19....2dde",
         description:"A deflationary collection of degenerates, punks, and misfits. Gods of the metaverse & masters of our own universe. Powered by the Solana Blockchain. Your DeGod gives you the ability to mine DUST, access to our NFT tracking.",
-
+        nfts: [2,4,5,3],
     },
     {
         id: 4,
@@ -84,7 +85,7 @@ export const Collections = [
         creator_logo: "/images/home/collections/cards/creator_logo.svg",
         creator_name: "0xc19....2dde",
         description:"A deflationary collection of degenerates, punks, and misfits. Gods of the metaverse & masters of our own universe. Powered by the Solana Blockchain. Your DeGod gives you the ability to mine DUST, access to our NFT tracking.",
-
+        nfts: [1,4,6,2],
     },
     {
         id: 6,
@@ -106,7 +107,7 @@ export const Collections = [
         creator_logo: "/images/home/collections/cards/creator_logo.svg",
         creator_name: "0xc19....2dde",
         description:"A deflationary collection of degenerates, punks, and misfits. Gods of the metaverse & masters of our own universe. Powered by the Solana Blockchain. Your DeGod gives you the ability to mine DUST, access to our NFT tracking.",
-
+        nfts: [4,5,6,1],
     },
     {
         id: 5,
@@ -128,7 +129,7 @@ export const Collections = [
         creator_logo: "/images/home/collections/cards/creator_logo.svg",
         creator_name: "0xc19....2dde",
         description:"A deflationary collection of degenerates, punks, and misfits. Gods of the metaverse & masters of our own universe. Powered by the Solana Blockchain. Your DeGod gives you the ability to mine DUST, access to our NFT tracking.",
-
+        nfts: [2,3,5,1,4],
     },
 ]
 

@@ -10,7 +10,7 @@ export default function Card({ card_name, card_image, verified, card_icon, card_
             <div className='card-info px-5 py-5'>
                 <div className='flex justify-between items-center'>
                     <div className='card-name flex items-center'>
-                        <span className='font-gilroy font-bold text-[#464754] text-xl'>
+                        <span className='font-gilroy font-bold text-[#464754] md:text-sm lg:text-xl'>
                             {card_name}
                         </span>
                         {verified &&
@@ -24,7 +24,7 @@ export default function Card({ card_name, card_image, verified, card_icon, card_
                     }
                 </div>
 
-                <div className='flex justify-between mt-2'>
+                <div className='lg:flex justify-between mt-2'>
                     <div className='card-items flex items-center'>
                         <img src={card_icon} alt={card_name} />
                         <span className={`floor-info font-gilroy  ${nft?  "text-xs text-light-text font-bold ml-1" :"text-sm text-[#807373] font-medium"} `}>
@@ -33,7 +33,7 @@ export default function Card({ card_name, card_image, verified, card_icon, card_
                         </span>
                     </div>
 
-                    <div className='floor-price flex items-center'>
+                    <div className='floor-price flex items-center md:mt-2 lg:mt-0'>
                         <img src={card_category_icon} alt={card_name} />
                         <span className='ml-2 font-gilroy font-bold text-[#464754]'>
                             {floor_price}
