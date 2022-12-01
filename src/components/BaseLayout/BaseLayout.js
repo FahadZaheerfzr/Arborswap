@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Sidebar from '../Sidebar/Sidebar'
 import Styles from './BaseLayout.module.css'
 import Topbar from '../Topbar/Topbar'
+import { SidebarContext } from '../../context/SidebarContext/GlobalProvider';
 
 export default function BaseLayout({children}) {
-    const [showSidebar, setShowSidebar] = useState(true);
+    const {showSidebar, setShowSidebar} = useContext(SidebarContext);
     const [sideBarMobile, setSideBarMobile] = useState(false);
     const [tempfixed, setTempFixed] = useState(true);
 
@@ -13,7 +14,7 @@ export default function BaseLayout({children}) {
     }
 
     return (
-        <div className='w-full h-screen'>
+        <div className='w-full'>
             <div className={`${Styles.topBar} bg-white`}>
                 <Topbar setSideBarMobile={setSideBarMobile} sideBarMobile={sideBarMobile} />
             </div>
@@ -35,7 +36,7 @@ export default function BaseLayout({children}) {
                     </div>
                 </div>
 
-                <div className={`w-full md:w-[calc(100%-270px)] md:ml-[270px] ease-in-out duration-300 ${showSidebar ? " translate-x-0" : "-translate-x-[170px]"}`}>
+                <div className={`w-full md:w-[calc(100%-270px)] md:ml-[270px] ease-in-out duration-300 ${showSidebar ? " translate-x-0" : "-translate-x-[100px]"}`}>
                     {children}
                 </div>
             </div>

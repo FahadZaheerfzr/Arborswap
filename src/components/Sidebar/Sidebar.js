@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from "react-router-dom"
 
 const nav_items = [
     {
@@ -8,7 +9,8 @@ const nav_items = [
         //  activeIcon:'/images/Sidebar/dashboard-active.svg',
         active: false,
         extendable: false,
-        subItems: []
+        subItems: [],
+        link: "/"
     },
     {
         id: 2,
@@ -91,7 +93,8 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                     </div>
                 }
                 {nav_items.map(nav_item => (
-                    <div key={nav_item.id} className='mt-8 w-full cursor-pointer' >
+                    <Link key={nav_item.id} to={nav_item.link}>
+                    <div  className='mt-8 w-full cursor-pointer' >
                         <div className='flex justify-between items-center' onClick={(nav_item_name) => handleActiveItem(nav_item.name, nav_item.extendable)}>
                             <div className='flex ml-[20%]'>
                                 <img src={nav_item.icon} alt="nav-item-icon" />
@@ -115,6 +118,7 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                             </div>
                         }
                     </div>
+                    </Link>
                 ))}
                 {
                     activeItem === "null" &&
