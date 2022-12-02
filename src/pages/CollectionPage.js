@@ -31,7 +31,6 @@ export default function CollectionPage() {
             setActivities(activities);
             document.title = collection.name;
         }
-        console.log(items);
     }, [collection]);
 
     return (
