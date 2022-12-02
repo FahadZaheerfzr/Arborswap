@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
+import ClickAwayListener from 'react-click-away-listener';
 
 export default function Button({ buttonText, dropDownItems, filter, setFilter }) {
   const [dropDownToggle, setDropDownToggle] = useState(false);
   const toggleDropDown = () => {
     setDropDownToggle(!dropDownToggle);
   };
+
+  const handleAwayFilter = ()=> {
+    setDropDownToggle(false);
+  }
   return (
+    <ClickAwayListener onClickAway={handleAwayFilter}>
     <div className='flex flex-col'>
       <button className='flex justify-center items-center bg-white px-5 py-2 font-gilroy font-semibold text-sm'
         onClick={toggleDropDown}>
@@ -32,5 +38,6 @@ export default function Button({ buttonText, dropDownItems, filter, setFilter })
 
         </div>)}
     </div>
+    </ClickAwayListener>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Carousel from './Slider/Slider'
+import ClickAwayListener from 'react-click-away-listener';
 import Button from './SubComponents/Button'
 import Tab from './SubComponents/Tab'
 import { Collections, NFTs } from '../../data/cards'
@@ -72,12 +73,16 @@ export default function HomeLayout() {
             <div className='flex w-full pt-12'>
                 <div className='hero-text w-full flex flex-col md:w-[30%]'>
                     <div className='main-text flex items-end'
-                        onClick={toggleDropDown}>
+                    >
                         <span className='font-gilroy font-bold text-[31px] text-[#464754]'>
                             Discover <br />
                             Collections
                         </span>
-                        <img className='mb-2 ml-2' src='./images/home/arrow-down.svg' alt="arrow-down" />
+                        <ClickAwayListener onClickAway={() => setDropDownToggle(false)}>
+                            <img className='mb-2 ml-2 cursor-pointer' src='./images/home/arrow-down.svg' alt="arrow-down"
+                                onClick={toggleDropDown} />
+                        </ClickAwayListener>
+
                     </div>
 
                     <div className="absolute mt-24">
