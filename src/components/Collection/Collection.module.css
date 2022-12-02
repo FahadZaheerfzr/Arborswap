@@ -2,3 +2,10 @@
     background: linear-gradient(180deg, rgba(242, 243, 245, 0) 57.22%, #F2F3F5 88.89%);
     border-radius: 0px 0px 20px 20px;
 }
+
+.filterBorder {
+    background: #FFFFFF;
+    border-width: 0px 0.5px 0.5px 0.5px;
+    border-style: solid;
+    border-color: #D7D9DD;
+}

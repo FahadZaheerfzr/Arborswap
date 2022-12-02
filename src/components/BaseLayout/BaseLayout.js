@@ -16,7 +16,7 @@ export default function BaseLayout({children, noTopbar, noSidebar}) {
     return (
         <div className='w-full'>
         {noTopbar ? null:
-            <div className={`${Styles.topBar} bg-white`}>
+            <div className={`${Styles.topBar} w-full bg-white`}>
                 <Topbar setSideBarMobile={setSideBarMobile} sideBarMobile={sideBarMobile} />
             </div>}
         
