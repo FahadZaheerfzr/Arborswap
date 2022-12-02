@@ -1,0 +1,8 @@
+.cardBox {
+    background: rgba(70, 71, 84, 0.08);
+    box-shadow: inset 3.63333px -3.63333px 3.63333px rgba(165, 165, 165, 0.1), inset -3.63333px 3.63333px 3.63333px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4.17833px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 12px;
+}

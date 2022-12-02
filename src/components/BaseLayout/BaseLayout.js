@@ -20,7 +20,7 @@ export default function BaseLayout({ children, noTopbar, noSidebar }) {
                     <Topbar setSideBarMobile={setSideBarMobile} sideBarMobile={sideBarMobile} />
                 </div>}
 
-            <div className='flex w-full'>
+            <div className='flex w-full md:mt-28'>
                 {noSidebar ? null :
                         <div className={`${sideBarMobile ? "block" : "hidden"} md:hidden w-[240px] bg-white absolute z-20`}>
                             <Sidebar fullSidebar={true} tempfixed={tempfixed} handleTempFixed={handleTempFixed} />
