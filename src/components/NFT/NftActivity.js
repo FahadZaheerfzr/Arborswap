@@ -36,7 +36,7 @@ export default function NftActivity({ nft }) {
             </div>
 
             <div className='mt-4 mb-4'>
-                {activities && activeTab==="activity" && activities.map((activity, index) => (
+                {activities && (activeTab==="activity" || activeTab ==="bids") && activities.map((activity, index) => (
                     <div key={index} className='flex items-center border-b border-dashed border-opacity-30 border-[#767779] justify-between px-4 py-5'>
                         <div className='flex items-center'>
                             <img src={activity.by_icon} alt={activity.by} />
