@@ -52,7 +52,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid }) {
                         onClick={() => { setBigGrid(true) }}>
                         {bigGrid ?
                             <img src="/images/home/nfts/menu.svg" alt='menu-active' /> :
-                            <img src='/images/sidebar/dashboard.svg' alt='grid-icon-deactive' />
+                            <img src='/images/Sidebar/dashboard.svg' alt='grid-icon-deactive' />
                         }
                     </div>
 

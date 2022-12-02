@@ -50,8 +50,8 @@ export default function Collection({ collection }) {
                             </div>
 
                             <div className='socials flex items-center'>
-                                <img className='w-4 h-4 mr-5' src='/images/sidebar/socials/twitter.svg' alt="twitter" />
-                                <img className='w-4 h-4 mr-5' src='/images/sidebar/socials/dribbble.svg' alt="dribbble" />
+                                <img className='w-4 h-4 mr-5' src='/images/Sidebar/socials/twitter.svg' alt="twitter" />
+                                <img className='w-4 h-4 mr-5' src='/images/Sidebar/socials/dribbble.svg' alt="dribbble" />
 
                                 <div className='w-8 h-8 bg-[#FAF8F5] rounded flex items-center justify-center'>
                                     <div className='dot w-1 h-1 mr-1 bg-dark-text rounded-full' />

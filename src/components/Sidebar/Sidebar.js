@@ -5,7 +5,7 @@ const nav_items = [
     {
         id: 1,
         name: 'Dashboard',
-        icon: '/images/sidebar/dashboard.svg',
+        icon: '/images/Sidebar/dashboard.svg',
         //  activeIcon:'/images/Sidebar/dashboard-active.svg',
         active: false,
         extendable: false,
@@ -15,7 +15,7 @@ const nav_items = [
     {
         id: 2,
         name: 'Marketplace',
-        icon: '/images/sidebar/marketplace.svg',
+        icon: '/images/Sidebar/marketplace.svg',
         // activeIcon:'/images/Sidebar/marketplace-active.svg',
         active: true,
         extendable: true,
