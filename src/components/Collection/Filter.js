@@ -25,7 +25,7 @@ const filters = [
     },
 ]
 
-export default function Filter() {
+export default function Filter({mobile}) {
     const [dropdowns, setDropdowns] = useState({
         1: false,
         2: false,
@@ -40,7 +40,7 @@ export default function Filter() {
     };
 
     return (
-        <div className={`bg-white w-full ${Styles.filterBorder} `}>
+        <div className={`bg-white w-full ${Styles.filterBorder} ${mobile? "max-h-[80vh] overflow-scroll":""}`}>
             {filters.map((filter) => (
                 <div key={filter.id} className='filter-box'>
                     <div className={`${Styles.filterBorder} flex justify-between pl-5 pr-7 py-6`}
