@@ -6,7 +6,7 @@ const nav_items = [
         id: 1,
         name: 'Dashboard',
         icon: '/images/Sidebar/dashboard.svg',
-        //  activeIcon:'/images/Sidebar/dashboard-active.svg',
+        activeIcon: '/images/Sidebar/dashboard-green.svg',
         active: false,
         extendable: false,
         subItems: [],
@@ -66,9 +66,11 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                 <div className='w-[35%] flex flex-col items-center mb-[5%] justify-between'>
                     <div className='nav-items'>
                         {nav_items.map((nav_item, index) => (
-                            <div key={index} className='mt-8'>
-                                <img className='h-6 w-6' src={nav_item.icon} alt={nav_item.name} />
-                            </div>
+                            <Link key={nav_item.id} to={nav_item.link}>
+                                <div className='mt-8'>
+                                    <img className='h-6 w-6' src={nav_item.icon} alt={nav_item.name} />
+                                </div>
+                            </Link>
                         ))}
                     </div>
 
@@ -94,30 +96,32 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                 }
                 {nav_items.map(nav_item => (
                     <Link key={nav_item.id} to={nav_item.link}>
-                    <div  className='mt-8 w-full cursor-pointer' >
-                        <div className='flex justify-between items-center' onClick={(nav_item_name) => handleActiveItem(nav_item.name, nav_item.extendable)}>
-                            <div className='flex ml-[20%]'>
-                                <img src={nav_item.icon} alt="nav-item-icon" />
-                                <span className={`font-gilroy font-semibold ml-5 ${nav_item.active ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
-                                    {nav_item.name}
-                                </span>
+                        <div className='mt-8 w-full cursor-pointer' >
+                            <div className='flex justify-between items-center' onClick={(nav_item_name) => handleActiveItem(nav_item.name, nav_item.extendable)}>
+                                <div className='flex ml-[20%]'>
+                                    {nav_item.active && nav_item.activeIcon ?
+                                        <img src={nav_item.activeIcon} alt="nav-item-icon" />
+                                        : <img src={nav_item.icon} alt="nav-item-icon" />}
+                                    <span className={`font-gilroy font-semibold ml-5 ${nav_item.active ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
+                                        {nav_item.name}
+                                    </span>
+                                </div>
+                                {nav_item.extendable &&
+                                    <div className='mr-8'>
+                                        <img src='/images/Sidebar/arrow-down.svg' alt="arrow-down" />
+                                    </div>
+                                }
                             </div>
-                            {nav_item.extendable &&
-                                <div className='mr-8'>
-                                    <img src='/images/Sidebar/arrow-down.svg' alt="arrow-down" />
+                            {activeItem === nav_item.name &&
+                                <div className='bg-[#FAF8F5] flex flex-col pl-[35%] mt-3 pb-5'>
+                                    {nav_item.subItems.map((subItem, index) => (
+                                        <span key={index} className={`font-semibold font-gilroy mt-5 ${active === subItem ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
+                                            {subItem}
+                                        </span>
+                                    ))}
                                 </div>
                             }
                         </div>
-                        {activeItem === nav_item.name &&
-                            <div className='bg-[#FAF8F5] flex flex-col pl-[35%] mt-3 pb-5'>
-                                {nav_item.subItems.map((subItem, index) => (
-                                    <span key={index} className={`font-semibold font-gilroy mt-5 ${active === subItem ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
-                                        {subItem}
-                                    </span>
-                                ))}
-                            </div>
-                        }
-                    </div>
                     </Link>
                 ))}
                 {
