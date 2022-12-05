@@ -52,7 +52,7 @@ const NFT_types = [
 
 ]
 
-export default function Preferences() {
+export default function Preferences({ setActive }) {
     const [chainType, setChainType] = useState(0);
     const [showChainType, setShowChainType] = useState(false);
     const [type, setType] = useState(0);
@@ -103,12 +103,13 @@ export default function Preferences() {
 
                 <div className='mb-10 mt-2'>
                     {NFT_types.map((item) => (
-                        <TypeOptions key={item.id} item={item} type={type} setType={setType}  />
+                        <TypeOptions key={item.id} item={item} type={type} setType={setType} />
                     ))}
                 </div>
 
                 <div className='flex justify-end items-center mb-10'>
-                    <button className='bg-primary-green text-white font-gilroy font-bold px-8 py-3 rounded-md'>
+                    <button className='bg-primary-green text-white font-gilroy font-bold px-8 py-3 rounded-md'
+                        onClick={()=>setActive("Add Details") }>
                         Next
                     </button>
                 </div>
