@@ -147,6 +147,11 @@ export const NFTs = [
         image: "/images/home/nfts/nft.svg",
         verified: true,
         likes:147,
+        contract_address: "0xc19....2dde",
+        token_id : "5597",
+        token_standard: "ERC-20",
+        chain_type: "Ethereum",
+        creator_royality: "10%",
         category_icon: "/images/home/nfts/category.svg",
         description:"The Original Defense Robot Prototype developed by the International Space Security Administration.",
     },
@@ -161,6 +166,11 @@ export const NFTs = [
         image: "/images/home/nfts/nft.svg",
         verified: true,
         likes:127,
+        contract_address: "0xc19....2dde",
+        token_id : "5597",
+        token_standard: "ERC-20",
+        chain_type: "Ethereum",
+        creator_royality: "10%",
         category_icon: "/images/home/nfts/category.svg",
         description:"The Original Defense Robot Prototype developed by the International Space Security Administration.",
     },
@@ -175,6 +185,11 @@ export const NFTs = [
         image: "/images/home/nfts/nft.svg",
         verified: true,
         likes:122,
+        contract_address: "0xc19....2dde",
+        token_id : "5597",
+        token_standard: "ERC-20",
+        chain_type: "Ethereum",
+        creator_royality: "10%",
         category_icon: "/images/home/nfts/category.svg",
         description:"The Original Defense Robot Prototype developed by the International Space Security Administration.",
 
@@ -190,6 +205,11 @@ export const NFTs = [
         image: "/images/home/nfts/nft.svg",
         verified: true,
         likes:117,
+        contract_address: "0xc19....2dde",
+        token_id : "5597",
+        token_standard: "ERC-20",
+        chain_type: "Ethereum",
+        creator_royality: "10%",
         category_icon: "/images/home/nfts/category.svg",
         description:"The Original Defense Robot Prototype developed by the International Space Security Administration.",
 
@@ -205,6 +225,11 @@ export const NFTs = [
         creator:"ThreeDee",
         verified: true,
         likes:110,
+        contract_address: "0xc19....2dde",
+        token_id : "5597",
+        token_standard: "ERC-20",
+        chain_type: "Ethereum",
+        creator_royality: "10%",
         category_icon: "/images/home/nfts/category.svg",
         description:"The Original Defense Robot Prototype developed by the International Space Security Administration.",
 
@@ -220,6 +245,12 @@ export const NFTs = [
         creator:"ThreeDee",
         verified: true,
         likes:110,
+        contract_address: "0xc19....2dde",
+        token_id : "5597",
+        token_standard: "ERC-20",
+        chain_type: "Ethereum",
+        creator_royalty: "10%",
+        chain_image: "/images/nfts/ethereum_detail.svg",
         category_icon: "/images/home/nfts/category.svg",
         description:"The Original Defense Robot Prototype developed by the International Space Security Administration.",
 
@@ -423,5 +454,152 @@ export const ActivitiesNFT = [
         time: "3 hours ago",
         by: "ThreeDee",
         by_icon: "/images/nft/creator.svg",
+    },
+]
+
+export const NFT_info = [
+    {
+        id: 1,
+        nft_id:1,
+        info: [
+            {
+                name: "Block",
+                type: "Flash",
+                rarity: "48.1% Rarity",
+            },
+            {
+                name: "Generation",
+                type: "Genesis",
+                rarity: "96.2% Rarity",
+            },
+            {
+                name: "Series",
+                type: "Series One",
+                rarity: "90.4% Rarity",
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+        ]
+    },
+    {
+        id: 2,
+        nft_id:2,
+        info: [
+            {
+                name: "Block",
+                type: "Flash",
+                rarity: "48.1% Rarity",
+            },
+            {
+                name: "Generation",
+                type: "Genesis",
+                rarity: "96.2% Rarity",
+            },
+            {
+                name: "Series",
+                type: "Series One",
+                rarity: "90.4% Rarity",
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+        ]
+    },
+    {
+        id: 3,
+        nft_id:3,
+        info: [
+            {
+                name: "Block",
+                type: "Flash",
+                rarity: "48.1% Rarity",
+            },
+            {
+                name: "Generation",
+                type: "Genesis",
+                rarity: "96.2% Rarity",
+            },
+            {
+                name: "Series",
+                type: "Series One",
+                rarity: "90.4% Rarity",
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+        ]
+    },
+    {
+        id: 4,
+        nft_id:4,
+        info: [
+            {
+                name: "Block",
+                type: "Flash",
+                rarity: "48.1% Rarity",
+            },
+            {
+                name: "Generation",
+                type: "Genesis",
+                rarity: "96.2% Rarity",
+            },
+            {
+                name: "Series",
+                type: "Series One",
+                rarity: "90.4% Rarity",
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+            {
+                name: "Tier",
+                type: "Stellar",
+                rarity: "0.5% Rarity", 
+            },
+        ]
     },
 ]

@@ -65,8 +65,8 @@ export default function NFT({ nft }) {
                 </div>
             </div>
             <div className='md:hidden tabs'>
-                    <NftActivity nft={nft} />
-                </div>
+                <NftActivity nft={nft} />
+            </div>
         </div>
     )
 }
