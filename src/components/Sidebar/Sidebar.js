@@ -19,7 +19,23 @@ const nav_items = [
         // activeIcon:'/images/Sidebar/marketplace-active.svg',
         active: true,
         extendable: true,
-        subItems: ["Discover", "Rankings", "Create"]
+        subItems: [
+            {
+                id: 1,
+                name: "Discover",
+                link: "/"
+            },
+            {
+                id: 2,
+                name: "Rankings",
+                link: "/rankings"
+            },
+            {
+                id: 3,
+                name: "Create",
+                link: "/create_nft"
+            }
+        ]
     },
     {
         id: 3,
@@ -95,8 +111,8 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                     </div>
                 }
                 {nav_items.map(nav_item => (
-                    <Link key={nav_item.id} to={nav_item.link}>
-                        <div className='mt-8 w-full cursor-pointer' >
+                        <div key={nav_item.id} className='mt-8 w-full cursor-pointer' >
+                        <Link  to={nav_item.link}>
                             <div className='flex justify-between items-center' onClick={(nav_item_name) => handleActiveItem(nav_item.name, nav_item.extendable)}>
                                 <div className='flex ml-[20%]'>
                                     {nav_item.active && nav_item.activeIcon ?
@@ -112,17 +128,20 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                                     </div>
                                 }
                             </div>
+                            </Link>
+
                             {activeItem === nav_item.name &&
                                 <div className='bg-[#FAF8F5] flex flex-col pl-[35%] mt-3 pb-5'>
                                     {nav_item.subItems.map((subItem, index) => (
-                                        <span key={index} className={`font-semibold font-gilroy mt-5 ${active === subItem ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
-                                            {subItem}
-                                        </span>
+                                        <Link key={index} to={subItem.link} className="mt-5" onClick={() => setActive(subItem.name)}>
+                                            <span className={`font-semibold font-gilroy ${active === subItem.name ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
+                                                {subItem.name}
+                                            </span>
+                                        </Link>
                                     ))}
                                 </div>
                             }
                         </div>
-                    </Link>
                 ))}
                 {
                     activeItem === "null" &&
