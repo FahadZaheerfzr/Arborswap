@@ -7,7 +7,7 @@ export default function CreateNft() {
     useDocumentTitle("Create NFT");
     return (
         <BaseLayout>
-            <div className='px-[10%] mt-14'>
+            <div className='md:px-[10%] mt-14'>
                 <Base />
             </div>
         </BaseLayout>

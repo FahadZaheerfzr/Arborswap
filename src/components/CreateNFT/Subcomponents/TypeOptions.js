@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function TypeOptions({item, type, setType}) {
   return (
-    <div className='py-6 pl-9 pr-5 mt-5 border-2 flex items-center justify-around border-primary-green rounded-xl'>
+    <div className='py-6 pl-4 md:pl-9 pr-2 md:pr-5 mt-5 border-2 flex items-center justify-around border-primary-green rounded-xl'>
         <img src={item.icon} alt={item.name} />
 
-        <div className=' w-64 flex flex-col'>
+        <div className='w-36 md:w-64 flex flex-col'>
             <span className='font-gilroy font-semibold text-dark-text'>
                 {item.name}
             </span>
