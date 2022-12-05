@@ -71,32 +71,34 @@ export default function HomeLayout() {
     return (
         <div className='px-[3%] md:pl-[5%] md:pr-[3%] pt-[5%] pb-[2%] bg-tree-pattern bg-center bg-no-repeat'>
             <div className='flex w-full pt-12'>
-                <div className='hero-text w-full flex flex-col md:w-[30%]'>
-                    <div className='main-text flex items-end'
-                    >
-                        <span className='font-gilroy font-bold text-[31px] text-[#464754]'>
-                            Discover <br />
-                            Collections
-                        </span>
-                        <ClickAwayListener onClickAway={() => setDropDownToggle(false)}>
+                <ClickAwayListener onClickAway={() => setDropDownToggle(false)}>
+
+                    <div className='hero-text w-full flex flex-col md:w-[30%]'>
+
+                        <div className='main-text flex items-end'>
+
+                            <span className='font-gilroy font-bold text-[31px] text-[#464754]'>
+                                Discover <br />
+                                Collections
+                            </span>
                             <img className='mb-2 ml-2 cursor-pointer' src='./images/home/arrow-down.svg' alt="arrow-down"
                                 onClick={toggleDropDown} />
-                        </ClickAwayListener>
 
-                    </div>
+                        </div>
 
-                    <div className="absolute mt-24">
-                        {dropDownToggle &&
-                            <Dropdown collections={collections} setCollections={setCollections} />
-                        }
-                    </div>
+                        <div className="absolute mt-24">
+                            {dropDownToggle &&
+                                <Dropdown collections={collections} setCollections={setCollections} />
+                            }
+                        </div>
 
-                    <div className='sub-text mt-2'>
-                        <span className='font-gilroy font-medium text-[#807373]'>
-                            Explore and Discover collections and Nfts.
-                        </span>
+                        <div className='sub-text mt-2'>
+                            <span className='font-gilroy font-medium text-[#807373]'>
+                                Explore and Discover collections and Nfts.
+                            </span>
+                        </div>
                     </div>
-                </div>
+                </ClickAwayListener>
 
                 <div className='hidden md:block ml-10 md:w-[70%] slider'>
                     <Carousel />
@@ -175,7 +177,10 @@ export default function HomeLayout() {
                     cardFormat === "grid" ?
                         <div className='hidden md:grid w-full  md:grid-cols-3 mt-7 gap-5'>
                             {NFTs.map((nft) => (
-                                <Card key={nft.id} card_name={nft.name} card_image={nft.image} verified={false} card_icon={"/images/home/collections/cards/verified.svg"} card_category_icon={nft.category_icon} floor_price={nft.listed_price} item_quantity={nft.owner} nft={true} />
+                                <Link key={nft.id} to={`nfts/${nft.id}`} >
+                                    <Card card_name={nft.name} card_image={nft.image} verified={false} card_icon={"/images/home/collections/cards/verified.svg"} card_category_icon={nft.category_icon} floor_price={nft.listed_price} item_quantity={nft.owner} nft={true} />
+                                </Link>
+
                             ))}
                         </div>
                         :
@@ -188,8 +193,8 @@ export default function HomeLayout() {
             {!collections &&
                 <div className='md:hidden w-full mt-4'>
                     {NFTs.map((nft) => (
-                        <div className='mt-4'>
-                            <CardMobile key={nft.id} card_name={nft.name} card_image={nft.image} verified={true} listed_price={nft.listed_price} card_category_icon={nft.category_icon} owner={nft.owner} />
+                        <div key={nft.id} className='mt-4'>
+                            <CardMobile card_name={nft.name} card_image={nft.image} verified={true} listed_price={nft.listed_price} card_category_icon={nft.category_icon} owner={nft.owner} />
                         </div>
                     ))}
                 </div>

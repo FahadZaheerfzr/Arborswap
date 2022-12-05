@@ -1,6 +1,15 @@
 import React from 'react'
 
 export default function Dropdown({collections, setCollections}) {
+
+    const setCollectionsFalse = () => {
+        setCollections(false);
+    }
+
+    const setCollectionsTrue = () => {
+        setCollections(true);
+    }
+
     return (
         <div className='dropdown flex flex-col bg-light-gray-shade'>
             <div className='flex justify-between px-5 items-center py-5 w-56'>
@@ -9,7 +18,7 @@ export default function Dropdown({collections, setCollections}) {
                 </span>
 
                 <input className='accent-[#464754]' type={"checkbox"} checked={collections} 
-                    onClick={()=>setCollections(true)}
+                    onChange={setCollectionsTrue}
                 />
             </div>
 
@@ -19,7 +28,7 @@ export default function Dropdown({collections, setCollections}) {
                 </span>
 
                 <input className='accent-[#464754]' type={"checkbox"} checked={!collections}
-                    onClick={()=>setCollections(false)}
+                    onChange={setCollectionsFalse}
                  />
             </div>
 
