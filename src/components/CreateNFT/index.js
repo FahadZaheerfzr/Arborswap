@@ -21,9 +21,9 @@ export default function Base() {
     const [active, setActive] = useState("Preferences");
     return (
         <div className='flex flex-col md:flex-row w-full'>
-            <div className="panel flex justify-around md:block md:pl-9 md:pr-[5%] rounded-l-[10px] bg-light-gray-shade">
+            <div className="panel flex py-4 md:py-0 justify-around md:block md:pl-9 md:pr-[5%] rounded-l-[10px] bg-light-gray-shade">
                 {panel_items.map((item) => (
-                    <div key={item.id} className={`panel-item mt-9 flex items-center`}>
+                    <div key={item.id} className={`panel-item md:mt-9 flex items-center`}>
                         {item.name === active &&
                             <div className={`w-2 h-2 rounded-full bg-primary-green mr-[10px]`} />
                         }
@@ -35,7 +35,7 @@ export default function Base() {
 
             <div className="panel-content bg-white rounded-r-[10px] px-4 md:px-9 md:w-2/3">
                 {active === "Preferences" && <Preferences setActive={setActive} />}
-                {active === "Add Details" && <AddDetails />}
+                {active === "Add Details" && <AddDetails setActive={setActive} />}
             </div>
         </div>
     )
