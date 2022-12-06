@@ -20,7 +20,7 @@ const collections = [
     },
 ]
 
-export default function AddDetails({ setActive, nftType, nft, setNft }) {
+export default function AddDetails({ setActive, nftType, nft, setNft, setVisible }) {
     const [collection, setCollection] = useState(1);
     const [properties, updateProperties] = useState([]);
     const [name, setName] = useState("");
@@ -89,7 +89,7 @@ export default function AddDetails({ setActive, nftType, nft, setNft }) {
                     <HeadingTags name={"Choose Collection"} required />
 
 
-                    <div className='flex items-center'>
+                    <div className='flex items-center cursor-pointer' onClick={()=>setVisible(true)}>
                         <div className='flex   text-primary-green w-4 h-4 text-xs rounded-full justify-center bg-primary-green bg-opacity-40'>
                             <span className='relative -top-[1px]'>+</span>
                         </div>
