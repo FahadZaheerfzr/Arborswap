@@ -59,18 +59,26 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
             <HeadingTags name={"Upload NFT File"} required />
 
 
-            <UploadImage image={image} setImage={setImage} />
+            <UploadImage image={image} setImage={setImage} multiples={nftType === 2} />
 
-
-            <div className='mt-10'>
-                <HeadingTags name={"Name"} required />
-
-                <div className='w-full mt-5'>
-                    <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="Enter NFT Name"
-                        onChange={(e) => setName(e.target.value)}
-                    />
+            {nftType === 2 ?
+                <div className='mt-10 bg-light-gray-shade bg-opacity-50 py-24 rounded-xl flex justify-center text-center'>
+                    <span className='font-gilroy font-medium text-[#807373]'>
+                        Your item name and metadata extracted <br/>
+                        from the .zip file shows here
+                    </span>
                 </div>
-            </div>
+                :
+
+                <div className='mt-10'>
+                    <HeadingTags name={"Name"} required />
+
+                    <div className='w-full mt-5'>
+                        <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="Enter NFT Name"
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                    </div>
+                </div>}
 
             <div className='mt-10'>
                 <HeadingTags name={"Description"} />
@@ -89,7 +97,7 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
                     <HeadingTags name={"Choose Collection"} required />
 
 
-                    <div className='flex items-center cursor-pointer' onClick={()=>setVisible(true)}>
+                    <div className='flex items-center cursor-pointer' onClick={() => setVisible(true)}>
                         <div className='flex   text-primary-green w-4 h-4 text-xs rounded-full justify-center bg-primary-green bg-opacity-40'>
                             <span className='relative -top-[1px]'>+</span>
                         </div>
@@ -169,7 +177,7 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
                         </span>
                     </button>
 
-                    <button className='bg-primary-green disabled:bg-light-text text-white font-gilroy font-bold px-8 py-3 rounded-md' disabled={name === "" ||  royalties === "" || image === "" ?true:false}
+                    <button className='bg-primary-green disabled:bg-light-text text-white font-gilroy font-bold px-8 py-3 rounded-md' disabled={name === "" || royalties === "" || image === "" ? true : false}
                         onClick={handleSubmit}>
                         Next
                     </button>

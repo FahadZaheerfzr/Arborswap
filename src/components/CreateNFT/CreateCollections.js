@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import HeadingTags from './Subcomponents/HeadingTags'
+import ImagePlaceholder from './Subcomponents/ImagePlaceholder';
 
 export default function CreateCollections({ setVisibility }) {
     const [collection, setCollection] = useState({});
@@ -50,11 +51,7 @@ export default function CreateCollections({ setVisibility }) {
                     <HeadingTags name='Upload Profile Image' required />
 
                     <div className='flex items-center gap-5 mt-5'>
-                        {image ?
-                            <img className='w-40 h-40' src={image} alt='placeholder' /> :
-                            <div className='p-14 flex items-center justify-center border-2 border-opacity-50 border-light-text border-dashed rounded-xl'>
-                                <img src='/images/create_nft/image-logo.svg' alt='placeholder' />
-                            </div>}
+                        <ImagePlaceholder image={image}/>
                         <div className='w-full flex flex-col items-center text-center'>
                             <span className='font-gilroy font-medium text-[#807373]'>
                                 JPG,PNG or GIF. <br /> 300 x 300 Size<br /> Recommended<br />
