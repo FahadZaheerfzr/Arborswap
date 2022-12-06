@@ -2,7 +2,43 @@ import React, { useContext, useState } from 'react'
 import { SidebarContext } from '../../context/SidebarContext/GlobalProvider';
 import Filter from './Filter';
 
-export default function FilterBar({ item, setItem, setBigGrid, bigGrid }) {
+const filter_items = [
+    {
+        id: 1,
+        name: 'Items',
+        bool_val: true,
+    },
+    {
+        id: 2,
+        name: 'Activity',
+        bool_val: false,
+    },
+]
+
+const profile_items = [
+    {
+        id: 1,
+        name: 'Owned',
+    },
+    {
+        id: 2,
+        name: 'On Sale',
+    },
+    {
+        id: 3,
+        name: 'Created',
+    },
+    {
+        id: 4,
+        name: 'Like',
+    },
+    {
+        id: 5,
+        name: 'Activity',
+    }
+]
+
+export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile }) {
     const { showSidebar } = useContext(SidebarContext);
     const [filterDropdown, setFilterDropdown] = useState(false);
     const [filtercount, setFilterCount] = useState(5);
@@ -21,13 +57,13 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid }) {
                                 Filter
                             </span>
 
-                            <div className="flex items-center cursor-pointer" 
-                            onClick={()=>setFilterMobile(false)}>
+                            <div className="flex items-center cursor-pointer"
+                                onClick={() => setFilterMobile(false)}>
                                 <span className='text-sm font-gilroy font-semibold text-dark-text mr-2'>
                                     Close
                                 </span>
                                 <div className='flex justify-center items-center bg-[#E56060] text-[#E56060] bg-opacity-10 rounded-full w-[15px] h-[15px]'>
-                                &#10005;
+                                    &#10005;
                                 </div>
                             </div>
                         </div>
@@ -55,19 +91,26 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid }) {
                             </div>}
                     </div>
 
-                    <div className={` h-full w-14 md:w-[84px] md:ml-5 flex items-center justify-center ${item ? "border-b-2 border-primary-green border-opacity-50" : null}`}
-                        onClick={() => setItem(true)}>
-                        <span className={`font-gilroy cursor-pointer font-bold ${item ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
-                            Items
-                        </span>
-                    </div>
+                    {profile ?
+                        profile_items.map((filter) => (
+                            <div key={filter.id} className={` h-full w-14 md:w-[84px] md:ml-5 flex items-center justify-center ${item === filter.id ? "border-b-2 border-primary-green border-opacity-50" : null}`}
+                                onClick={() => setItem(filter.id)}>
+                                <span className={`font-gilroy cursor-pointer font-bold ${item === filter.id ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
+                                    {filter.name}
+                                </span>
+                            </div>
+                        ))
+                        : filter_items.map((filter) => (
+                            <div key={filter.id} className={` h-full w-14 md:w-[84px] md:ml-5 flex items-center justify-center ${item === filter.bool_val ? "border-b-2 border-primary-green border-opacity-50" : null}`}
+                                onClick={() => setItem(filter.bool_val)}>
+                                <span className={`font-gilroy cursor-pointer font-bold ${item === filter.bool_val ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
+                                    {filter.name}
+                                </span>
+                            </div>
+                        ))}
 
-                    <div className={` h-full w-14 md:w-[84px] flex items-center justify-center ml-4 ${!item ? "border-b-2 border-primary-green border-opacity-50" : null}`}
-                        onClick={() => setItem(false)}>
-                        <span className={`font-gilroy cursor-pointer font-bold ${!item ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
-                            Activity
-                        </span>
-                    </div>
+
+
                 </div>
                 <div className='flex h-12 items-center pr-[5%]'>
                     <div className='h-full flex items-center'>

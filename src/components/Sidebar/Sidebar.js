@@ -44,7 +44,23 @@ const nav_items = [
         //activeIcon:'/images/Sidebar/marketplace-active.svg',
         active: false,
         extendable: true,
-        subItems: ["My Profile", "Rankings", "Create"]
+        subItems: [
+            {
+                id: 1,
+                name: "My Profile",
+                link: "/my_profile"
+            },
+            {
+                id: 2,
+                name: "Activites",
+                link: "/activities"
+            },
+            {
+                id: 3,
+                name: "Settings",
+                link: "/settings"
+            }
+        ]
     },
     {
         id: 4,

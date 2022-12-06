@@ -1,4 +1,5 @@
 import React from 'react'
+import CoverImage from '../Common/CoverImage'
 import Styles from './Collection.module.css'
 import Info from './Subcomponents/Info'
 import InfoMobile from './Subcomponents/InfoMobile'
@@ -6,16 +7,7 @@ import InfoMobile from './Subcomponents/InfoMobile'
 export default function Collection({ collection }) {
     return (
         <div className='w-full'>
-            <div className='w-full flex flex-col md:flex-row justify-center'>
-                <div className='w-full md:w-10/12 h-32 md:h-72 '>
-                    <div className={`${Styles.cover} relative w-full h-full z-10`}>
-
-                    </div>
-                    <div className='w-full h-full -mt-32 md:-mt-72  flex justify-center'>
-                        <img className='w-full rounded-b-[20px] ' src={collection.full_image} alt={collection.name} />
-                    </div>
-                </div>
-            </div>
+            <CoverImage full_image={collection.full_image} name={collection.name} />
 
             <div className='w-full flex  justify-center md:-mt-7 relative z-20'>
                 <div className='w-10/12 flex justify-between'>
