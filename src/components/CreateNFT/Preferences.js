@@ -1,33 +1,8 @@
 import React, { useState } from 'react'
 import ChainOptions from './Subcomponents/ChainOptions';
 import TypeOptions from './Subcomponents/TypeOptions';
+import { chain_types } from '../../data/cards';
 
-const chain_types = [
-    {
-        id: 0,
-        name: 'Binance Chain',
-        icon: '/images/create_nft/binance_coin.svg',
-        est_gas_fee: '40',
-    },
-    {
-        id: 1,
-        name: 'Ethereum Chain',
-        icon: '/images/create_nft/ethereum.svg',
-        est_gas_fee: '50',
-    },
-    {
-        id: 2,
-        name: 'Solana Chain',
-        icon: '/images/create_nft/solana.svg',
-        est_gas_fee: '70',
-    },
-    {
-        id: 3,
-        name: 'Polygon Chain',
-        icon: '/images/create_nft/polygon.svg',
-        est_gas_fee: '70',
-    },
-]
 
 const NFT_types = [
     {
@@ -107,7 +82,7 @@ export default function Preferences({ setActive, type, setType, chainType, setCh
 
                 <div className='flex justify-end items-center mb-10'>
                     <button className='bg-primary-green text-white font-gilroy font-bold px-8 py-3 rounded-md'
-                        onClick={()=>setActive("Add Details") }>
+                        onClick={() => setActive("Add Details")}>
                         Next
                     </button>
                 </div>
