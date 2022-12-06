@@ -19,22 +19,27 @@ const profile_items = [
     {
         id: 1,
         name: 'Owned',
+        mobile_name: 'Owned',
     },
     {
         id: 2,
         name: 'On Sale',
+        mobile_name: 'Onsale',
     },
     {
         id: 3,
         name: 'Created',
+        mobile_name: 'Created',
     },
     {
         id: 4,
         name: 'Like',
+        mobile_name: 'Like',
     },
     {
         id: 5,
         name: 'Activity',
+        mobile_name: 'Activity',
     }
 ]
 
@@ -92,14 +97,16 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                     </div>
 
                     {profile ?
-                        profile_items.map((filter) => (
-                            <div key={filter.id} className={` h-full w-14 md:w-[84px] md:ml-5 flex items-center justify-center ${item === filter.id ? "border-b-2 border-primary-green border-opacity-50" : null}`}
-                                onClick={() => setItem(filter.id)}>
-                                <span className={`font-gilroy cursor-pointer font-bold ${item === filter.id ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
-                                    {filter.name}
-                                </span>
-                            </div>
-                        ))
+                        <div className='flex w-44 ml-2 md:w-full h-full overflow-x-scroll gap-5 md:gap-0'> 
+                            {profile_items.map((filter) => (
+                                <div key={filter.id} className={` h-full w-14 md:w-[84px] md:ml-5 flex items-center justify-center ${item === filter.id ? "border-b-2 border-primary-green border-opacity-50" : null}`}
+                                    onClick={() => setItem(filter.id)}>
+                                    <span className={`font-gilroy cursor-pointer font-bold ${item === filter.id ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
+                                        {filter.name.replace(/\s+/g, '')}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
                         : filter_items.map((filter) => (
                             <div key={filter.id} className={` h-full w-14 md:w-[84px] md:ml-5 flex items-center justify-center ${item === filter.bool_val ? "border-b-2 border-primary-green border-opacity-50" : null}`}
                                 onClick={() => setItem(filter.bool_val)}>
