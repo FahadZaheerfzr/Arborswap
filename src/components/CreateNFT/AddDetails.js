@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import CollectionComponent from './Subcomponents/CollectionComponent';
+import HeadingTags from './Subcomponents/HeadingTags';
+import UploadImage from './Subcomponents/UploadImage';
 
 const collections = [
     {
@@ -18,9 +20,14 @@ const collections = [
     },
 ]
 
-export default function AddDetails({ setActive }) {
+export default function AddDetails({ setActive, nftType, nft, setNft }) {
     const [collection, setCollection] = useState(1);
-    const [properties, updateProperties] = useState([1,]);
+    const [properties, updateProperties] = useState([]);
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [image, setImage] = useState("");
+    const [royalties, setRoyalties] = useState("");
+    const [copies, setCopies] = useState("");
 
     const addProperty = () => {
         updateProperties([...properties, properties.length + 1])
@@ -30,56 +37,57 @@ export default function AddDetails({ setActive }) {
         //addProperty();
     }
 
+    const updateNft = () => {
+        setNft({
+            ...nft,
+            name: name,
+            description: description,
+            image: image,
+            royalties: royalties,
+            copies: copies,
+            collection: collection,
+        })
+    }
+
+    const handleSubmit = () => {
+        updateNft();
+        setActive("Preview");
+    }
+
     return (
         <div className='mt-9 mb-9'>
-            <span className='font-gilroy font-semibold text-[#807373]'>
-                Upload NFT File
-                <span className='text-[#E56060]'>&nbsp;*</span>
-            </span>
+            <HeadingTags name={"Upload NFT File"} required />
 
 
-            <div className='mt-4 flex flex-col text-center items-center justify-center border-2 border-dashed border-light-text border-opacity-50 rounded-xl h-56'>
-                <span className='font-gilroy font-medium text-[#807373]'>
-                    JPG,PNG,GIF,MP3 OR MP4<br />
-                    <span className='text-dark-text'>MAX 100MB</span>
-                </span>
-
-                <button className='bg-light-gray-shade mt-10 flex gap-2 py-[10px] px-5'>
-                    <img src="/images/create_nft/upload.svg" alt="upload" />
-                    <span className='font-gilroy font-semibold text-sm text-[#807373]'>
-                        Upload File
-                    </span>
-                </button>
-            </div>
+            <UploadImage image={image} setImage={setImage} />
 
 
             <div className='mt-10'>
-                <span className='font-gilroy font-semibold text-[#807373]'>
-                    Name
-                    <span className='text-[#E56060]'>&nbsp;*</span>
-                </span>
+                <HeadingTags name={"Name"} required />
 
                 <div className='w-full mt-5'>
-                    <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="Enter NFT Name" />
+                    <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="Enter NFT Name"
+                        onChange={(e) => setName(e.target.value)}
+                    />
                 </div>
             </div>
 
             <div className='mt-10'>
-                <span className='font-gilroy font-semibold text-[#807373]'>
-                    Description
-                </span>
+                <HeadingTags name={"Description"} />
+
 
                 <div className='w-full mt-5'>
-                    <textarea className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="Write something about the NFT" ></textarea>
+                    <textarea className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="Write something about the NFT"
+                        onChange={(e) => setDescription(e.target.value)}>
+
+                    </textarea>
                 </div>
             </div>
 
             <div className='mt-10'>
                 <div className='flex items-center justify-between'>
-                    <span className='font-gilroy font-semibold text-[#807373]'>
-                        Choose Collection
-                        <span className='text-[#E56060]'>&nbsp;*</span>
-                    </span>
+                    <HeadingTags name={"Choose Collection"} required />
+
 
                     <div className='flex items-center'>
                         <div className='flex   text-primary-green w-4 h-4 text-xs rounded-full justify-center bg-primary-green bg-opacity-40'>
@@ -98,31 +106,51 @@ export default function AddDetails({ setActive }) {
                 </div>
             </div>
 
-            <div className='mt-10'>
-                <span className='font-gilroy font-semibold text-[#807373]'>
-                    Royalties
-                    <span className='text-[#E56060]'>&nbsp;*</span>
-                </span>
+            {nftType === 1 ?
+                <div className='mt-10 flex w-full gap-5 items-center'>
+                    <div className='w-full'>
+                        <HeadingTags name={"Royalties"} required />
 
-                <div className='w-full mt-5'>
-                    <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="Enter NFT Name" />
+
+                        <div className='w-full mt-5'>
+                            <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. 10%"
+                                onChange={(e) => setRoyalties(e.target.value)}
+                            />
+                        </div>
+                    </div>
+                    <div className='w-full '>
+                        <HeadingTags name={"Number of Copies"} required />
+
+
+                        <div className='mt-5'>
+                            <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. 100"
+                                onChange={(e) => setCopies(e.target.value)}
+                            />
+                        </div>
+                    </div>
+                </div> :
+                <div className='mt-5'>
+                    <HeadingTags name={"Royalties"} required />
+
+
+                    <div className='w-full mt-5'>
+                        <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. 10%"
+                            onChange={(e) => setRoyalties(e.target.value)} />
+                    </div>
                 </div>
-            </div>
+            }
 
             <div className='mt-10'>
-                <span className='font-gilroy font-semibold text-[#807373]'>
-                    Properties
-                    <span className='text-[#E56060]'>&nbsp;*</span>
-                </span>
+                <HeadingTags name={"Properties"} required />
 
                 {properties.map((ind) => (
                     <div key={ind} className='w-full mt-5 flex gap-5'>
                         <div className='w-1/2' >
-                            <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. Size" 
+                            <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. Size"
                             />
                         </div>
                         <div className='w-1/2'>
-                            <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. Large" 
+                            <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. Large"
                                 onChange={updateInput}
                             />
                         </div>
@@ -141,8 +169,8 @@ export default function AddDetails({ setActive }) {
                         </span>
                     </button>
 
-                    <button className='bg-primary-green disabled:bg-light-text text-white font-gilroy font-bold px-8 py-3 rounded-md' disabled
-                        onClick={() => setActive("Preview")}>
+                    <button className='bg-primary-green disabled:bg-light-text text-white font-gilroy font-bold px-8 py-3 rounded-md' disabled={name === "" ||  royalties === "" || image === "" ?true:false}
+                        onClick={handleSubmit}>
                         Next
                     </button>
                 </div>

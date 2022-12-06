@@ -52,10 +52,8 @@ const NFT_types = [
 
 ]
 
-export default function Preferences({ setActive }) {
-    const [chainType, setChainType] = useState(0);
+export default function Preferences({ setActive, type, setType, chainType, setChainType }) {
     const [showChainType, setShowChainType] = useState(false);
-    const [type, setType] = useState(0);
 
     const toggleChainType = () => {
         setShowChainType(!showChainType);
