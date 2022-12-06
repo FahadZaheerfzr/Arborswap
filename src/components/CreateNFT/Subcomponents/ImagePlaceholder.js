@@ -7,7 +7,7 @@ export default function ImagePlaceholder({ image }) {
         )
     }
     return (
-        <div className='py-9 flex items-center justify-center border-2 border-opacity-50 border-light-text border-dashed rounded-xl'>
+        <div className='px-6 py-9 md:px-0 flex items-center justify-center border-2 border-opacity-50 border-light-text border-dashed rounded-xl'>
             <img src='/images/create_nft/image-logo.svg' alt='placeholder' />
         </div>
     )

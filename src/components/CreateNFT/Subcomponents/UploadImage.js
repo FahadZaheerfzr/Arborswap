@@ -56,7 +56,7 @@ export default function UploadImage({ image, setImage, multiples }) {
 
             </div>
             {multiples &&
-                <div className='mt-4 gap-5 grid grid-cols-4'>
+                <div className='mt-4 gap-2 md:gap-5 grid grid-cols-4'>
                     <ImagePlaceholder />
                     <ImagePlaceholder />
                     <ImagePlaceholder />
