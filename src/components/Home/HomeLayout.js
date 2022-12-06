@@ -9,48 +9,7 @@ import Dropdown from './SubComponents/Dropdown'
 import ListCard from './Collections/ListCard'
 import CardMobile from './NFTs/CardMobile'
 import { Link } from "react-router-dom"
-
-const Buttons = [
-    {
-        id: 1,
-        buttonText: 'Sort By',
-        dropDownItems: ["Floor Price", "Items", "Name (A-Z)", "Name (Z-A)"],
-    },
-    {
-        id: 2,
-        buttonText: 'All Categories',
-        dropDownItems: ["Ethereum", "Solana", "Polygon", "Binance Smart Chain", "Cardano"]
-    },
-    {
-        id: 3,
-        buttonText: 'Floor Price',
-        dropDownItems: ["Low to High", "High to Low"]
-    },
-]
-
-
-const Tabs = [
-    {
-        id: 1,
-        tabName: 'All'
-    },
-    {
-        id: 2,
-        tabName: 'Ethereum'
-    },
-    {
-        id: 3,
-        tabName: 'Solana'
-    },
-    {
-        id: 4,
-        tabName: 'BSC'
-    },
-    {
-        id: 5,
-        tabName: 'Polygon'
-    },
-]
+import { Buttons, Tabs } from '../../data/components';
 
 export default function HomeLayout() {
     const [activeTab, setActiveTab] = useState(1);
@@ -69,8 +28,8 @@ export default function HomeLayout() {
     }
 
     return (
-        <div className='px-[3%] md:pl-[5%] md:pr-[3%] pt-[5%] pb-[2%] bg-tree-pattern bg-center bg-no-repeat'>
-            <div className='flex w-full pt-12'>
+        <div className='px-[3%] md:pl-[5%] md:pr-[3%] pb-[2%] bg-tree-pattern bg-center bg-no-repeat'>
+            <div className='flex w-full pt-16'>
                 <ClickAwayListener onClickAway={() => setDropDownToggle(false)}>
 
                     <div className='hero-text w-full flex flex-col md:w-[30%]'>

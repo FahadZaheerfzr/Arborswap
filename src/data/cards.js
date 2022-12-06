@@ -4,7 +4,7 @@ export const Collections = [
         name: "DeGods Nfts",
         image: "/images/home/collections/cards/card_image.svg",
         verified: true,
-        icon: "/images/home/collections/cards/card_icon.svg",
+        icon: "/images/home/collections/cards/creator_logo.svg",
         category: "Ethereum",
         category_icon: "/images/home/collections/cards/ethereum.svg",
         floor_price: 44.014,
