@@ -4,7 +4,7 @@ import { SidebarProvider } from "./context/SidebarContext/GlobalProvider";
 
 function App() {
   return (
-    <div className="">
+    <div className=" dark:bg-dark-background">
       <SidebarProvider>
         <Router>
           <WebRouter />

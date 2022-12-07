@@ -2,6 +2,32 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation } from "react-router-dom"
 import { site_map as nav_items } from '../../data/sitemap';
 import { ReactSVG } from 'react-svg';
+import ArrowDownSVG from '../../svgs/arrow_down';
+import TwitterSVG from '../../svgs/twitter';
+import DribbleSVG from '../../svgs/dribble';
+import InstagramSVG from '../../svgs/instagram';
+import TelegramSVG from '../../svgs/telegram';
+
+const socials = [
+    {
+        id: 1,
+        icon: <TelegramSVG className="fill-dark-text dark:fill-dark-white-color" />
+    },
+    {
+        id: 2,
+        icon: <TwitterSVG className="fill-dark-text dark:fill-dark-white-color" />
+    },
+    {
+        id: 3,
+        icon: <InstagramSVG className="fill-dark-text dark:fill-dark-white-color" />
+    },
+    {
+        id: 4,
+        icon: <DribbleSVG className="fill-dark-text dark:fill-dark-white-color" />
+    },
+ 
+]
+
 
 export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activeLink }) {
     const [activeItem, setActiveItem] = useState("null");
@@ -55,7 +81,7 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activ
             <div className='nav-items'>
                 {
                     activeItem === "null" &&
-                    <div className='bg-white pt-[20%]'>
+                    <div className='bg-white dark:bg-black-shade2-background pt-[20%]'>
                     </div>
                 }
                 {nav_items.map(nav_item => (
@@ -67,23 +93,23 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activ
                                         <img src={nav_item.activeIcon} alt={nav_item.name} />
                                         : <ReactSVG src={nav_item.icon} alt={nav_item.name} />
                                     }
-                                    <span className={`font-gilroy font-semibold ml-5 ${nav_item.name === activeLink ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
+                                    <span className={`font-gilroy font-semibold ml-5 ${nav_item.name === activeLink ? "text-primary-green" : "text-light-text dark:text-dark-text-color hover:text-primary-green"}`}>
                                         {nav_item.name}
                                     </span>
                                 </div>
                                 {nav_item.extendable &&
                                     <div className='mr-8'>
-                                        <img src='/images/Sidebar/arrow-down.svg' alt="arrow-down" />
+                                        <ArrowDownSVG className="fill-dark-text dark:fill-dark-white-color" />
                                     </div>
                                 }
                             </div>
                         </Link>
 
                         {activeItem === nav_item.name &&
-                            <div className='bg-[#FAF8F5] flex flex-col pl-[35%] mt-3 pb-5'>
+                            <div className='bg-[#FAF8F5] dark:bg-black-shade3-background flex flex-col pl-[35%] mt-3 pb-5'>
                                 {nav_item.subItems.map((subItem, index) => (
                                     <Link key={index} to={subItem.link} className="mt-5">
-                                        <span className={`font-semibold font-gilroy ${location.pathname === subItem.link ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
+                                        <span className={`font-semibold font-gilroy ${location.pathname === subItem.link ? "text-primary-green" : "text-light-text dark:text-dark-text-color hover:text-primary-green"}`}>
                                             {subItem.name}
                                         </span>
                                     </Link>
@@ -94,7 +120,7 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activ
                 ))}
                 {
                     activeItem === "null" &&
-                    <div className='bg-white pt-[20%]'>
+                    <div className='bg-white dark:bg-black-shade2-background pt-[20%]'>
                     </div>
                 }
             </div>
@@ -123,21 +149,11 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activ
 
 
                 <div className='socials flex mt-9'>
-                    <div className='twitter flex items-center justify-center bg-[#F5F1EB] w-[34px] h-[34px] rounded-md '>
-                        <img src='/images/Sidebar/socials/twitter.svg' alt="twitter" />
-                    </div>
-
-                    <div className='telegram flex items-center justify-center bg-[#F5F1EB] w-[34px] h-[34px] rounded-md ml-3'>
-                        <img src='/images/Sidebar/socials/telegram.svg' alt="telegram" />
-                    </div>
-
-                    <div className='dribble flex items-center justify-center bg-[#F5F1EB] w-[34px] h-[34px] rounded-md ml-3'>
-                        <img src='/images/Sidebar/socials/dribbble.svg' alt="dribble" />
-                    </div>
-
-                    <div className='instagram flex items-center justify-center bg-[#F5F1EB] w-[34px] h-[34px] rounded-md ml-3'>
-                        <img src='/images/Sidebar/socials/instagram.svg' alt="instagram" />
-                    </div>
+                    {socials.map(social => (
+                        <div key={social.id} className='twitter flex items-center justify-center bg-[#F5F1EB] dark:bg-black-shade4-background w-[34px] h-[34px] rounded-md ml-[14px] first:ml-0'>
+                            {social.icon}
+                        </div>
+                    ))}
                 </div>
 
                 <div className='copyrights'>

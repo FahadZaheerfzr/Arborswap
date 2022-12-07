@@ -11,9 +11,9 @@ export default function Dropdown({collections, setCollections}) {
     }
 
     return (
-        <div className='dropdown flex flex-col bg-light-gray-shade'>
+        <div className='dropdown flex flex-col bg-light-gray-shade dark:bg-black-shade4-background text-dark-text dark:text-dark-white-color'>
             <div className='flex justify-between px-5 items-center py-5 w-56'>
-                <span className='font-gilroy font-bold text-sm text-dark-text'>
+                <span className='font-gilroy font-bold text-sm '>
                     Collections
                 </span>
 
@@ -23,7 +23,7 @@ export default function Dropdown({collections, setCollections}) {
             </div>
 
             <div className='flex justify-between px-5 items-center py-5 w-56'>
-                <span className='font-gilroy font-bold text-sm text-dark-text'>
+                <span className='font-gilroy font-bold text-sm'>
                     NFTs
                 </span>
 

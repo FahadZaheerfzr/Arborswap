@@ -10,6 +10,10 @@ import ListCard from './Collections/ListCard'
 import CardMobile from './NFTs/CardMobile'
 import { Link } from "react-router-dom"
 import { Buttons, Tabs } from '../../data/components';
+import GridIconSVG from '../../svgs/grid_icon';
+import ListIconSVG from '../../svgs/list_icon';
+import MenuSmallSVG from '../../svgs/menu_small';
+import MenuSVG from '../../svgs/menu';
 
 export default function HomeLayout() {
     const [activeTab, setActiveTab] = useState(1);
@@ -36,7 +40,7 @@ export default function HomeLayout() {
 
                         <div className='main-text flex items-end'>
 
-                            <span className='font-gilroy font-bold text-[31px] text-[#464754]'>
+                            <span className='font-gilroy font-bold text-[31px] text-[#464754] dark:text-dark-white-color'>
                                 Discover <br />
                                 Collections
                             </span>
@@ -52,7 +56,7 @@ export default function HomeLayout() {
                         </div>
 
                         <div className='sub-text mt-2'>
-                            <span className='font-gilroy font-medium text-[#807373]'>
+                            <span className='font-gilroy font-medium text-[#807373] dark:text-[#BBB6B0]'>
                                 Explore and Discover collections and Nfts.
                             </span>
                         </div>
@@ -85,20 +89,20 @@ export default function HomeLayout() {
 
             <div className='hidden md:flex w-full  items-center mt-12 justify-between'>
                 <div className='flex'>
-                    <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer ${cardFormat === "list" ? "bg-white" : "bg-[#F5F1EB]"}`}
+                    <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer ${cardFormat === "list" ? "bg-white dark:bg-black-shade2-background" : "bg-[#F5F1EB] dark:bg-black-shade4-background"}`}
                         onClick={() => setCardFormat("list")}>
                         {
                             collections ?
-                                <img src='./images/home/collections/list-icon.svg' alt="list-icon" />
-                                : <img src='./images/home/nfts/menu-small.svg' alt="small menu" />
+                                <ListIconSVG className={`${cardFormat === "list" ? "fill-dark-text dark:fill-dark-white-color" : "fill-light-text"}`} />
+                                : <MenuSmallSVG className={`${cardFormat === 'list' ? "fill-dark-text dark:fill-dark-white-color" : "fill-light-text"}`} />
                         }
                     </div>
-                    <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer ${cardFormat === "grid" ? "bg-white" : "bg-[#F5F1EB]"}`}
+                    <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer ${cardFormat === "grid" ? "bg-white dark:bg-black-shade2-background" : "bg-[#F5F1EB] dark:bg-black-shade4-background"}`}
                         onClick={() => setCardFormat("grid")}>
                         {
                             collections ?
-                                <img src='./images/home/collections/grid-icon.svg' alt="grid-icon" />
-                                : <img src='./images/home/nfts/menu.svg' alt="menu" />
+                                <GridIconSVG className={`${cardFormat === "grid" ? "fill-dark-text dark:fill-white" : "fill-light-text"}`} />
+                                : <MenuSVG className={`${cardFormat === 'grid' ? "fill-dark-text dark:fill-dark-white-color" : "fill-light-text"}`} />
                         }
 
                     </div>
@@ -110,7 +114,7 @@ export default function HomeLayout() {
 
 
                 <div className='tabs'>
-                    <div className='flex items-center p-1 bg-[#F5F1EB]'>
+                    <div className='flex items-center p-1 bg-[#F5F1EB] dark:bg-black-shade4-background'>
                         {Tabs.map((tab) => (
                             <Tab key={tab.id} tabName={tab.tabName} active={tab.id === activeTab} setActiveTab={setActiveTab} id={tab.id} />
                         ))}

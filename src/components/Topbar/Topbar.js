@@ -1,4 +1,5 @@
 import React from 'react'
+import NotificationSVG from '../../svgs/notification'
 
 export default function Topbar({setSideBarMobile, sideBarMobile}) {
     return (
@@ -19,14 +20,14 @@ export default function Topbar({setSideBarMobile, sideBarMobile}) {
 
             <div className='hidden sm:flex search md:w-[40%] lg:w-[40%] items-center '>
                 <img className='absolute ml-6' src='/images/Topbar/search.svg' alt="search" />
-                <input className='w-full rounded-[10px] py-4 pl-16 font-gilroy font-medium bg-[#FAF8F5] placeholder:text-[#707070] focus:outline-none'
+                <input className='w-full rounded-[10px] py-4 pl-16 font-gilroy font-medium bg-[#FAF8F5] dark:bg-black-shade3-background placeholder:text-[#707070] focus:outline-none dark:text-dark-white-color'
                     type="text" placeholder='Search by Collection, NFT or User' />
             </div>
 
             <div className='flex user-div '>
-                <div className='w-10 h-10 lg:w-12 lg:h-12 bg-[#F5F6F7] rounded-md flex items-center justify-center'>
+                <div className='w-10 h-10 lg:w-12 lg:h-12 bg-[#F5F6F7] dark:bg-dark-background rounded-md flex items-center justify-center'>
                     <img className='md:hidden' src='/images/Topbar/search.svg' alt="search" />
-                    <img className='hidden md:block' src='/images/Topbar/notification.svg' alt="notification" />
+                    <NotificationSVG className='hidden md:block fill-slate-700 dark:fill-white' />
                 </div>
 
                 <div className='flex md:hidden w-10 h-10 justify-center border-2 rounded-md border-primary-green border-opacity-50 items-center ml-4'>
@@ -38,11 +39,11 @@ export default function Topbar({setSideBarMobile, sideBarMobile}) {
 
                     <img className=' ml-5' src='/images/Topbar/metamask.svg' alt="metamask" />
 
-                    <span className=' font-gilroy font-medium ml-2'>
+                    <span className=' font-gilroy font-medium ml-2 dark:text-dark-white-color'>
                         0xdd....ahs4
                     </span>
 
-                    <div className=' ml-3 mr-6'>
+                    <div className='flex ml-3 mr-6'>
                         <div className='w-1 h-1 rounded-full bg-primary-green mr-[2px]' />
                         <div className='w-1 h-1 rounded-full bg-primary-green mr-[2px]' />
                         <div className='w-1 h-1 rounded-full bg-primary-green' />

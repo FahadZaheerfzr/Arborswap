@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { SidebarContext } from '../../context/SidebarContext/GlobalProvider';
 import Filter from './Filter';
 import { ReactSVG } from 'react-svg';
+import Styles from './Collection.module.css'
 const filter_items = [
     {
         id: 1,
@@ -97,7 +98,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                     </div>
 
                     {profile ?
-                        <div className='flex w-44 ml-2 md:w-full h-full overflow-x-scroll gap-5 md:gap-0'> 
+                        <div className={`${Styles.filter} flex w-44 ml-2 md:w-full h-full overflow-x-scroll gap-5 md:gap-0`}> 
                             {profile_items.map((filter) => (
                                 <div key={filter.id} className={` h-full w-14 md:w-[84px] md:ml-5 flex items-center justify-center ${item === filter.id ? "border-b-2 border-primary-green border-opacity-50" : null}`}
                                     onClick={() => setItem(filter.id)}>

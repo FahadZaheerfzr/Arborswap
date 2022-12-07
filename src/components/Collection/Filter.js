@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ArrowDownSVG from '../../svgs/arrow_down';
 import Styles from './Collection.module.css'
 import ChainTypeFilter from './Subcomponents/ChainTypeFilter';
 import PriceFilter from './Subcomponents/PriceFilter';
@@ -87,7 +88,7 @@ export default function Filter({ mobile, profile }) {
                                 <span className='font-gilroy text-sm font-bold text-[#807373] mr-3'>
                                     {filter.filterCount > 0 ? filter.filterCount : ""}
                                 </span>
-                                <img className={`${dropdowns[filter.id] ? "rotate-180" : "rotate-0"}`} src='/images/Sidebar/arrow-down.svg' alt='arrow-down' />
+                                <ArrowDownSVG className={`${dropdowns[filter.id] ? "rotate-180" : "rotate-0"} fill-dark-text dark:fill-dark-white-color`} />
                             </div>
                         </div>
                     }

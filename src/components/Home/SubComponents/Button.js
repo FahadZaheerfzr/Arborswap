@@ -13,21 +13,21 @@ export default function Button({ buttonText, dropDownItems, filter, setFilter })
   return (
     <ClickAwayListener onClickAway={handleAwayFilter}>
     <div className='flex flex-col'>
-      <button className='flex justify-center items-center bg-white px-5 py-2 font-gilroy font-semibold text-sm'
+      <button className='flex justify-center items-center bg-white dark:bg-black-shade2-background  px-5 py-2 font-gilroy font-semibold text-sm'
         onClick={toggleDropDown}>
-        <span>
+        <span className='dark:text-dark-gray'>
           {buttonText}
         </span>
         <img className='ml-2' src='./images/home/arrow-down.svg' alt="arrow-down" />
       </button>
 
       {dropDownToggle && (
-        <div className='absolute  mt-12 rounded-xl w-48 bg-white'>
+        <div className='absolute  mt-12 rounded-xl w-48 bg-white dark:bg-black-shade4-background'>
 
           {dropDownItems.map((item, index) => (
             <div key={index} className='flex justify-between cursor-pointer px-4 py-3'
               onClick={() => setFilter(item)}>
-              <span className='font-gilroy font-bold text-sm text-dark-text'>
+              <span className='font-gilroy font-bold text-sm text-dark-text dark:text-dark-white-color'>
                 {item}
               </span>
               {filter === item && (
