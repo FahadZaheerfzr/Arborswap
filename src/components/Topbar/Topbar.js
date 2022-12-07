@@ -5,13 +5,13 @@ export default function Topbar({setSideBarMobile, sideBarMobile}) {
     return (
         <div className='h-[110px] flex items-center justify-between pl-[4%] pr-[5%] '>
             <div className='flex items-center'>
-            <div className='flex md:hidden flex-col h-10 w-10 bg-[#F5F6F7] hamburger justify-center items-center'
+            <div className='flex md:hidden flex-col h-10 w-10 bg-[#F5F6F7] dark:bg-dark-background hamburger justify-center items-center'
                 onClick={()=>setSideBarMobile(!sideBarMobile)}>
 
-                <div className={`${sideBarMobile?"hidden":"block"} h-0 w-5 border mb-1 border-[#464754]`} />
-                <div className={`${sideBarMobile?"hidden":"block"} h-0 w-5 border mb-1 border-[#464754]`} />
-                <div className={`${sideBarMobile?"hidden":"block"} h-0 w-5 border border-[#464754]`} />
-                <span className={`${sideBarMobile?"block":"hidden"}`}>&#x2715;</span>
+                <div className={`${sideBarMobile?"hidden":"block"} h-0 w-5 border mb-1 border-dark-text dark:border-dark-white-color`} />
+                <div className={`${sideBarMobile?"hidden":"block"} h-0 w-5 border mb-1 border-dark-text dark:border-dark-white-color`} />
+                <div className={`${sideBarMobile?"hidden":"block"} h-0 w-5 border border-dark-text dark:border-dark-white-color`} />
+                <span className={`${sideBarMobile?"block":"hidden"} dark:text-dark-white-color`}>&#x2715;</span>
             </div>
             <div className='logo-div ml-5'>
                 <img className='w-[120px] sm:w-[150px]' src='/images/logo.svg' alt="header-logo" />

@@ -24,7 +24,7 @@ export default function Card({ card_name, card_image, verified, card_icon, card_
                     }
                 </div>
 
-                <div className='lg:flex justify-between mt-2'>
+                <div className='flex justify-between mt-2'>
                     <div className='card-items flex items-center'>
                         <img className='w-7 h-7 mr-3' src={card_icon} alt={card_name} />
                         <span className={`floor-info font-gilroy  ${nft?  "text-xs text-light-text dark:text-[#6C717A] font-bold ml-1" :"text-sm text-[#807373] dark:text-dark-gray font-medium"} `}>

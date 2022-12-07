@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import DribbleSVG from '../../svgs/dribble'
+import TwitterSVG from '../../svgs/twitter'
 export default function ProfileBase({ profile }) {
 
     return (
@@ -25,8 +27,8 @@ export default function ProfileBase({ profile }) {
                             <span className='hidden md:block font-gilroy font-medium text-sm text-dark-text ml-2 mr-5'>
                                 {profile.contact_address}
                             </span>
-                            <img className='w-4 h-4 mr-5' src='/images/Sidebar/socials/twitter.svg' alt="twitter" />
-                            <img className='w-4 h-4 mr-5' src='/images/Sidebar/socials/dribbble.svg' alt="dribbble" />
+                            <TwitterSVG className='w-4 h-4 mr-5' />
+                            <DribbleSVG className='w-4 h-4 mr-5' />
                         </div>
 
                         <div className='flex mt-3 md:hidden items-center'>

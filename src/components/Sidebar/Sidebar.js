@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link, useLocation } from "react-router-dom"
 import { site_map as nav_items } from '../../data/sitemap';
 import { ReactSVG } from 'react-svg';
@@ -7,6 +7,7 @@ import TwitterSVG from '../../svgs/twitter';
 import DribbleSVG from '../../svgs/dribble';
 import InstagramSVG from '../../svgs/instagram';
 import TelegramSVG from '../../svgs/telegram';
+import { ThemeContext } from '../../context/ThemeContext/ThemeProvider';
 
 const socials = [
     {
@@ -31,7 +32,9 @@ const socials = [
 
 export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activeLink }) {
     const [activeItem, setActiveItem] = useState("null");
+    const {theme} = useContext(ThemeContext);
     const location = useLocation();
+
 
     useEffect(() => {
         setActiveItem(activeLink);
@@ -130,7 +133,10 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activ
 
             <div className=' flex flex-col items-end mr-7'>
                 <div className='flex'>
-                    <img className='mr-3' src='/images/Sidebar/sun.svg' alt="sun" />
+                    {theme === 'dark'? 
+                    <img className='mr-3' src='/images/Sidebar/moon.svg' alt="moon" />
+                    :<img className='mr-3' src='/images/Sidebar/sun.svg' alt="sun" />
+                    }
                     <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
                         <input type="checkbox" value="" checked={tempfixed ? false : true} id="default-toggle" className="sr-only peer"
                             onChange={handleTempFixed}
