@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { SidebarContext } from '../../context/SidebarContext/GlobalProvider';
 import Filter from './Filter';
-
+import { ReactSVG } from 'react-svg';
 const filter_items = [
     {
         id: 1,
@@ -140,7 +140,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                         onClick={() => { setBigGrid(true) }}>
                         {bigGrid ?
                             <img src="/images/home/nfts/menu.svg" alt='menu-active' /> :
-                            <img src='/images/Sidebar/dashboard.svg' alt='grid-icon-deactive' />
+                            <ReactSVG src='/images/Sidebar/dashboard.svg' alt='grid-icon-deactive' />
                         }
                     </div>
 
