@@ -1,8 +1,6 @@
 .filterBorder {
-    background: #FFFFFF;
     border-width: 0px 0.5px 0.5px 0.5px;
     border-style: solid;
-    border-color: #D7D9DD;
 }
 
 .filter::-webkit-scrollbar {

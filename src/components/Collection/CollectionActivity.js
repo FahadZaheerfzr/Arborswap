@@ -4,11 +4,11 @@ import { SidebarContext } from '../../context/SidebarContext/GlobalProvider';
 export default function CollectionActivity({ activity }) {
     const {showSidebar} = useContext(SidebarContext);
     return (
-        <div className={`w-full flex justify-center ease-in-out duration-300 ${showSidebar? "md:translate-x-[100px]": "md:translate-x-[0px]" }`}>
+        <div className={`w-full relative flex justify-center ease-in-out duration-300 ${showSidebar? "md:translate-x-[100px]": "md:translate-x-[0px]" }`}>
             <div className='w-full px-4 md:px-0 md:w-4/6 border-b border-dashed border-[#767779] border-opacity-30 py-5'>
                 <div className='w-full flex'>
                     <div className='logo w-[20%]'>
-                        <img className='absolute z-10' src="/images/collection/activity/lock.svg" alt="lock" />
+                        <img className='absolute' src="/images/collection/activity/lock.svg" alt="lock" />
                         <img src={activity.image} alt={activity.name} />
                     </div>
 

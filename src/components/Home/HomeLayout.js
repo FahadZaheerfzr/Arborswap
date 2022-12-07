@@ -79,7 +79,7 @@ export default function HomeLayout() {
 
                 </div>
 
-                <div className='mt-5 flex items-center p-1 bg-[#F5F1EB]'>
+                <div className='mt-5 flex items-center p-1 bg-[#F5F1EB] dark:bg-black-shade4-background'>
                     {Tabs.map((tab) => (
                         <Tab key={tab.id} tabName={tab.tabName} active={tab.id === activeTab} setActiveTab={setActiveTab} id={tab.id} />
                     ))}

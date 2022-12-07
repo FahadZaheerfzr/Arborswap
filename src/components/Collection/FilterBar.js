@@ -3,6 +3,9 @@ import { SidebarContext } from '../../context/SidebarContext/GlobalProvider';
 import Filter from './Filter';
 import { ReactSVG } from 'react-svg';
 import Styles from './Collection.module.css'
+import MenuSVG from '../../svgs/menu';
+import MenuSmallSVG from '../../svgs/menu_small';
+import UndoSVG from '../../svgs/undo';
 const filter_items = [
     {
         id: 1,
@@ -77,7 +80,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                     </div>
                 </div>
             }
-            <div className={`w-full flex h-12 border-[0.5px] border-[#D7D9DD]  items-center md:pl-[100px] bg-white justify-between `}>
+            <div className={`w-full flex h-12 border-[0.5px] border-[#D7D9DD] dark:border-[#313538]  items-center md:pl-[100px] bg-white dark:bg-black-shade2-background justify-between `}>
                 <div className={`flex h-12 items-center md:ml-5 ease-in-out duration-300 ${showSidebar ? "md:translate-x-[170px]" : "md:translate-x-[0px]"}`}>
                     <div className='flex h-full'>
                         <div className='hidden md:flex min-w-[48px] px-3 mr-4 h-full   border-b-2 border-[#C89211] border-opacity-50 items-center justify-center'>
@@ -88,11 +91,11 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                                 </span>}
                         </div>
 
-                        <div className={`hidden md:flex items-center h-full arrow border-r-[0.5px] border-[#D7D9DD] ${!showSidebar ? "ml-11" : null}`}>
+                        <div className={`hidden md:flex items-center h-full arrow border-r-[0.5px] border-[#D7D9DD] dark:border-[#313538] ${!showSidebar ? "ml-11" : null}`}>
                             <img src='/images/home/arrow-down.svg' alt='arrow-down' className={`cursor-pointer ease-linear duration-150 ${filterDropdown ? "rotate-180" : "rotate-0"}`} onClick={toggleFilterDropDown} />
                         </div>
                         {filterDropdown &&
-                            <div className={`absolute mt-12 md:-ml-5 w-56`}>
+                            <div className={`absolute mt-12 md:-ml-5 w-56 z-50`}>
                                 <Filter profile={profile} />
                             </div>}
                     </div>
@@ -102,16 +105,16 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                             {profile_items.map((filter) => (
                                 <div key={filter.id} className={` h-full w-14 md:w-[84px] md:ml-5 flex items-center justify-center ${item === filter.id ? "border-b-2 border-primary-green border-opacity-50" : null}`}
                                     onClick={() => setItem(filter.id)}>
-                                    <span className={`font-gilroy cursor-pointer font-bold ${item === filter.id ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
-                                        {filter.name.replace(/\s+/g, '')}
+                                    <span className={`font-gilroy cursor-pointer font-bold ${item === filter.id ? "text-primary-green" : "text-light-text dark:text-dark-text-color hover:text-primary-green"}`}>
+                                        {filter.name}
                                     </span>
                                 </div>
                             ))}
                         </div>
                         : filter_items.map((filter) => (
-                            <div key={filter.id} className={` h-full w-14 md:w-[84px] md:ml-5 flex items-center justify-center ${item === filter.bool_val ? "border-b-2 border-primary-green border-opacity-50" : null}`}
+                            <div key={filter.id} className={` h-full w-14 md:w-[84px] ml-5 md:ml-5 flex items-center justify-center ${item === filter.bool_val ? "border-b-2 border-primary-green border-opacity-50" : null}`}
                                 onClick={() => setItem(filter.bool_val)}>
-                                <span className={`font-gilroy cursor-pointer font-bold ${item === filter.bool_val ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
+                                <span className={`font-gilroy cursor-pointer font-bold ${item === filter.bool_val ? "text-primary-green" : "text-light-text dark:text-dark-text-color hover:text-primary-green"}`}>
                                     {filter.name}
                                 </span>
                             </div>
@@ -122,7 +125,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                 </div>
                 <div className='flex h-12 items-center pr-[5%]'>
                     <div className='h-full flex items-center'>
-                        <span className='font-gilroy font-semibold text-sm md:text-base text-[#807373]'>
+                        <span className='font-gilroy font-semibold text-sm md:text-base text-[#807373] dark:text-dark-gray'>
                             Price : Low to High
                         </span>
 
@@ -132,7 +135,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                     <div className='hidden md:flex h-full ml-14 items-center'>
                         <img className='mr-3' src='/images/collection/undo.svg' alt='undo' />
 
-                        <span className='font-gilroy font-semibold text-[#807373]'>
+                        <span className='font-gilroy font-semibold text-[#807373] dark:text-dark-gray'>
                             Reset All
                         </span>
                     </div>
@@ -140,7 +143,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                     <div className='hidden md:flex menu cursor-pointer h-full items-center ml-10 mr-6'
                         onClick={() => { setBigGrid(true) }}>
                         {bigGrid ?
-                            <img src="/images/home/nfts/menu.svg" alt='menu-active' /> :
+                            <MenuSVG className={` fill-dark-text dark:fill-dark-white-color`} /> :
                             <ReactSVG src='/images/Sidebar/dashboard.svg' alt='grid-icon-deactive' />
                         }
                     </div>
@@ -148,28 +151,28 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                     <div className='hidden md:flex menu cursor-pointer h-full items-center'
                         onClick={() => { setBigGrid(false) }}>
                         {bigGrid ?
-                            <img src='/images/home/nfts/menu-small.svg' alt='small-grid-icon-deactive' /> :
+                            <MenuSmallSVG/>:
                             <img src='/images/collection/menu.svg' alt='small-grid-icon' />
                         }
                     </div>
                 </div>
             </div>
             <div className='flex md:hidden justify-between px-6 mt-5 '>
-                <div className="flex items-center bg-white px-5 py-3"
+                <div className="flex items-center bg-white dark:bg-black-shade2-background px-5 py-3"
                     onClick={() => setFilterMobile(true)}>
                     <img src='/images/collection/filter-search.svg' alt='filter' />
 
-                    <span className='font-gilroy font-bold text-[#807373] text-sm ml-3'>
-                        Filters: <span className='text-dark-text'>{filtercount}</span>
+                    <span className='font-gilroy font-bold text-[#807373] dark:text-dark-gray text-sm ml-3'>
+                        Filters: <span className='text-dark-text dark:text-dark-white-color'>{filtercount}</span>
                     </span>
 
                     <img className='ml-3' src='/images/home/arrow-down.svg' alt='arrow-down' />
                 </div>
 
-                <div className='flex items-center bg-white px-5 py-3'>
-                    <img src='/images/collection/undo.svg' alt='undo' />
+                <div className='flex items-center bg-white dark:bg-black-shade2-background px-5 py-3'>
+                    <UndoSVG />
 
-                    <span className='font-gilroy font-semibold text-[#807373] text-sm ml-3'>
+                    <span className='font-gilroy font-semibold text-[#807373] dark:text-dark-white-color text-sm ml-3'>
                         Reset All
                     </span>
                 </div>

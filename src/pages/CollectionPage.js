@@ -49,7 +49,7 @@ export default function CollectionPage() {
                     nfts &&
                     <CollectionItems items={nfts} bigGrid={bigGrid} />
                     : activities &&
-                    <div className='mt-5'>
+                    <div className='mt-5 relative '>
                         {activities.map((activity) => (
                             <CollectionActivity activity={activity} />
                         ))}

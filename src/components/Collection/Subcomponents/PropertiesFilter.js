@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ArrowDownSVG from '../../../svgs/arrow_down';
 
 const filters = [
     {
@@ -83,21 +84,21 @@ export default function PropertiesFilter() {
                     <div className='filter  border-b border-dashed border-light-text border-opacity-30'>
                         <div className='filter-name py-4 flex items-center cursor-pointer justify-between'
                             onClick={() => toggleDropdown(filter.id)}>
-                            <span className='font-gilroy font-bold text-sm text-dark-text'>
+                            <span className='font-gilroy font-bold text-sm text-dark-text dark:text-dark-white-color'>
                                 {filter.name}
                             </span>
-                            <img className={`${dropdowns[filter.id] ? "rotate-180" : "rotate-0"}`} src='/images/Sidebar/arrow-down.svg' alt='arrow-down' />
+                            <ArrowDownSVG className={`dark:fill-dark-white-color ${dropdowns[filter.id] ? "rotate-180" : "rotate-0"}`} alt='arrow-down' />
                         </div>
                         {dropdowns[filter.id] &&
                             filter.options.map((options) => (
                                 <div className='flex items-center justify-between py-2'>
                                     <div className='flex items-center'>
                                         <input type="checkbox" className='mr-2 w-3 h-3 accent-dark-text' />
-                                        <span className='font-gilroy font-semibold text-sm text-dark-text'>
+                                        <span className='font-gilroy font-semibold text-sm text-dark-text dark:text-dark-white-color'>
                                             {options.name}
                                         </span>
                                     </div>
-                                    <span className='font-gilroy font-medium text-sm text-[#807373]'>
+                                    <span className='font-gilroy font-medium text-sm text-[#807373] dark:text-dark-gray'>
                                         {options.value}%
                                     </span>
                                 </div>
