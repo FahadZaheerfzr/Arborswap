@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import UploadImage from '../Common/UploadImage';
 import CollectionComponent from './Subcomponents/CollectionComponent';
-import HeadingTags from './Subcomponents/HeadingTags';
-import UploadImage from './Subcomponents/UploadImage';
+import HeadingTags from '../Common/HeadingTags';
 
 const collections = [
     {

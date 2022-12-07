@@ -33,7 +33,7 @@ export default function Base() {
     return (
         <div className=''>
             {visible &&
-                <div className='fixed top-[5%] w-3/4 flex bg-transparent backdrop-blur-md justify-center z-20 h-full'>
+                <div className='fixed top-[5%] w-full md:w-3/4 flex bg-transparent backdrop-blur-md justify-center z-20 h-full'>
                     <CreateCollections setVisibility={setVisible} />
                 </div>}
             <div className='flex bg-light-gray-shade flex-col md:flex-row w-full'>

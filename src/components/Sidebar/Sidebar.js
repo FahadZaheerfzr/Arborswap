@@ -32,7 +32,8 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activ
                                     {nav_item.name === activeLink ?
                                         <img src={nav_item.activeIcon} alt={nav_item.name} />
                                         : <ReactSVG src={nav_item.icon} alt={nav_item.name} />
-                                    }                                </div>
+                                    }
+                                </div>
                             </Link>
                         ))}
                     </div>

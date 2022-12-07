@@ -47,7 +47,7 @@ export const site_map = [
             {
                 id: 1,
                 name: "My Profile",
-                link: "/my_profile"
+                link: "/profile"
             },
             {
                 id: 2,
@@ -60,7 +60,7 @@ export const site_map = [
                 link: "/settings"
             }
         ],
-        sublinks: ["/my_profile", "/activities", "/settings"],
+        sublinks: ["/profile", "/activities", "/settings"],
     },
     {
         id: 4,

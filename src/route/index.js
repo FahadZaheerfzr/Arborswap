@@ -7,6 +7,7 @@ import Error from '../pages/Error';
 import LandingPage from '../pages/LandingPage';
 import NftPage from '../pages/NftPage';
 import ProfilePage from '../pages/ProfilePage';
+import SettingsPage from '../pages/SettingsPage';
 
 
 export default function WebRouter() {
@@ -16,7 +17,8 @@ export default function WebRouter() {
     { path: "/nfts/:id", element: <NftPage /> },
     { path: "create_nft", element: <CreateNft /> },
     { path: "rankings", element: <CollectionRankings />},
-    { path: "my_profile", element: <ProfilePage /> },
+    { path: "profile", element: <ProfilePage /> },
+    { path: "settings", element: <SettingsPage />},
     { path: "*", element: <Error /> },
   ]);
   return routes;

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import HeadingTags from './Subcomponents/HeadingTags'
+import HeadingTags from '../Common/HeadingTags'
 import ImagePlaceholder from './Subcomponents/ImagePlaceholder';
 
 export default function CreateCollections({ setVisibility }) {
@@ -29,7 +29,7 @@ export default function CreateCollections({ setVisibility }) {
     }
 
     return (
-        <div className='w-1/2 '>
+        <div className='w-full md:w-1/2 '>
             <div className='bg-white'>
                 <div className="flex items-center rounded-t-[10px] border border-opacity-50 border-[#D7D9DD] justify-between py-6 px-5 bg-white">
                     <span className='text-xl font-gilroy font-bold text-dark-text'>

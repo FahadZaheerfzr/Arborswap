@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import ImagePlaceholder from './ImagePlaceholder';
+import ImagePlaceholder from '../CreateNFT/Subcomponents/ImagePlaceholder';
 
 export default function UploadImage({ image, setImage, multiples }) {
     const fileInput = useRef();
