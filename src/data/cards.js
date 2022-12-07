@@ -631,3 +631,36 @@ export const chain_types = [
         est_gas_fee: '70',
     },
 ]
+
+
+export const profile_chain_types = [
+    {
+        id: 0,
+        name: 'All Chain',
+        icon: '/images/user_profile/all_chain.svg',
+    },
+    {
+        id: 1,
+        name: 'Binance Chain',
+        icon: '/images/create_nft/binance_coin.svg',
+        est_gas_fee: '40',
+    },
+    {
+        id: 2,
+        name: 'Ethereum Chain',
+        icon: '/images/create_nft/ethereum.svg',
+        est_gas_fee: '50',
+    },
+    {
+        id: 3,
+        name: 'Solana Chain',
+        icon: '/images/create_nft/solana.svg',
+        est_gas_fee: '70',
+    },
+    {
+        id: 4,
+        name: 'Polygon Chain',
+        icon: '/images/create_nft/polygon.svg',
+        est_gas_fee: '70',
+    },
+]

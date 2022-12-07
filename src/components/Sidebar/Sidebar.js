@@ -76,7 +76,6 @@ const nav_items = [
 
 
 export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
-    const [active, setActive] = useState("Discover")
     const [activeItem, setActiveItem] = useState("Marketplace");
     const location = useLocation();
 
@@ -149,7 +148,7 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                             {activeItem === nav_item.name &&
                                 <div className='bg-[#FAF8F5] flex flex-col pl-[35%] mt-3 pb-5'>
                                     {nav_item.subItems.map((subItem, index) => (
-                                        <Link key={index} to={subItem.link} className="mt-5" onClick={() => setActive(subItem.name)}>
+                                        <Link key={index} to={subItem.link} className="mt-5">
                                             <span className={`font-semibold font-gilroy ${location.pathname === subItem.link ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
                                                 {subItem.name}
                                             </span>

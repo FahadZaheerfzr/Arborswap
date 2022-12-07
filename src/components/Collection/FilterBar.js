@@ -72,18 +72,18 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                                 </div>
                             </div>
                         </div>
-                        <Filter mobile={true} />
+                        <Filter mobile={true} profile />
                     </div>
                 </div>
             }
             <div className={`w-full flex h-12 border-[0.5px] border-[#D7D9DD]  items-center md:pl-[100px] bg-white justify-between `}>
                 <div className={`flex h-12 items-center md:ml-5 ease-in-out duration-300 ${showSidebar ? "md:translate-x-[170px]" : "md:translate-x-[0px]"}`}>
                     <div className='flex h-full'>
-                        <div className='hidden md:flex min-w-[48px] px-4 mr-4 h-full   border-b-2 border-[#C89211] border-opacity-50 items-center justify-center'>
+                        <div className='hidden md:flex min-w-[48px] px-3 mr-4 h-full   border-b-2 border-[#C89211] border-opacity-50 items-center justify-center'>
                             <img src='/images/collection/filter-search.svg' alt='filter' className='cursor-pointer' onClick={toggleFilterDropDown} />
                             {!showSidebar &&
                                 <span className='font-gilroy font-bold text-[#807373] ml-3'>
-                                    Filter : <span className='text-dark-text'>{filtercount}</span>
+                                    Filter:<span className='text-dark-text'>{filtercount}</span>
                                 </span>}
                         </div>
 
@@ -92,7 +92,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                         </div>
                         {filterDropdown &&
                             <div className={`absolute mt-12 md:-ml-5 w-56`}>
-                                <Filter />
+                                <Filter profile={profile} />
                             </div>}
                     </div>
 
