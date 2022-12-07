@@ -34,7 +34,7 @@ export default function CollectionPage() {
     }, [collection]);
 
     return (
-        <div className='mb-10'>
+        <div className='pb-10'>
             <ExtendedLayout>
                 <BaseLayout>
                     {collection &&

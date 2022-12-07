@@ -7,7 +7,7 @@ export default function LandingPage() {
   return (
     <div className='w-full'>
 
-      <div className='base-layout'>
+      <div className='base-layout pb-5'>
         <BaseLayout >
             <HomeLayout />
         </BaseLayout>
