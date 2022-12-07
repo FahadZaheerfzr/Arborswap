@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 export default function ProfileBase({ profile }) {
 
     return (
@@ -37,10 +37,12 @@ export default function ProfileBase({ profile }) {
                         </div>
 
                         <div className='hidden md:flex mt-3 items-center'>
-                            <button className='bg-white text-[#807373] font-gilroy font-semibold text-sm px-4 py-3 rounded-md flex items-center'>
-                                <img className='w-4 h-4 mr-2' src='/images/user_profile/edit.svg' alt="edit" />
-                                Edit Profile
-                            </button>
+                            <Link to={"/settings"}>
+                                <button className='bg-white text-[#807373] font-gilroy font-semibold text-sm px-4 py-3 rounded-md flex items-center'>
+                                    <img className='w-4 h-4 mr-2' src='/images/user_profile/edit.svg' alt="edit" />
+                                    Edit Profile
+                                </button>
+                            </Link>
 
                             <div className='ml-[10px] flex items-center justify-center bg-white w-11 h-11 rounded-md'>
                                 <img src='/images/create_nft/upload.svg' alt="upload" className='' />
