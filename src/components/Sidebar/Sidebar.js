@@ -1,84 +1,15 @@
-import { useState } from 'react'
-import { Link,useLocation } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import { Link, useLocation } from "react-router-dom"
+import { site_map as nav_items } from '../../data/sitemap';
+import { ReactSVG } from 'react-svg';
 
-const nav_items = [
-    {
-        id: 1,
-        name: 'Dashboard',
-        icon: '/images/Sidebar/dashboard.svg',
-        activeIcon: '/images/Sidebar/dashboard-green.svg',
-        active: false,
-        extendable: false,
-        subItems: [],
-        link: "/"
-    },
-    {
-        id: 2,
-        name: 'Marketplace',
-        icon: '/images/Sidebar/marketplace.svg',
-        // activeIcon:'/images/Sidebar/marketplace-active.svg',
-        active: true,
-        extendable: true,
-        subItems: [
-            {
-                id: 1,
-                name: "Discover",
-                link: "/"
-            },
-            {
-                id: 2,
-                name: "Rankings",
-                link: "/rankings"
-            },
-            {
-                id: 3,
-                name: "Create",
-                link: "/create_nft"
-            }
-        ]
-    },
-    {
-        id: 3,
-        name: 'User Profile',
-        icon: '/images/Sidebar/user-profile.svg',
-        //activeIcon:'/images/Sidebar/marketplace-active.svg',
-        active: false,
-        extendable: true,
-        subItems: [
-            {
-                id: 1,
-                name: "My Profile",
-                link: "/my_profile"
-            },
-            {
-                id: 2,
-                name: "Activites",
-                link: "/activities"
-            },
-            {
-                id: 3,
-                name: "Settings",
-                link: "/settings"
-            }
-        ]
-    },
-    {
-        id: 4,
-        name: 'More Products',
-        icon: '/images/Sidebar/menu.svg',
-        // activeIcon:'/images/Sidebar/marketplace-active.svg',
-        active: false,
-        extendable: true,
-        subItems: ["Search", "Rankings", "Create"]
-    },
-
-]
-
-
-export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
-    const [activeItem, setActiveItem] = useState("Marketplace");
+export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activeLink }) {
+    const [activeItem, setActiveItem] = useState("null");
     const location = useLocation();
 
+    useEffect(() => {
+        setActiveItem(activeLink);
+    }, [activeLink])
 
     const handleActiveItem = (nav_item, nav_item_extendable) => {
         if (nav_item_extendable) {
@@ -88,7 +19,6 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                 setActiveItem(nav_item);
             }
         }
-
     }
 
     if (!fullSidebar) {
@@ -99,13 +29,13 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                         {nav_items.map((nav_item, index) => (
                             <Link key={nav_item.id} to={nav_item.link}>
                                 <div className='mt-8'>
-                                    <img className='h-6 w-6' src={nav_item.icon} alt={nav_item.name} />
+                                    <ReactSVG className='w-6 h-6' src={nav_item.icon} alt={nav_item.name} />
                                 </div>
                             </Link>
                         ))}
                     </div>
 
-                    <div className=' flex justify-center'>
+                    <div className='flex justify-center'>
                         <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
                             <input type="checkbox" value="" checked={tempfixed ? false : true} id="default-toggle" className="sr-only peer"
                                 onChange={handleTempFixed}
@@ -126,14 +56,15 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                     </div>
                 }
                 {nav_items.map(nav_item => (
-                        <div key={nav_item.id} className='mt-8 w-full cursor-pointer' >
-                        <Link  to={nav_item.link}>
+                    <div key={nav_item.id} className='mt-8 w-full cursor-pointer' >
+                        <Link to={nav_item.link}>
                             <div className='flex justify-between items-center' onClick={(nav_item_name) => handleActiveItem(nav_item.name, nav_item.extendable)}>
                                 <div className='flex ml-[20%]'>
-                                    {nav_item.active && nav_item.activeIcon ?
-                                        <img src={nav_item.activeIcon} alt="nav-item-icon" />
-                                        : <img src={nav_item.icon} alt="nav-item-icon" />}
-                                    <span className={`font-gilroy font-semibold ml-5 ${nav_item.active ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
+                                    {nav_item.name === activeLink ?
+                                        <img src={nav_item.activeIcon} alt={nav_item.name} />
+                                        : <ReactSVG src={nav_item.icon} alt={nav_item.name} />
+                                    }
+                                    <span className={`font-gilroy font-semibold ml-5 ${nav_item.name === activeLink ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
                                         {nav_item.name}
                                     </span>
                                 </div>
@@ -143,20 +74,20 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed }) {
                                     </div>
                                 }
                             </div>
-                            </Link>
+                        </Link>
 
-                            {activeItem === nav_item.name &&
-                                <div className='bg-[#FAF8F5] flex flex-col pl-[35%] mt-3 pb-5'>
-                                    {nav_item.subItems.map((subItem, index) => (
-                                        <Link key={index} to={subItem.link} className="mt-5">
-                                            <span className={`font-semibold font-gilroy ${location.pathname === subItem.link ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
-                                                {subItem.name}
-                                            </span>
-                                        </Link>
-                                    ))}
-                                </div>
-                            }
-                        </div>
+                        {activeItem === nav_item.name &&
+                            <div className='bg-[#FAF8F5] flex flex-col pl-[35%] mt-3 pb-5'>
+                                {nav_item.subItems.map((subItem, index) => (
+                                    <Link key={index} to={subItem.link} className="mt-5">
+                                        <span className={`font-semibold font-gilroy ${location.pathname === subItem.link ? "text-primary-green" : "text-light-text hover:text-primary-green"}`}>
+                                            {subItem.name}
+                                        </span>
+                                    </Link>
+                                ))}
+                            </div>
+                        }
+                    </div>
                 ))}
                 {
                     activeItem === "null" &&
