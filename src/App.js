@@ -4,7 +4,7 @@ import { SidebarProvider } from "./context/SidebarContext/GlobalProvider";
 
 function App() {
   return (
-    <div >
+    <div className="">
       <SidebarProvider>
         <Router>
           <WebRouter />
