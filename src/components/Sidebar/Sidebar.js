@@ -29,8 +29,10 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activ
                         {nav_items.map((nav_item, index) => (
                             <Link key={nav_item.id} to={nav_item.link}>
                                 <div className='mt-8'>
-                                    <ReactSVG className='w-6 h-6' src={nav_item.icon} alt={nav_item.name} />
-                                </div>
+                                    {nav_item.name === activeLink ?
+                                        <img src={nav_item.activeIcon} alt={nav_item.name} />
+                                        : <ReactSVG src={nav_item.icon} alt={nav_item.name} />
+                                    }                                </div>
                             </Link>
                         ))}
                     </div>
