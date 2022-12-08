@@ -17,6 +17,7 @@ export const site_map = [
         activeIcon:'/images/Sidebar/marketplace-active.svg',
         active: true,
         extendable: true,
+        link: "/",
         subItems: [
             {
                 id: 1,
@@ -43,6 +44,7 @@ export const site_map = [
         activeIcon:'/images/Sidebar/user-profile-active.svg',
         active: false,
         extendable: true,
+        link: "/profile",
         subItems: [
             {
                 id: 1,
