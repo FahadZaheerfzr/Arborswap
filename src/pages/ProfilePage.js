@@ -23,7 +23,7 @@ export default function ProfilePage() {
     const [active, setActive] = useState(1);
     const [bigGrid, setBigGrid] = useState(false);
     return (
-        <div className='mb-10'>
+        <div className='pb-10'>
             <ExtendedLayout>
                 <BaseLayout>
                     <CoverImage full_image={profile.image} name={profile.name} />

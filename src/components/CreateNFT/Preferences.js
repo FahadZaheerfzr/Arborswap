@@ -36,7 +36,7 @@ export default function Preferences({ setActive, type, setType, chainType, setCh
 
     return (
         <div className='mt-9'>
-            <span className='font-gilroy font-semibold text-[#807373]'>
+            <span className='font-gilroy font-semibold text-[#807373] dark:text-dark-gray'>
                 Chain Type
                 <span className='text-[#E56060]'>&nbsp;*</span>
             </span>
@@ -48,11 +48,11 @@ export default function Preferences({ setActive, type, setType, chainType, setCh
                             <img className='w-10 h-10' src={chain_types[chainType].icon} alt={chain_types[chainType].name} />
 
                             <div className='ml-4 flex flex-col'>
-                                <span className='font-gilroy font-semibold text-dark-text'>
+                                <span className='font-gilroy font-semibold text-dark-text dark:text-dark-white-color'>
                                     {chain_types[chainType].name}
                                 </span>
-                                <span className='font-gilroy font-medium text-light-text text-sm'>
-                                    Est. gas fee ~ <span className='text-[#807373]'>${chain_types[chainType].est_gas_fee}</span>
+                                <span className='font-gilroy font-medium text-light-text dark:text-dark-text-color text-sm'>
+                                    Est. gas fee ~ <span className='text-[#807373] dark:text-dark-gray'>${chain_types[chainType].est_gas_fee}</span>
                                 </span>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ export default function Preferences({ setActive, type, setType, chainType, setCh
             </div>
 
             <div className='mt-10'>
-                <span className='font-gilroy font-semibold text-[#807373]'>
+                <span className='font-gilroy font-semibold text-[#807373] dark:text-dark-gray'>
                     Choose NFT Type
                     <span className='text-[#E56060]'>&nbsp;*</span>
                 </span>

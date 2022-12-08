@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import UploadSVG from '../../svgs/upload';
 import ImagePlaceholder from '../CreateNFT/Subcomponents/ImagePlaceholder';
 
 export default function UploadImage({ image, setImage, multiples }) {
@@ -36,17 +37,17 @@ export default function UploadImage({ image, setImage, multiples }) {
 
     return (
         <div >
-            <div className='mt-4 flex flex-col text-center items-center justify-center border-2 border-dashed border-light-text border-opacity-50 rounded-xl h-56'>
+            <div className='mt-4 flex flex-col text-center items-center justify-center border-2 border-dashed border-light-text dark:border-dark-text-color border-opacity-50 rounded-xl h-56'>
 
-                <span className='font-gilroy font-medium text-[#807373]'>
+                <span className='font-gilroy font-medium text-[#807373] dark:text-dark-gray'>
                     {multiples ? "ZIP Format Only" : "JPG,PNG,GIF,MP3 OR MP4"}<br />
-                    <span className='text-dark-text'>{multiples ? "MAX 150MB, 8 Files MAX" : "MAX 100MB"}</span>
+                    <span className='text-dark-text dark:text-dark-white-color'>{multiples ? "MAX 150MB, 8 Files MAX" : "MAX 100MB"}</span>
                 </span>
 
-                <button className='bg-light-gray-shade mt-10 flex gap-2 py-[10px] px-5'
+                <button className='bg-light-gray-shade dark:bg-dark-background mt-10 flex gap-2 py-[10px] px-5'
                     onClick={triggerFile}>
-                    <img src="/images/create_nft/upload.svg" alt="upload" />
-                    <span className='font-gilroy font-semibold text-sm text-[#807373]'>
+                    <UploadSVG className='fill-dark-text dark:fill-dark-white-color' />
+                    <span className='font-gilroy font-semibold text-sm text-[#807373] dark:text-dark-gray'>
                         Upload File
                     </span>
                     <input type={'file'} className='hidden' accept='image/png, image/jpeg, image/gif, video/mp4, audio/mp3'
@@ -57,14 +58,14 @@ export default function UploadImage({ image, setImage, multiples }) {
             </div>
             {multiples &&
                 <div className='mt-4 gap-2 md:gap-5 grid grid-cols-4'>
-                    <ImagePlaceholder />
-                    <ImagePlaceholder />
-                    <ImagePlaceholder />
-                    <ImagePlaceholder />
-                    <ImagePlaceholder />
-                    <ImagePlaceholder />
-                    <ImagePlaceholder />
-                    <ImagePlaceholder />
+                    <ImagePlaceholder multiples />
+                    <ImagePlaceholder multiples />
+                    <ImagePlaceholder multiples />
+                    <ImagePlaceholder multiples />
+                    <ImagePlaceholder multiples />
+                    <ImagePlaceholder multiples />
+                    <ImagePlaceholder multiples />
+                    <ImagePlaceholder multiples />
                 </div>
             }
         </div>

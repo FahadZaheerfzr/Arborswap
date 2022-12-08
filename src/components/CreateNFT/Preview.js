@@ -2,6 +2,7 @@ import React from 'react'
 import PreviewDetails from './Subcomponents/PreviewDetails'
 import PreviewHeader from './Subcomponents/PreviewHeader'
 import { chain_types, Collections } from '../../data/cards'
+import BackArrowSVG from '../../svgs/back_arrow'
 
 export default function Preview({ nft, nftType, nftChainType, setActive }) {
     return (
@@ -10,10 +11,10 @@ export default function Preview({ nft, nftType, nftChainType, setActive }) {
                 <img className="w-32 h-32 mr-5" src={nft.image} alt={nft.name} />
 
                 <div className='nft-info flex flex-col px-2'>
-                    <span className='text-xl font-gilroy font-bold text-dark-text'>
+                    <span className='text-xl font-gilroy font-bold text-dark-text dark:text-dark-white-color'>
                         {nft.name}
                     </span>
-                    <span className='mt-2 md:mt-0 font-gilroy font-medium text-[#807373]'>
+                    <span className='mt-2 md:mt-0 font-gilroy font-medium text-[#807373] dark:text-dark-gray'>
                         {nft.description}
                     </span>
                 </div>
@@ -44,10 +45,10 @@ export default function Preview({ nft, nftType, nftChainType, setActive }) {
 
             <div className='mt-10'>
                 <div className='flex justify-end items-center mb-10'>
-                    <button className='bg-white mr-5 flex items-center gap-2 py-[10px] px-5'
+                    <button className='bg-white dark:bg-transparent mr-5 flex items-center gap-2 py-[10px] px-5'
                         onClick={() => setActive("Add Details")}>
-                        <img src='/images/create_nft/arrow-right.svg' alt='return' />
-                        <span className='font-gilroy font-medium text-sm text-dark-text'>
+                        <BackArrowSVG className="fill-dark-text dark:fill-dark-white-color" />
+                        <span className='font-gilroy font-medium text-sm text-dark-text dark:text-dark-white-color'>
                             Go Back
                         </span>
                     </button>

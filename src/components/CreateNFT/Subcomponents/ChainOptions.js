@@ -7,12 +7,12 @@ export default function ChainOptions({ item, chainType, setChainType, userFilter
                 <img className={`${userFilter?"w-7 h-7":""}`} src={item.icon} alt={item.name} />
 
                 <div className={`${userFilter? "ml-2" : "ml-4"} flex flex-col`}>
-                    <span className='font-gilroy font-semibold text-dark-text'>
+                    <span className='font-gilroy font-semibold text-dark-text dark:text-dark-gray'>
                         {item.name}
                     </span>
                     {!userFilter && (
-                    <span className='font-gilroy font-medium text-light-text text-sm'>
-                        Est. gas fee ~ <span className='text-[#807373]'>${item.est_gas_fee}</span>
+                    <span className='font-gilroy font-medium text-light-text dark:text-dark-text-color text-sm'>
+                        Est. gas fee ~ <span className='text-[#807373] dark:text-dark-gray'>${item.est_gas_fee}</span>
                     </span>)}
                 </div>
             </div>

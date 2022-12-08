@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import { SidebarContext } from '../../context/SidebarContext/GlobalProvider';
+import LinkArrowSVG from '../../svgs/link_arrow';
 
 export default function CollectionActivity({ activity }) {
     const {showSidebar} = useContext(SidebarContext);
@@ -15,42 +16,42 @@ export default function CollectionActivity({ activity }) {
                     <div className='w-[80%] flex flex-col md:flex-row justify-between md:items-center'>
                         <div className='basic-info'>
                             <div className="name">
-                                <span className='font-gilroy font-semibold text-dark-text'>
+                                <span className='font-gilroy font-semibold text-dark-text dark:text-dark-white-color'>
                                     {activity.name}
                                 </span>
                             </div>
 
                             <div className="details mt-3 flex items-center">
-                                <span className='font-gilroy font-medium text-sm text-[#807373]'>
-                                    {activity.action} for <span className='text-dark-text'>
+                                <span className='font-gilroy font-medium text-sm text-[#807373] dark:text-dark-gray'>
+                                    {activity.action} for <span className='text-dark-text dark:text-dark-white-color'>
                                         {activity.price} ETH
                                     </span> - {activity.time}
                                 </span>
-                                <img className='ml-3' src='/images/collection/activity/arrow-right.svg' alt='arrow-right' />
+                                <LinkArrowSVG className='ml-3 fill-none stroke-dark-text dark:stroke-dark-white-color' />
                             </div>
                         </div>
 
                         <div className='transfer-details mt-3 md:mt-0'>
                             <div className='flex items-center'>
-                                <span className='font-gilroy font-semibold text-sm text-[#807373]'>
+                                <span className='font-gilroy font-semibold text-sm text-[#807373] dark:text-dark-gray'>
                                     By
                                 </span>
 
                                 <img className='ml-3' src={activity.by_icon} alt={activity.by} />
 
-                                <span className='font-gilroy font-medium text-sm text-dark-text ml-3'>
+                                <span className='font-gilroy font-medium text-sm text-dark-text dark:text-dark-white-color ml-3'>
                                     {activity.by}
                                 </span>
                             </div>
 
                             <div className='flex items-center mt-3'>
-                                <span className='font-gilroy font-semibold text-sm text-[#807373]'>
+                                <span className='font-gilroy font-semibold text-sm text-[#807373] dark:text-dark-gray'>
                                     To
                                 </span>
 
                                 <img className='ml-3' src={activity.to_icon} alt={activity.to} />
 
-                                <span className='font-gilroy font-medium text-sm text-dark-text ml-3'>
+                                <span className='font-gilroy font-medium text-sm text-dark-text dark:text-dark-white-color ml-3'>
                                     {activity.to}
                                 </span>
                             </div>

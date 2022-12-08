@@ -16,14 +16,14 @@ export default function CollectionRankingBase() {
             <div className='flex w-full pt-16'>
                 <div className='hero-text w-full flex flex-col md:w-[30%]'>
                     <div className='main-text flex items-end'>
-                        <span className='font-gilroy font-bold text-[31px] text-[#464754]'>
+                        <span className='font-gilroy font-bold text-[31px] text-dark-text dark:text-dark-white-color'>
                             Top Ranked <br />
                             Collections
                         </span>
                     </div>
 
                     <div className='sub-text mt-2'>
-                        <span className='font-gilroy font-medium text-[#807373]'>
+                        <span className='font-gilroy font-medium text-[#807373] dark:text-dark-gray '>
                             Explore and Discover collections and Nfts.
                         </span>
                     </div>
@@ -36,7 +36,7 @@ export default function CollectionRankingBase() {
 
             <div className='flex md:hidden w-full items-center justify-between pr-4'>
                 <div className='tabs'>
-                    <div className='flex items-center p-1 bg-[#F5F1EB]'>
+                    <div className='flex items-center p-1 bg-[#F5F1EB] dark:bg-black-shade4-background'>
                         {Days.map((day) => (
                             <Tab key={day.id} tabName={day.mobileOption} active={day.id === activeDay} setActiveTab={setActiveDay} id={day.id} />
                         ))}
@@ -48,7 +48,7 @@ export default function CollectionRankingBase() {
             </div>
 
             <div className='md:hidden tabs mt-5'>
-                <div className='flex items-center p-1 bg-[#F5F1EB]'>
+                <div className='flex items-center p-1 bg-[#F5F1EB] dark:bg-black-shade4-background'>
                     {Tabs.map((tab) => (
                         <Tab key={tab.id} tabName={tab.tabName} active={tab.id === activeTab} setActiveTab={setActiveTab} id={tab.id} />
                     ))}
@@ -59,7 +59,7 @@ export default function CollectionRankingBase() {
             <div className='hidden md:flex w-full  items-center mt-12 justify-between'>
 
                 <div className='tabs'>
-                    <div className='flex items-center p-1 bg-[#F5F1EB]'>
+                    <div className='flex items-center p-1 bg-[#F5F1EB] dark:bg-black-shade4-background'>
                         {Days.map((day) => (
                             <Tab key={day.id} tabName={day.option} active={day.id === activeDay} setActiveTab={setActiveDay} id={day.id} />
                         ))}
@@ -69,7 +69,7 @@ export default function CollectionRankingBase() {
                 <Button key={Buttons[1].id} buttonText={Buttons[1].buttonText} dropDownItems={Buttons[1].dropDownItems} />
 
                 <div className='tabs'>
-                    <div className='flex items-center p-1 bg-[#F5F1EB]'>
+                    <div className='flex items-center p-1 bg-[#F5F1EB] dark:bg-black-shade4-background'>
                         {Tabs.map((tab) => (
                             <Tab key={tab.id} tabName={tab.tabName} active={tab.id === activeTab} setActiveTab={setActiveTab} id={tab.id} />
                         ))}

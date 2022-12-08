@@ -19,27 +19,27 @@ export default function NFT({ nft }) {
             </div>
             <div className='w-full md:w-1/2'>
                 <div className='flex justify-between'>
-                    <div className='font-gilroy text-2xl font-bold text-dark-text'>
+                    <div className='font-gilroy text-2xl font-bold text-dark-text dark:text-dark-white-color'>
                         {nft.name}
                     </div>
 
                     <div className='flex items-center'>
-                        <div className="flex items-center bg-white mr-2 rounded-md h-8 px-3">
+                        <div className="flex items-center bg-white dark:bg-black-shade2-background mr-2 rounded-md h-8 px-3">
                             <img src="/images/nft/heart.svg" alt="heart" />
-                            <span className='font-gilroy text-sm font-semibold text-[#807373] ml-2'>
+                            <span className='font-gilroy text-sm font-semibold text-[#807373] dark:text-dark-gray ml-2'>
                                 {nft.likes}
                             </span>
                         </div>
-                        <div className='w-8 h-8 bg-white rounded-md flex items-center justify-center'>
-                            <div className='dot w-1 h-1 mr-1 bg-dark-text rounded-full' />
-                            <div className='dot w-1 h-1 mr-1 bg-dark-text rounded-full' />
-                            <div className='dot w-1 h-1 bg-dark-text rounded-full' />
+                        <div className='w-8 h-8 bg-white dark:bg-black-shade2-background rounded-md flex items-center justify-center'>
+                            <div className='dot w-1 h-1 mr-1 bg-dark-text dark:bg-dark-white-color rounded-full' />
+                            <div className='dot w-1 h-1 mr-1 bg-dark-text dark:bg-dark-white-color rounded-full' />
+                            <div className='dot w-1 h-1 bg-dark-text dark:bg-dark-white-color rounded-full' />
                         </div>
                     </div>
                 </div>
                 <div className='flex items-center'>
                     <img src="/images/home/collections/cards/verified.svg" alt="heart" />
-                    <span className='font-gilroy ml-2 text-[#807373] font-semibold'>
+                    <span className='font-gilroy ml-2 text-[#807373] dark:text-dark-gray font-semibold'>
                         Frontier NFTs
                     </span>
                 </div>
@@ -50,11 +50,11 @@ export default function NFT({ nft }) {
                 </div>
 
                 <div className={`border-b border-dashed flex flex-col py-5 border-[#767779] border-opacity-30`}>
-                    <span className='text-xl font-gilroy font-bold text-dark-text'>
+                    <span className='text-xl font-gilroy font-bold text-dark-text dark:text-dark-white-color'>
                         Description
                     </span>
 
-                    <span className='font-gilroy text-light-text font-medium mt-5'>
+                    <span className='font-gilroy text-light-text dark:text-dark-text-color font-medium mt-5'>
                         {nft.description}
                     </span>
 

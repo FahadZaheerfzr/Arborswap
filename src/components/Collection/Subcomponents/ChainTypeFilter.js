@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ChainOptions from '../../CreateNFT/Subcomponents/ChainOptions'
 import { profile_chain_types as chain_types } from '../../../data/cards';
+import ArrowDownSVG from '../../../svgs/arrow_down';
 
 export default function ChainTypeFilter() {
     const [showChainType, setShowChainType] = useState(false);
@@ -17,7 +18,7 @@ export default function ChainTypeFilter() {
                         <img className='w-7 h-7' src={chain_types[chainType].icon} alt={chain_types[chainType].name} />
 
                         <div className='ml-2 flex flex-col'>
-                            <span className='font-gilroy font-semibold text-[#807373]'>
+                            <span className='font-gilroy font-semibold text-[#807373] dark:text-dark-gray'>
                                 {chain_types[chainType].name}
                             </span>
                         </div>
@@ -25,14 +26,14 @@ export default function ChainTypeFilter() {
 
                     <div className='flex items-center rounded-full w-8 h-8 justify-center cursor-pointer'
                         onClick={toggleChainType}>
-                        <img className={`${showChainType ? "rotate-180" : "rotate-0"} duration-300 ease-in-out`} src='/images/sidebar/arrow-down.svg' alt='arrow down' />
+                        <ArrowDownSVG className={`${showChainType ? "rotate-180" : "rotate-0"} duration-300 ease-in-out fill-dark-text dark:fill-dark-white-color`} />
                     </div>
                 </div>
             </div>
             {showChainType &&
                 <div className='py-5'>
                     <div className='chain-type ml-2'>
-                        <span className='font-gilroy font-semibold text-[#807373] text-sm'>
+                        <span className='font-gilroy font-semibold text-[#807373] dark:text-dark-gray text-sm'>
                             Chain Type
                         </span>
                     </div>

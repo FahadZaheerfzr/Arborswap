@@ -1,22 +1,21 @@
 import * as React from "react"
 
-const UndoSVG = (props) => (
+const LinkArrowSVG = (props) => (
   <svg
-    width={24}
-    height={24}
-    fill="#000000"
+    width={16}
+    height={17}
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <path
-      d="M10.98 8.31H4.13M7.13 18.31h8c2.76 0 5-2.24 5-5s-2.24-5-5-5"
+      d="M12.714 13.214a6.667 6.667 0 1 0-9.428-9.428 6.667 6.667 0 0 0 9.428 9.428ZM6.35 10.15 9.18 7.322"
       strokeWidth={1.5}
-      strokeMiterlimit={10}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M6.43 10.81 3.87 8.25l2.56-2.56"
+      d="M9.65 9.678V6.85H6.822"
       strokeWidth={1.5}
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -24,4 +23,4 @@ const UndoSVG = (props) => (
   </svg>
 )
 
-export default UndoSVG
+export default LinkArrowSVG

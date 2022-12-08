@@ -45,7 +45,7 @@ export default function MobileCard({ rank, card_name, card_icon, item_quantity, 
             </div>
 
             <div className='flex items-center justify-between mx-5 mt-5'>
-                <span className='font-gilroy font-medium text-[#807373] text-sm'>
+                <span className='font-gilroy font-medium text-[#807373] dark:text-dark-gray text-sm'>
                     Floor Price
                 </span>
 
@@ -57,7 +57,7 @@ export default function MobileCard({ rank, card_name, card_icon, item_quantity, 
                 </div>
             </div>
             <div className='flex items-center justify-between mx-5 mt-5'>
-                <span className='font-gilroy font-medium text-[#807373] text-sm'>
+                <span className='font-gilroy font-medium text-[#807373] dark:text-dark-gray text-sm'>
                     Volume
                 </span>
 

@@ -7,9 +7,6 @@ import PriceFilter from './Subcomponents/PriceFilter';
 import PropertiesFilter from './Subcomponents/PropertiesFilter';
 import SaleFilter from './Subcomponents/SaleFilter'
 
-
-
-
 export default function Filter({ mobile, profile }) {
     const {theme} = useContext(ThemeContext);
     const [dropdowns, setDropdowns] = useState({

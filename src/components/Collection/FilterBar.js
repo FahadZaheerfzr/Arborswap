@@ -27,7 +27,7 @@ const profile_items = [
     },
     {
         id: 2,
-        name: 'On Sale',
+        name: 'OnSale',
         mobile_name: 'Onsale',
     },
     {
@@ -61,14 +61,14 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
             {filterMobile &&
                 <div className='fixed bg-transparent backdrop-blur-md  top-[0%] z-[100] w-full h-screen'>
                     <div className='flex flex-col h-screen justify-center px-6 '>
-                        <div className="flex items-center rounded-t-[10px] border border-opacity-50 border-[#D7D9DD] justify-between py-6 px-5 w-full bg-white">
-                            <span className='text-xl font-gilroy font-bold text-dark-text'>
+                        <div className="flex items-center rounded-t-[10px] border border-opacity-50 border-[#D7D9DD] justify-between py-6 px-5 w-full bg-white dark:bg-black-shade2-background">
+                            <span className='text-xl font-gilroy font-bold text-dark-text dark:text-dark-white-color'>
                                 Filter
                             </span>
 
                             <div className="flex items-center cursor-pointer"
                                 onClick={() => setFilterMobile(false)}>
-                                <span className='text-sm font-gilroy font-semibold text-dark-text mr-2'>
+                                <span className='text-sm font-gilroy font-semibold text-dark-text dark:text-dark-white-color mr-2'>
                                     Close
                                 </span>
                                 <div className='flex justify-center items-center bg-[#E56060] text-[#E56060] bg-opacity-10 rounded-full w-[15px] h-[15px]'>
@@ -76,7 +76,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                                 </div>
                             </div>
                         </div>
-                        <Filter mobile={true} profile />
+                        <Filter mobile={true} profile={profile} />
                     </div>
                 </div>
             }
@@ -133,7 +133,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                     </div>
 
                     <div className='hidden md:flex h-full ml-14 items-center'>
-                        <img className='mr-3' src='/images/collection/undo.svg' alt='undo' />
+                        <UndoSVG className='mr-3 stroke-dark-text dark:stroke-dark-white-color fill-none' />
 
                         <span className='font-gilroy font-semibold text-[#807373] dark:text-dark-gray'>
                             Reset All

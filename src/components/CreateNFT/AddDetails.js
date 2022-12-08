@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import UploadImage from '../Common/UploadImage';
 import CollectionComponent from './Subcomponents/CollectionComponent';
 import HeadingTags from '../Common/HeadingTags';
+import BackArrowSVG from '../../svgs/back_arrow';
 
 const collections = [
     {
@@ -62,8 +63,8 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
             <UploadImage image={image} setImage={setImage} multiples={nftType === 2} />
 
             {nftType === 2 ?
-                <div className='mt-10 bg-light-gray-shade bg-opacity-50 py-24 rounded-xl flex justify-center text-center'>
-                    <span className='font-gilroy font-medium text-[#807373]'>
+                <div className='mt-10 bg-light-gray-shade dark:bg-dark-background bg-opacity-50 py-24 rounded-xl flex justify-center text-center'>
+                    <span className='font-gilroy font-medium text-[#807373] dark:text-dark-gray'>
                         Your item name and metadata extracted <br/>
                         from the .zip file shows here
                     </span>
@@ -74,7 +75,7 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
                     <HeadingTags name={"Name"} required />
 
                     <div className='w-full mt-5'>
-                        <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="Enter NFT Name"
+                        <input className='bg-transparent w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text dark:text-dark-white-color focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="Enter NFT Name"
                             onChange={(e) => setName(e.target.value)}
                         />
                     </div>
@@ -85,7 +86,7 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
 
 
                 <div className='w-full mt-5'>
-                    <textarea className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="Write something about the NFT"
+                    <textarea className='bg-transparent w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text dark:text-dark-white-color focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="Write something about the NFT"
                         onChange={(e) => setDescription(e.target.value)}>
 
                     </textarea>
@@ -101,7 +102,7 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
                         <div className='flex   text-primary-green w-4 h-4 text-xs rounded-full justify-center bg-primary-green bg-opacity-40'>
                             <span className='relative -top-[1px]'>+</span>
                         </div>
-                        <span className='font-gilroy font-semibold text-sm ml-2 text-[#807373]'>
+                        <span className='font-gilroy font-semibold text-sm ml-2 text-[#807373] dark:text-dark-gray'>
                             Create New
                         </span>
                     </div>
@@ -121,7 +122,7 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
 
 
                         <div className='w-full mt-5'>
-                            <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. 10%"
+                            <input className='bg-transparent w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text dark:text-dark-white-color focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. 10%"
                                 onChange={(e) => setRoyalties(e.target.value)}
                             />
                         </div>
@@ -131,7 +132,7 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
 
 
                         <div className='mt-5'>
-                            <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. 100"
+                            <input className='bg-transparent w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text dark:text-dark-white-color focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. 100"
                                 onChange={(e) => setCopies(e.target.value)}
                             />
                         </div>
@@ -142,7 +143,7 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
 
 
                     <div className='w-full mt-5'>
-                        <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. 10%"
+                        <input className='bg-transparent w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text dark:text-dark-white-color focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. 10%"
                             onChange={(e) => setRoyalties(e.target.value)} />
                     </div>
                 </div>
@@ -154,11 +155,11 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
                 {properties.map((ind) => (
                     <div key={ind} className='w-full mt-5 flex gap-5'>
                         <div className='w-1/2' >
-                            <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. Size"
+                            <input className='bg-transparent w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text dark:text-dark-white-color focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. Size"
                             />
                         </div>
                         <div className='w-1/2'>
-                            <input className='w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. Large"
+                            <input className='bg-transparent w-full px-5 py-4 font-gilroy placeholder:font-medium placeholder:text-light-text font-semibold text-dark-text dark:text-dark-white-color focus:outline-none border-[1.5px] rounded-lg border-light-text border-opacity-50' type={"text"} placeholder="E.g. Large"
                                 onChange={updateInput}
                             />
                         </div>
@@ -169,10 +170,10 @@ export default function AddDetails({ setActive, nftType, nft, setNft, setVisible
 
             <div className='mt-10'>
                 <div className='flex justify-end items-center mb-10'>
-                    <button className='bg-white mr-5 flex items-center gap-2 py-[10px] px-5'
+                    <button className='bg-white dark:bg-transparent mr-5 flex items-center gap-2 py-[10px] px-5'
                         onClick={() => setActive("Preferences")}>
-                        <img src='/images/create_nft/arrow-right.svg' alt='return' />
-                        <span className='font-gilroy font-medium text-sm text-dark-text'>
+                        <BackArrowSVG className="fill-dark-text dark:fill-dark-white-color" />
+                        <span className='font-gilroy font-medium text-sm text-dark-text dark:text-dark-white-color'>
                             Go Back
                         </span>
                     </button>
