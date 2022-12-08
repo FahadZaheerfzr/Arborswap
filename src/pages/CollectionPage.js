@@ -16,6 +16,7 @@ export default function CollectionPage() {
     const [bigGrid, setBigGrid] = useState(false);
     const [activities, setActivities] = useState([]);
 
+
     useEffect(() => {
         const collection = Collections.find((collection) => collection.id === parseInt(id));
         setCollection(collection);
@@ -42,12 +43,17 @@ export default function CollectionPage() {
                     }
                 </BaseLayout>
 
-                <FilterBar item={item} setItem={setItem} setBigGrid={setBigGrid} bigGrid={bigGrid} />
-
+                <div className='w-full relative z-10'>
+                    <FilterBar item={item} setItem={setItem} setBigGrid={setBigGrid} bigGrid={bigGrid} />
+                </div>
 
                 {item ?
                     nfts &&
-                    <CollectionItems items={nfts} bigGrid={bigGrid} />
+                    <BaseLayout noSidebar noTopbar>
+                        <div className='w-full flex justify-center'>
+                            <CollectionItems items={NFTs} bigGrid={bigGrid} />
+                        </div>
+                    </BaseLayout>
                     : activities &&
                     <div className='mt-5 relative '>
                         {activities.map((activity) => (

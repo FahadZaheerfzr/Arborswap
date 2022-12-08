@@ -32,7 +32,7 @@ export default function BaseLayout({ children, noTopbar, noSidebar }) {
                     <Topbar setSideBarMobile={setSideBarMobile} sideBarMobile={sideBarMobile} activeLink={activeItem} />
                 </div>}
 
-            <div className='flex w-full md:mt-24'>
+            <div className={`flex w-full ${noTopbar? "" :"md:mt-24"}`}>
                 {noSidebar ? null :
                     <div className={`${sideBarMobile ? "block" : "hidden"} md:hidden w-[240px] bg-white absolute dark:bg-black-shade2-background z-20`}>
                         <Sidebar fullSidebar={true} tempfixed={tempfixed} handleTempFixed={handleTempFixed} activeLink={activeItem} />

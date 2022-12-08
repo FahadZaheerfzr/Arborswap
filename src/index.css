@@ -27,11 +27,3 @@ code {
     monospace;
 }
 
-svg {
-  fill: #A69F9F;
-}
-
-svg:hover {
-  fill: #00783F;
-}
-

@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link, useLocation } from "react-router-dom"
 import { site_map as nav_items } from '../../data/sitemap';
-import { ReactSVG } from 'react-svg';
 import ArrowDownSVG from '../../svgs/arrow_down';
 import TwitterSVG from '../../svgs/twitter';
 import DribbleSVG from '../../svgs/dribble';
 import InstagramSVG from '../../svgs/instagram';
 import TelegramSVG from '../../svgs/telegram';
 import { ThemeContext } from '../../context/ThemeContext/ThemeProvider';
+import { SidebarContext } from '../../context/SidebarContext/GlobalProvider';
 
 const socials = [
     {
@@ -30,8 +30,9 @@ const socials = [
 
 
 export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activeLink }) {
+    const {setShowSidebar} = useContext(SidebarContext);
     const [activeItem, setActiveItem] = useState("null");
-    const {theme} = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
     const location = useLocation();
 
 
@@ -49,20 +50,36 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activ
         }
     }
 
+    const handleSmallSidebar = (nav_item) => {
+        if (nav_item === activeItem) {
+            setActiveItem("null")
+        } else {
+            setActiveItem(nav_item);
+        }
+        setShowSidebar(true);
+    }
+
     if (!fullSidebar) {
         return (
             <div className='w-full flex justify-end'>
                 <div className='w-[35%] flex flex-col items-center mb-[5%] justify-between'>
                     <div className='nav-items'>
                         {nav_items.map((nav_item, index) => (
-                            <Link key={nav_item.id} to={nav_item.link}>
-                                <div className='mt-8'>
+                            nav_item.extendable ?
+                                <div key={nav_item.id} className='mt-8' onClick={() => handleSmallSidebar(nav_item.name)}>
                                     {nav_item.name === activeLink ?
-                                        <img src={nav_item.activeIcon} alt={nav_item.name} />
-                                        : <ReactSVG src={nav_item.icon} alt={nav_item.name} />
+                                        nav_item.activeIcon
+                                        : nav_item.icon
                                     }
                                 </div>
-                            </Link>
+                                : <Link key={nav_item.id} to={nav_item.link}>
+                                    <div className='mt-8'>
+                                        {nav_item.name === activeLink ?
+                                            nav_item.activeIcon
+                                            : nav_item.icon
+                                        }
+                                    </div>
+                                </Link>
                         ))}
                     </div>
 
@@ -92,8 +109,8 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activ
                             <div className='flex justify-between items-center' onClick={(nav_item_name) => handleActiveItem(nav_item.name, nav_item.extendable)}>
                                 <div className='flex ml-[20%]'>
                                     {nav_item.name === activeLink ?
-                                        <img src={nav_item.activeIcon} alt={nav_item.name} />
-                                        : <ReactSVG src={nav_item.icon} alt={nav_item.name} />
+                                        nav_item.activeIcon
+                                        : nav_item.icon
                                     }
                                     <span className={`font-gilroy font-semibold ml-5 ${nav_item.name === activeLink ? "text-primary-green" : "text-light-text dark:text-dark-text-color hover:text-primary-green"}`}>
                                         {nav_item.name}
@@ -132,9 +149,9 @@ export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activ
 
             <div className=' flex flex-col items-end mr-7'>
                 <div className='flex'>
-                    {theme === 'dark'? 
-                    <img className='mr-3' src='/images/Sidebar/moon.svg' alt="moon" />
-                    :<img className='mr-3' src='/images/Sidebar/sun.svg' alt="sun" />
+                    {theme === 'dark' ?
+                        <img className='mr-3' src='/images/Sidebar/moon.svg' alt="moon" />
+                        : <img className='mr-3' src='/images/Sidebar/sun.svg' alt="sun" />
                     }
                     <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
                         <input type="checkbox" value="" checked={tempfixed ? false : true} id="default-toggle" className="sr-only peer"

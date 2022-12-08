@@ -1,9 +1,14 @@
+import DashboardSVG from "../svgs/dashboard";
+import MarketplaceSVG from "../svgs/marketplace";
+import MenuSidebarSVG from "../svgs/menu_sidebar";
+import UserProfileSVG from "../svgs/user_profile";
+
 export const site_map = [
     {
         id: 1,
         name: 'Dashboard',
-        icon: '/images/Sidebar/dashboard.svg',
-        activeIcon: '/images/Sidebar/dashboard-green.svg',
+        icon: <DashboardSVG className="fill-light-text hover:fill-primary-green" />,
+        activeIcon: <DashboardSVG className="fill-primary-green" />,
         active: false,
         extendable: false,
         subItems: [],
@@ -13,8 +18,8 @@ export const site_map = [
     {
         id: 2,
         name: 'Marketplace',
-        icon: '/images/Sidebar/marketplace.svg',
-        activeIcon:'/images/Sidebar/marketplace-active.svg',
+        icon: <MarketplaceSVG className="fill-light-text hover:fill-primary-green" />,
+        activeIcon: <MarketplaceSVG className="fill-primary-green" />,
         active: true,
         extendable: true,
         link: "/",
@@ -40,8 +45,8 @@ export const site_map = [
     {
         id: 3,
         name: 'User Profile',
-        icon: '/images/Sidebar/user-profile.svg',
-        activeIcon:'/images/Sidebar/user-profile-active.svg',
+        icon: <UserProfileSVG className="fill-light-text hover:fill-primary-green" />,
+        activeIcon: <UserProfileSVG className="fill-primary-green" />,
         active: false,
         extendable: true,
         link: "/profile",
@@ -67,8 +72,8 @@ export const site_map = [
     {
         id: 4,
         name: 'More Products',
-        icon: '/images/Sidebar/menu.svg',
-        activeIcon:'/images/Sidebar/menu-active.svg',
+        icon: <MenuSidebarSVG className="fill-light-text hover:fill-primary-green" />,
+        activeIcon: <MenuSidebarSVG className="fill-primary-green" />,
         active: false,
         extendable: true,
         subItems: ["Search", "Rankings", "Create"],

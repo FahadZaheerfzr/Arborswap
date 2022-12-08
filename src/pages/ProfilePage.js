@@ -33,8 +33,11 @@ export default function ProfilePage() {
                 <FilterBar item={active} setItem={setActive} setBigGrid={setBigGrid} bigGrid={bigGrid} profile />
             </ExtendedLayout>
 
-
-            <CollectionItems items={NFTs} bigGrid={bigGrid} />
+            <BaseLayout noSidebar noTopbar>
+                <div className='w-full flex justify-center'>
+                    <CollectionItems items={NFTs} bigGrid={bigGrid} profile />
+                </div>
+            </BaseLayout>
         </div>
     )
 }

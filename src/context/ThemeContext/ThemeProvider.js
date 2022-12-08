@@ -34,7 +34,6 @@ export default function ThemeProvider({ initialTheme, children }) {
 
     useEffect(() => {
         checkTheme(theme);
-        console.log(theme);
     }, [theme]);
 
     return (

@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { SidebarContext } from '../../context/SidebarContext/GlobalProvider';
 import Filter from './Filter';
-import { ReactSVG } from 'react-svg';
 import Styles from './Collection.module.css'
 import MenuSVG from '../../svgs/menu';
 import MenuSmallSVG from '../../svgs/menu_small';
 import UndoSVG from '../../svgs/undo';
+import DashboardSVG from '../../svgs/dashboard';
 const filter_items = [
     {
         id: 1,
@@ -95,7 +95,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                             <img src='/images/home/arrow-down.svg' alt='arrow-down' className={`cursor-pointer ease-linear duration-150 ${filterDropdown ? "rotate-180" : "rotate-0"}`} onClick={toggleFilterDropDown} />
                         </div>
                         {filterDropdown &&
-                            <div className={`absolute mt-12 md:-ml-5 w-56 z-50`}>
+                            <div className={`absolute mt-12 md:-ml-5 w-56 z-10`}>
                                 <Filter profile={profile} />
                             </div>}
                     </div>
@@ -144,14 +144,14 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                         onClick={() => { setBigGrid(true) }}>
                         {bigGrid ?
                             <MenuSVG className={` fill-dark-text dark:fill-dark-white-color`} /> :
-                            <ReactSVG src='/images/Sidebar/dashboard.svg' alt='grid-icon-deactive' />
+                            <DashboardSVG className="fill-dark-text" />
                         }
                     </div>
 
                     <div className='hidden md:flex menu cursor-pointer h-full items-center'
                         onClick={() => { setBigGrid(false) }}>
                         {bigGrid ?
-                            <MenuSmallSVG/>:
+                            <MenuSmallSVG className="fill-light-text" /> :
                             <img src='/images/collection/menu.svg' alt='small-grid-icon' />
                         }
                     </div>
