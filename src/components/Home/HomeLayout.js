@@ -86,13 +86,13 @@ export default function HomeLayout() {
             </div>
 
             <div className='hidden md:flex w-full  items-center mt-12 justify-between'>
-                <div className='flex bg-[#F5F1EB]'>
-                    <div className={`absolute bg-white w-11 h-11 rounded-md flex justify-center items-center ease-in-out duration-300 ${cardFormat === "grid" ? "translate-x-[44px]" : ""}`}>
+                <div className='flex bg-[#F5F1EB] dark:bg-black-shade4-background'>
+                    <div className={`absolute bg-white dark:bg-black-shade2-background w-11 h-11 rounded-md flex justify-center items-center ease-in-out duration-300 ${cardFormat === "grid" ? "translate-x-[44px]" : ""}`}>
                         {
                             cardFormat === "list" ?
-                            <ListIconSVG className={`fill-dark-text`} />
+                            <ListIconSVG className={`fill-dark-text dark:fill-dark-white-color`} />
                             :
-                            <GridIconSVG className={`fill-dark-text`} />
+                            <GridIconSVG className={`fill-dark-text dark:fill-dark-white-color`} />
 
                         }
                     </div>
@@ -100,14 +100,14 @@ export default function HomeLayout() {
                         onClick={() => setCardFormat("list")}>
                         {
                             collections &&
-                            <ListIconSVG className={`fill-light-text`} />
+                            <ListIconSVG className={`fill-light-text dark:fill-dark-text-color`} />
                         }
                     </div>
                     <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer `}
                         onClick={() => setCardFormat("grid")}>
                         {
                             collections &&
-                            <GridIconSVG className={`fill-light-text`} />
+                            <GridIconSVG className={`fill-light-text dark:fill-dark-text-color`} />
                         }
 
                     </div>
