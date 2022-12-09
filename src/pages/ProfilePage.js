@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import BaseLayout from '../components/BaseLayout/BaseLayout'
 import CollectionItems from '../components/Collection/CollectionItems'
 import FilterBar from '../components/Collection/FilterBar'
 import CoverImage from '../components/Common/CoverImage'
 import ExtendedLayout from '../components/ExtendedLayout/ExtendedLayout'
 import ProfileBase from '../components/UserProfile'
+import { SidebarContext } from '../context/SidebarContext/GlobalProvider'
 import { NFTs } from '../data/cards'
 
 const profile = {
@@ -19,7 +20,7 @@ const profile = {
 }
 
 export default function ProfilePage() {
-
+    const { showSidebar } = useContext(SidebarContext);
     const [active, setActive] = useState(1);
     const [bigGrid, setBigGrid] = useState(false);
     return (
@@ -30,14 +31,25 @@ export default function ProfilePage() {
 
                     <ProfileBase profile={profile} />
                 </BaseLayout>
-                <FilterBar item={active} setItem={setActive} setBigGrid={setBigGrid} bigGrid={bigGrid} profile />
-            </ExtendedLayout>
 
-            <BaseLayout noSidebar noTopbar>
-                <div className='w-full flex justify-center'>
-                    <CollectionItems items={NFTs} bigGrid={bigGrid} profile />
-                </div>
-            </BaseLayout>
+            </ExtendedLayout>
+            <div className='w-full z-10'>
+                <FilterBar item={active} setItem={setActive} setBigGrid={setBigGrid} bigGrid={bigGrid} profile />
+            </div>
+
+            {
+                showSidebar || bigGrid ?
+                    <BaseLayout noSidebar noTopbar>
+                        <div className='w-full flex justify-center'>
+                            <CollectionItems items={NFTs} bigGrid={bigGrid} />
+                        </div>
+                    </BaseLayout> 
+                    :
+                    <div className='w-full flex pl-[110px] px-4'>
+                        <CollectionItems items={NFTs} bigGrid={bigGrid} fullWidth />
+                    </div>
+            }
+
         </div>
     )
 }

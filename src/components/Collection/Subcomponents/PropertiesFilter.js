@@ -74,8 +74,8 @@ export default function PropertiesFilter() {
     return (
         <div className='price-filters px-3 py-6'>
             <div className='search flex items-center'>
-                <img className='absolute ml-3' src='/images/Topbar/search.svg' alt="search" />
-                <input className='w-full rounded-md py-3 pl-10 font-gilroy font-medium bg-[#FAF8F5] placeholder:text-[#707070] focus:outline-none'
+                <img className='sticky ml-3' src='/images/Topbar/search.svg' alt="search" />
+                <input className='w-full -ml-7 rounded-md py-3 pl-10 font-gilroy font-medium bg-[#FAF8F5] placeholder:text-[#707070] focus:outline-none'
                     type="text" placeholder='Search by Traits' />
             </div>
 

@@ -74,7 +74,7 @@ export default function Filter({ mobile, profile }) {
     };
 
     return (
-        <div className={`bg-white dark:bg-black-shade2-background border-[#D7D9DD] dark:border-[#313538] w-full ${Styles.filterBorder} ${mobile ? "max-h-[80vh] overflow-scroll" : ""}`}>
+        <div className={`bg-white max-h-[calc(100vh-170px)] overflow-scroll dark:bg-black-shade2-background border-[#D7D9DD] dark:border-[#313538] w-full ${Styles.filter} ${Styles.filterBorder} ${mobile ? "max-h-[80vh] overflow-scroll" : ""}`}>
             {filters.map((filter) => (
                 <div key={filter.id} className='filter-box'>
                     {filter.name &&

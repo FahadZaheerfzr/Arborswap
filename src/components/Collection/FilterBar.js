@@ -57,7 +57,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
         setFilterDropdown(!filterDropdown);
     }
     return (
-        <div className=''>
+        <div className='sticky top-[110px]'>
             {filterMobile &&
                 <div className='fixed bg-transparent backdrop-blur-md  top-[0%] z-[100] w-full h-screen'>
                     <div className='flex flex-col h-screen justify-center px-6 '>
@@ -80,7 +80,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                     </div>
                 </div>
             }
-            <div className={`w-full flex h-12 border-[0.5px] border-[#D7D9DD] dark:border-[#313538]  items-center md:pl-[100px] bg-white dark:bg-black-shade2-background justify-between `}>
+            <div className={`w-full h-12 flex   border-[0.5px] border-[#D7D9DD] dark:border-[#313538]  items-center md:pl-[100px] bg-white dark:bg-black-shade2-background justify-between `}>
                 <div className={`flex h-12 items-center md:ml-5 ease-in-out duration-300 ${showSidebar ? "md:translate-x-[170px]" : "md:translate-x-[0px]"}`}>
                     <div className='flex h-full'>
                         <div className='hidden md:flex min-w-[48px] px-3 mr-4 h-full   border-b-2 border-[#C89211] border-opacity-50 items-center justify-center'>
@@ -95,15 +95,15 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                             <img src='/images/home/arrow-down.svg' alt='arrow-down' className={`cursor-pointer ease-linear duration-150 ${filterDropdown ? "rotate-180" : "rotate-0"}`} onClick={toggleFilterDropDown} />
                         </div>
                         {filterDropdown &&
-                            <div className={`absolute mt-12 md:-ml-5 w-56 z-10`}>
+                            <div className={`fixed mt-12 md:-ml-5 w-56 z-10`}>
                                 <Filter profile={profile} />
                             </div>}
                     </div>
 
                     {profile ?
-                        <div className={`${Styles.filter} flex w-44 ml-2 md:w-full h-full overflow-x-scroll gap-5 md:gap-0`}> 
+                        <div className={`${Styles.filter} flex w-44 ml-2 md:w-full h-full  gap-5 lg:gap-1 xl:gap-3`}> 
                             {profile_items.map((filter) => (
-                                <div key={filter.id} className={` h-full w-14 md:w-[84px] md:ml-5 flex items-center justify-center ${item === filter.id ? "border-b-2 border-primary-green border-opacity-50" : null}`}
+                                <div key={filter.id} className={` h-full w-14 md:w-[84px]  flex items-center justify-center ${item === filter.id ? "border-b-2 border-primary-green border-opacity-50" : null}`}
                                     onClick={() => setItem(filter.id)}>
                                     <span className={`font-gilroy cursor-pointer font-bold ${item === filter.id ? "text-primary-green" : "text-light-text dark:text-dark-text-color hover:text-primary-green"}`}>
                                         {filter.name}
@@ -112,7 +112,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                             ))}
                         </div>
                         : filter_items.map((filter) => (
-                            <div key={filter.id} className={` h-full w-14 md:w-[84px] ml-5 md:ml-5 flex items-center justify-center ${item === filter.bool_val ? "border-b-2 border-primary-green border-opacity-50" : null}`}
+                            <div key={filter.id} className={` h-full w-14 md:w-[84px] ml-5 md:ml-3 lg:ml-5 flex items-center justify-center ${item === filter.bool_val ? "border-b-2 border-primary-green border-opacity-50" : null}`}
                                 onClick={() => setItem(filter.bool_val)}>
                                 <span className={`font-gilroy cursor-pointer font-bold ${item === filter.bool_val ? "text-primary-green" : "text-light-text dark:text-dark-text-color hover:text-primary-green"}`}>
                                     {filter.name}
@@ -125,14 +125,14 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile 
                 </div>
                 <div className='flex h-12 items-center pr-[5%]'>
                     <div className='h-full flex items-center'>
-                        <span className='font-gilroy font-semibold text-sm md:text-base text-[#807373] dark:text-dark-gray'>
+                        <span className='font-gilroy font-semibold text-sm xl:text-base text-[#807373] dark:text-dark-gray'>
                             Price : Low to High
                         </span>
 
                         <img className='ml-4' src='/images/home/arrow-down.svg' alt='arrow-down' />
                     </div>
 
-                    <div className='hidden md:flex h-full ml-14 items-center'>
+                    <div className='hidden md:flex h-full lg:ml-8 xl:ml-14 items-center'>
                         <UndoSVG className='mr-3 stroke-dark-text dark:stroke-dark-white-color fill-none' />
 
                         <span className='font-gilroy font-semibold text-[#807373] dark:text-dark-gray'>

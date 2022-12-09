@@ -11,9 +11,9 @@ export default function Collection({ collection }) {
             <CoverImage full_image={collection.full_image} name={collection.name} />
 
             <div className='w-full flex  justify-center md:-mt-7 relative z-20'>
-                <div className='w-10/12 flex justify-between'>
+                <div className='md:w-full lg:w-11/12 xl:w-10/12 flex justify-between'>
                     <div className='creator-info w-2/6 md:w-1/6 flex flex-col items-center '>
-                        <img src={collection.creator_logo} alt={collection.creator_name} />
+                        <img className='md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32' src={collection.creator_logo} alt={collection.creator_name} />
 
 
                         <div className='hidden md:block creator-info mt-9'>
