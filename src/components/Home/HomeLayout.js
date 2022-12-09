@@ -12,8 +12,6 @@ import { Link } from "react-router-dom"
 import { Buttons, Tabs } from '../../data/components';
 import GridIconSVG from '../../svgs/grid_icon';
 import ListIconSVG from '../../svgs/list_icon';
-import MenuSmallSVG from '../../svgs/menu_small';
-import MenuSVG from '../../svgs/menu';
 
 export default function HomeLayout() {
     const [activeTab, setActiveTab] = useState(1);
