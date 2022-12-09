@@ -88,21 +88,28 @@ export default function HomeLayout() {
             </div>
 
             <div className='hidden md:flex w-full  items-center mt-12 justify-between'>
-                <div className='flex'>
-                    <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer ${cardFormat === "list" ? "bg-white dark:bg-black-shade2-background" : "bg-[#F5F1EB] dark:bg-black-shade4-background"}`}
-                        onClick={() => setCardFormat("list")}>
+                <div className='flex bg-[#F5F1EB]'>
+                    <div className={`absolute bg-white w-11 h-11 rounded-md flex justify-center items-center ease-in-out duration-300 ${cardFormat === "grid" ? "translate-x-[44px]" : ""}`}>
                         {
-                            collections ?
-                                <ListIconSVG className={`${cardFormat === "list" ? "fill-dark-text dark:fill-dark-white-color" : "fill-light-text"}`} />
-                                : <MenuSmallSVG className={`${cardFormat === 'list' ? "fill-dark-text dark:fill-dark-white-color" : "fill-light-text"}`} />
+                            cardFormat === "list" ?
+                            <ListIconSVG className={`fill-dark-text`} />
+                            :
+                            <GridIconSVG className={`fill-dark-text`} />
+
                         }
                     </div>
-                    <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer ${cardFormat === "grid" ? "bg-white dark:bg-black-shade2-background" : "bg-[#F5F1EB] dark:bg-black-shade4-background"}`}
+                    <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer `}
+                        onClick={() => setCardFormat("list")}>
+                        {
+                            collections &&
+                            <ListIconSVG className={`fill-light-text`} />
+                        }
+                    </div>
+                    <div className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer `}
                         onClick={() => setCardFormat("grid")}>
                         {
-                            collections ?
-                                <GridIconSVG className={`${cardFormat === "grid" ? "fill-dark-text dark:fill-white" : "fill-light-text"}`} />
-                                : <MenuSVG className={`${cardFormat === 'grid' ? "fill-dark-text dark:fill-dark-white-color" : "fill-light-text"}`} />
+                            collections &&
+                            <GridIconSVG className={`fill-light-text`} />
                         }
 
                     </div>
