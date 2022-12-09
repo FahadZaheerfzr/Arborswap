@@ -17,6 +17,7 @@ export default function CollectionPage() {
     const [bigGrid, setBigGrid] = useState(false);
     const [activities, setActivities] = useState([]);
     const { showSidebar } = useContext(SidebarContext);
+    const [filterDropdown, setFilterDropdown] = useState(false);
 
 
     useEffect(() => {
@@ -46,7 +47,7 @@ export default function CollectionPage() {
                 </BaseLayout>
                 <div className='w-full relative mb-12 z-10'>
                     <div className='h-screen absolute w-full'>
-                        <FilterBar item={item} setItem={setItem} setBigGrid={setBigGrid} bigGrid={bigGrid} />
+                        <FilterBar filterDropdown={filterDropdown} setFilterDropdown={setFilterDropdown} item={item} setItem={setItem} setBigGrid={setBigGrid} bigGrid={bigGrid} />
                     </div>
                 </div>
 
@@ -60,7 +61,7 @@ export default function CollectionPage() {
                             </BaseLayout>
                             :
                             <div className='w-full flex pl-[110px] px-4'>
-                                <CollectionItems items={NFTs} bigGrid={bigGrid} fullWidth />
+                                <CollectionItems items={NFTs} bigGrid={bigGrid} fullWidth filterDropdown={filterDropdown} />
                             </div>
 
                     )

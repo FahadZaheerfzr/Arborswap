@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { SidebarContext } from '../../context/SidebarContext/GlobalProvider';
 import Filter from './Filter';
 import Styles from './Collection.module.css'
@@ -47,13 +47,21 @@ const profile_items = [
     }
 ]
 
-export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile }) {
-    const { showSidebar } = useContext(SidebarContext);
-    const [filterDropdown, setFilterDropdown] = useState(false);
+export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile, filterDropdown, setFilterDropdown }) {
+    const { showSidebar, setShowSidebar } = useContext(SidebarContext);
     const [filtercount, setFilterCount] = useState(5);
     const [filterMobile, setFilterMobile] = useState(false);
 
+    useEffect(()=>{
+        if (showSidebar){
+            setFilterDropdown(false);
+        }
+    }, [showSidebar])
+
     const toggleFilterDropDown = () => {
+        if (filterDropdown === false && showSidebar){
+            setShowSidebar(false);
+        }
         setFilterDropdown(!filterDropdown);
     }
     return (

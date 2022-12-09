@@ -23,6 +23,8 @@ export default function ProfilePage() {
     const { showSidebar } = useContext(SidebarContext);
     const [active, setActive] = useState(1);
     const [bigGrid, setBigGrid] = useState(false);
+    const [filterDropdown, setFilterDropdown] = useState(false);
+
     return (
         <div className='pb-10'>
             <ExtendedLayout>
@@ -35,7 +37,7 @@ export default function ProfilePage() {
             </ExtendedLayout>
             <div className='w-full relative mb-12 z-10'>
                 <div className='h-screen absolute w-full'>
-                    <FilterBar item={active} setItem={setActive} setBigGrid={setBigGrid} bigGrid={bigGrid} profile />
+                    <FilterBar filterDropdown={filterDropdown} setFilterDropdown={setFilterDropdown} item={active} setItem={setActive} setBigGrid={setBigGrid} bigGrid={bigGrid} profile />
                 </div>
             </div>
 
@@ -48,7 +50,7 @@ export default function ProfilePage() {
                     </BaseLayout>
                     :
                     <div className='w-full flex pl-[110px] px-4'>
-                        <CollectionItems items={NFTs} bigGrid={bigGrid} fullWidth />
+                        <CollectionItems items={NFTs} bigGrid={bigGrid} fullWidth filterDropdown={filterDropdown} />
                     </div>
             }
 

@@ -49,7 +49,7 @@ export default function NFT({ nft }) {
                     <OwnerInfo box_for={"Current Owner"} name={nft.owner} image={nft.owner_image} />
                 </div>
 
-                <div className={`border-b border-dashed flex flex-col py-5 border-[#767779] border-opacity-30`}>
+                <div className={`border-b mb-7 border-dashed flex flex-col py-5 border-[#767779] border-opacity-30`}>
                     <span className='text-xl font-gilroy font-bold text-dark-text dark:text-dark-white-color'>
                         Description
                     </span>
