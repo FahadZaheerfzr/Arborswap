@@ -52,10 +52,9 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile,
   const [filtercount, setFilterCount] = useState(5)
   const [filterMobile, setFilterMobile] = useState(false)
 
-  
   useEffect(() => {
     if (showSidebar) {
-      setFilterDropdown(false);
+      setFilterDropdown(false)
     }
   }, [showSidebar, setFilterDropdown])
 
