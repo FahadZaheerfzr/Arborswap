@@ -89,8 +89,9 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile,
         className={`w-full h-12 flex   border-[0.5px] border-[#D7D9DD] dark:border-[#313538]  items-center md:pl-[100px] bg-white dark:bg-black-shade2-background justify-between `}
       >
         <div
-          className={`flex h-12 items-center md:ml-5 ease-in-out duration-300 ${showSidebar ? 'md:translate-x-[170px]' : 'md:translate-x-[0px]'
-            }`}
+          className={`flex h-12 items-center md:ml-5 ease-in-out duration-300 ${
+            showSidebar ? 'md:translate-x-[170px]' : 'md:translate-x-[0px]'
+          }`}
         >
           <div className="flex h-full">
             <div className="hidden md:flex min-w-[48px] px-3 mr-4 h-full   border-b-2 border-[#C89211] border-opacity-50 items-center justify-center">
@@ -108,8 +109,9 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile,
             </div>
 
             <div
-              className={`hidden md:flex items-center h-full arrow border-r-[0.5px] border-[#D7D9DD] dark:border-[#313538] ${!showSidebar ? 'ml-11' : null
-                }`}
+              className={`hidden md:flex items-center h-full arrow border-r-[0.5px] border-[#D7D9DD] dark:border-[#313538] ${
+                !showSidebar ? 'ml-11' : null
+              }`}
             >
               <img
                 src="/images/home/arrow-down.svg"
@@ -130,15 +132,17 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile,
               {profile_items.map((filter) => (
                 <div
                   key={filter.id}
-                  className={` h-full w-14 md:w-[84px]  flex items-center justify-center ${item === filter.id ? 'border-b-2 border-primary-green border-opacity-50' : null
-                    }`}
+                  className={` h-full w-14 md:w-[84px]  flex items-center justify-center ${
+                    item === filter.id ? 'border-b-2 border-primary-green border-opacity-50' : null
+                  }`}
                   onClick={() => setItem(filter.id)}
                 >
                   <span
-                    className={`font-gilroy cursor-pointer font-bold ${item === filter.id
+                    className={`font-gilroy cursor-pointer font-bold ${
+                      item === filter.id
                         ? 'text-primary-green'
                         : 'text-light-text dark:text-dark-text-color hover:text-primary-green'
-                      }`}
+                    }`}
                   >
                     {filter.name}
                   </span>
@@ -149,15 +153,17 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile,
             filter_items.map((filter) => (
               <div
                 key={filter.id}
-                className={` h-full w-14 md:w-[84px] ml-5 md:ml-3 lg:ml-5 flex items-center justify-center ${item === filter.bool_val ? 'border-b-2 border-primary-green border-opacity-50' : null
-                  }`}
+                className={` h-full w-14 md:w-[84px] ml-5 md:ml-3 lg:ml-5 flex items-center justify-center ${
+                  item === filter.bool_val ? 'border-b-2 border-primary-green border-opacity-50' : null
+                }`}
                 onClick={() => setItem(filter.bool_val)}
               >
                 <span
-                  className={`font-gilroy cursor-pointer font-bold ${item === filter.bool_val
+                  className={`font-gilroy cursor-pointer font-bold ${
+                    item === filter.bool_val
                       ? 'text-primary-green'
                       : 'text-light-text dark:text-dark-text-color hover:text-primary-green'
-                    }`}
+                  }`}
                 >
                   {filter.name}
                 </span>
@@ -179,8 +185,8 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile,
 
             <span className="font-gilroy font-semibold text-[#807373] dark:text-dark-gray">Reset All</span>
           </div>
-          {item &&
-            <div className='flex items-center'>
+          {item && (
+            <div className="flex items-center">
               <div
                 className="hidden md:flex menu cursor-pointer h-full items-center ml-10 mr-6"
                 onClick={() => {
@@ -207,7 +213,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile,
                 )}
               </div>
             </div>
-          }
+          )}
         </div>
       </div>
       <div className="flex md:hidden justify-between px-6 mt-5 ">

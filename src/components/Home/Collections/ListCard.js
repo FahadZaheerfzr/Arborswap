@@ -83,11 +83,11 @@ export default function ListCard({
         </div>
 
         <Link to={`/collections/${card_id}`}>
-        <div className="view-item flex items-center">
-          <span className="font-gilroy font-medium text-primary-green text-sm">View</span>
+          <div className="view-item flex items-center">
+            <span className="font-gilroy font-medium text-primary-green text-sm">View</span>
 
-          <img src="/images/Sidebar/arrow-left.svg" alt="arrow-icon" className="ml-2 rotate-180" />
-        </div>
+            <img src="/images/Sidebar/arrow-left.svg" alt="arrow-icon" className="ml-2 rotate-180" />
+          </div>
         </Link>
       </div>
     </div>

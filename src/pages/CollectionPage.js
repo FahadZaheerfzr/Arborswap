@@ -67,7 +67,7 @@ export default function CollectionPage() {
               </div>
             ))
           : activities && (
-              <div className={`mt-5 relative ${filterDropdown? "ml-[170px]":""} `}>
+              <div className={`mt-5 relative ${filterDropdown ? 'ml-[170px]' : ''} `}>
                 {activities.map((activity) => (
                   <CollectionActivity activity={activity} />
                 ))}

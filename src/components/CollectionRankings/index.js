@@ -102,7 +102,7 @@ export default function CollectionRankingBase() {
         {Collections.map((card, index) => (
           <ListCard
             key={card.id}
-            card_id = {card.id}
+            card_id={card.id}
             rank={card.id}
             card_name={card.name}
             verified={card.verified}
