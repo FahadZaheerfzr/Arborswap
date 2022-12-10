@@ -1,13 +1,7 @@
-import * as React from "react"
+import * as React from 'react'
 
 const DashboardSVG = (props) => (
-  <svg
-    width={20}
-    height={20}
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
+  <svg width={20} height={20} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       opacity={0.4}
       d="M18.333 7.1V3.315c0-1.175-.533-1.65-1.858-1.65h-3.367c-1.325 0-1.858.475-1.858 1.65v3.775c0 1.183.533 1.65 1.858 1.65h3.367c1.325.008 1.858-.467 1.858-1.642Z"

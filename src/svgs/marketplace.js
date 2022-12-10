@@ -1,13 +1,7 @@
-import * as React from "react"
+import * as React from 'react'
 
 const MarketplaceSVG = (props) => (
-  <svg
-    width={20}
-    height={20}
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
+  <svg width={20} height={20} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       opacity={0.4}
       d="M16.033 4.65H15.7l-2.817-2.817a.589.589 0 0 0-.825 0 .589.589 0 0 0 0 .825l1.992 1.991h-8.1L7.94 2.658a.589.589 0 0 0 0-.825.589.589 0 0 0-.824 0L4.308 4.649h-.333c-.75 0-2.308 0-2.308 2.134 0 .808.166 1.341.516 1.691.2.209.442.317.7.375.242.059.5.067.75.067h12.733c.259 0 .5-.017.734-.067.7-.166 1.233-.666 1.233-2.066 0-2.134-1.558-2.134-2.3-2.134Z"

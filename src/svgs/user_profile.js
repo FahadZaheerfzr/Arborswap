@@ -1,13 +1,7 @@
-import * as React from "react"
+import * as React from 'react'
 
 const UserProfileSVG = (props) => (
-  <svg
-    width={20}
-    height={20}
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
+  <svg width={20} height={20} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       opacity={0.4}
       d="M10 1.666a3.962 3.962 0 0 0-3.958 3.958c0 2.142 1.675 3.875 3.858 3.95a.673.673 0 0 1 .183 0H10.142a3.948 3.948 0 0 0 3.816-3.95A3.962 3.962 0 0 0 10 1.666Z"
