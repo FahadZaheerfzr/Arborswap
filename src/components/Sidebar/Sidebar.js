@@ -22,10 +22,10 @@ const socials = [
     id: 3,
     icon: <InstagramSVG className="fill-dark-text dark:fill-dark-white-color" />,
   },
-  {
-    id: 4,
-    icon: <DribbleSVG className="fill-dark-text dark:fill-dark-white-color" />,
-  },
+  // {
+  //   id: 4,
+  //   icon: <DribbleSVG className="fill-dark-text dark:fill-dark-white-color" />,
+  // },
 ]
 
 export default function Sidebar({ fullSidebar, tempfixed, handleTempFixed, activeLink }) {

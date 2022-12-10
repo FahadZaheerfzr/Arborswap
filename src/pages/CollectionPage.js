@@ -40,8 +40,8 @@ export default function CollectionPage() {
     <div className="pb-10">
       <ExtendedLayout>
         <BaseLayout>{collection && <Collection collection={collection} />}</BaseLayout>
-        <div className="w-full relative mb-12 z-10">
-          <div className="h-screen absolute w-full">
+        <div className="w-full relative md:mb-12 z-10">
+          <div className="md:h-[200px] md:absolute w-full">
             <FilterBar
               filterDropdown={filterDropdown}
               setFilterDropdown={setFilterDropdown}
@@ -67,7 +67,7 @@ export default function CollectionPage() {
               </div>
             ))
           : activities && (
-              <div className="mt-5 relative ">
+              <div className={`mt-5 relative ${filterDropdown? "ml-[170px]":""} `}>
                 {activities.map((activity) => (
                   <CollectionActivity activity={activity} />
                 ))}

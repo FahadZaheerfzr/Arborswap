@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ListCard({
   rank,
   card_name,
+  card_id,
   change,
   verified,
   card_icon,
@@ -80,11 +82,13 @@ export default function ListCard({
           </div>
         </div>
 
+        <Link to={`/collections/${card_id}`}>
         <div className="view-item flex items-center">
           <span className="font-gilroy font-medium text-primary-green text-sm">View</span>
 
           <img src="/images/Sidebar/arrow-left.svg" alt="arrow-icon" className="ml-2 rotate-180" />
         </div>
+        </Link>
       </div>
     </div>
   )

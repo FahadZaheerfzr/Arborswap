@@ -12,6 +12,8 @@ import { Link } from 'react-router-dom'
 import { Buttons, Tabs } from '../../data/components'
 import GridIconSVG from '../../svgs/grid_icon'
 import ListIconSVG from '../../svgs/list_icon'
+import DashboardSVG from '../../svgs/dashboard'
+import MenuSmallSVG from '../../svgs/menu_small'
 
 export default function HomeLayout() {
   const [activeTab, setActiveTab] = useState(1)
@@ -37,7 +39,7 @@ export default function HomeLayout() {
             <div className="main-text flex items-end">
               <span className="font-gilroy font-bold text-[31px] text-[#464754] dark:text-dark-white-color">
                 Discover <br />
-                Collections
+                {collections? "Collections" : "NFTs"}
               </span>
               <img
                 className="mb-2 ml-2 cursor-pointer"
@@ -94,22 +96,28 @@ export default function HomeLayout() {
             }`}
           >
             {cardFormat === 'list' ? (
-              <ListIconSVG className={`fill-dark-text dark:fill-dark-white-color`} />
+              collections ? <ListIconSVG className={`fill-dark-text dark:fill-dark-white-color`} />
+              : <MenuSmallSVG className={`fill-dark-text dark:fill-dark-white-color`} />
             ) : (
-              <GridIconSVG className={`fill-dark-text dark:fill-dark-white-color`} />
+              collections ? <GridIconSVG className={`fill-dark-text dark:fill-dark-white-color`} />
+              : <DashboardSVG className={`fill-dark-text dark:fill-dark-white-color`} />
             )}
           </div>
           <div
             className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer `}
             onClick={() => setCardFormat('list')}
           >
-            {collections && <ListIconSVG className={`fill-light-text dark:fill-dark-text-color`} />}
+            {collections ? <ListIconSVG className={`fill-light-text dark:fill-dark-text-color`} />
+            : <MenuSmallSVG className={`fill-light-text dark:fill-dark-text-color`} />
+            }
           </div>
           <div
             className={`w-11 h-11 rounded-md flex justify-center items-center cursor-pointer `}
             onClick={() => setCardFormat('grid')}
           >
-            {collections && <GridIconSVG className={`fill-light-text dark:fill-dark-text-color`} />}
+            {collections ? <GridIconSVG className={`fill-light-text dark:fill-dark-text-color`}/>
+            : <DashboardSVG className={`fill-light-text dark:fill-dark-white-color`} />
+            }
           </div>
         </div>
 
@@ -159,6 +167,7 @@ export default function HomeLayout() {
             {Collections.map((card) => (
               <ListCard
                 key={card.id}
+                card_id = {card.id}
                 card_name={card.name}
                 verified={card.verified}
                 card_icon={card.icon}

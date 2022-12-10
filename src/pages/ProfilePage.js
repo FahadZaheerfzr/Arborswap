@@ -34,8 +34,8 @@ export default function ProfilePage() {
           <ProfileBase profile={profile} />
         </BaseLayout>
       </ExtendedLayout>
-      <div className="w-full relative mb-12 z-10">
-        <div className="h-screen absolute w-full">
+      <div className="w-full relative md:mb-12 z-10">
+        <div className="md:h-[200px] md:absolute w-full">
           <FilterBar
             filterDropdown={filterDropdown}
             setFilterDropdown={setFilterDropdown}
