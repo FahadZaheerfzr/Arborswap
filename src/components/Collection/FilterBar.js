@@ -52,11 +52,12 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile,
   const [filtercount, setFilterCount] = useState(5)
   const [filterMobile, setFilterMobile] = useState(false)
 
+  
   useEffect(() => {
     if (showSidebar) {
-      setFilterDropdown(false)
+      setFilterDropdown(false);
     }
-  }, [showSidebar])
+  }, [showSidebar, setFilterDropdown])
 
   const toggleFilterDropDown = () => {
     if (filterDropdown === false && showSidebar) {
@@ -81,7 +82,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile,
                 </div>
               </div>
             </div>
-            <Filter mobile={true} profile={profile} />
+            <Filter mobile={true} profile={profile} item={item} />
           </div>
         </div>
       )}
@@ -122,7 +123,7 @@ export default function FilterBar({ item, setItem, setBigGrid, bigGrid, profile,
             </div>
             {filterDropdown && (
               <div className={`fixed mt-12 md:-ml-5 w-56 z-10`}>
-                <Filter profile={profile} />
+                <Filter profile={profile} item={item} />
               </div>
             )}
           </div>
